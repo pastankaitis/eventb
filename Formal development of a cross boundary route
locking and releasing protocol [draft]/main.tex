@@ -1,0 +1,176 @@
+\documentclass{llncs}
+\usepackage[latin1]{inputenc}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage[table]{xcolor}
+\usepackage{enumerate}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage {bsymb,b2latex}
+\usepackage{fancyhdr,lastpage,color}
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{caption}
+\captionsetup[table]{position=bottom}
+\usepackage{siunitx}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,positioning, calc,lindenmayersystems,decorations.pathmorphing,intersections}
+\tikzstyle{resource}= [draw,minimum size=16pt,inner sep=0pt]
+\tikzstyle{process} = [draw,minimum size=16pt,inner sep=0pt,circle]
+\tikzstyle{allocated} = [->,thick,arrows={-latex}]
+\tikzstyle{requested} = [<-,thick,arrows={latex-}, dashed]
+
+
+\usetikzlibrary{positioning}
+\newcommand{\MonetaryLevel}{Monetary level}
+\newcommand{\RealLevel}{Real level}
+\newcommand{\Firms}{Firms}
+\newcommand{\Households}{Households}
+\newcommand{\Banks}{Banks}
+\newcommand{\Commodities}{Commodities}
+\newcommand{\LaborPower}{Labor power}
+\newcommand{\Wages}{Wages}
+\newcommand{\Consumption}{Consumption}
+\newcommand{\Credits}{Credits}
+\newcommand{\Withdrawals}{Withdrawals}
+\newcommand{\Deposits}{Deposits}
+\newcommand{\Repayments}{Repayments}
+
+\newcommand{\yslant}{0.5}
+\newcommand{\xslant}{-0.6}
+
+\floatstyle{plaintop}
+\restylefloat{table}
+
+
+
+\newcommand{\VALID}		{\mathsf{valid}}
+\newcommand{\INVALID}	{\mathsf{invalid}}
+\newcommand{\UNKNOWN}	{\mathsf{unknown}}
+\newcommand{\FAILED}	{\mathsf{failed}}
+\newcommand{\prover}	{\mathrm{prover}}
+\newcommand{\INTER}[1] 	{\llbracket #1 \rrbracket}
+
+\providecommand{\keywords}[1]{\textbf{{Keyword:}} #1}
+
+\usepackage{bsymb}
+\input{railheader}
+\input{convheader}
+
+\newganttchartelement*{mymilestone}{
+	mymilestone/.style={
+		shape=isosceles triangle,
+		inner sep=0pt,
+		draw=cyan,
+		top color=white,
+		bottom color=cyan!50
+	},
+	mymilestone incomplete/.style={
+		/pgfgantt/mymilestone,
+		draw=yellow,
+		bottom color=yellow!50
+	},
+	mymilestone label font=\slshape,
+	mymilestone left shift=0pt,
+	mymilestone right shift=0pt
+}
+
+
+
+\begin{document}
+
+\title{Formal development of a cross boundary route locking and releasing protocol}
+
+
+\author{Paulius Stankaitis\inst{1}, Alexei Iliasov\inst{1},  Alexander Romanovsky\inst{1} and Yamine A\"{i}t-Ameur\inst{2}}
+
+
+\institute{
+	Newcastle University, Newcastle upon Tyne, United Kingdom \\
+	\email{\{p.stankaitis|alexei.iliasov|alexander.romanovsky\}@ncl.ac.uk} \vspace{.1cm}\\
+	\and 
+	INPT-ENSEEIHT, 2 Rue Charles Camichel, Toulouse, France\\
+	\email{yamine@enseeiht.fr}}
+	
+
+
+
+
+  
+
+
+
+
+
+
+\date{}
+
+\maketitle
+
+
+
+\begin{abstract}
+The railway interlocking system is essential for ensuring safe operation of railway networks.  Nowadays a computer based system is used to establish safe routes trains can pass through. In many cases a train is required to transition from one interlocking area to another and cross boundary route locking and releasing protocol must ensure a safe transition. In this paper we present a formal development of the cross boundary route locking and releasing protocol in Event-B. The developed distributed protocol not only ensures safety properties of the interlocking transition but also guarantees the deadlock-freedom of the railway system. %Furthermore we consider a general version of the protocol.
+
+\end{abstract}
+
+\begin{keywords}
+	Distributed Railway Interlocking $\cdot$ Event-B $\cdot$ Formal Verification $\cdot$ Stepwise Development $\cdot$ Safety Verification $\cdot$ System Liveness
+
+\end{keywords}
+
+\input{chapters/introduction} \newpage
+
+\input{chapters/description} \newpage
+
+%\input{chapters/eventb} \newpage
+
+
+%\input{chapters/model} \newpage
+
+%\input{chapters/proofs} \newpage
+
+%\input{chapters/discussion} \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\noindent \textbf{Acknowledgments.} This work is supported by an iCASE studentship (EPSRC and Siemens Rail Automation). We are grateful to our colleagues from Siemens Rail Automation for invaluable feedback.
+
+
+\bibliographystyle{plain}
+\bibliography{main}
+
+
+
+
+
+\end{document}

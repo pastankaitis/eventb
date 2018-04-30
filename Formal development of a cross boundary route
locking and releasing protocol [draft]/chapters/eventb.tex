@@ -1,0 +1,48 @@
+\section{Event-B}
+
+%The Event-B formal specification language has been used a number of times in developing railway models . 
+The Event-B mathematical language used in the system development and analysis is an evolution of the classical B
+method \cite{abrial2005b} and Action Systems \cite{ActionSystems}. %Perhaps due to the success of the B method and a good tool support Event-B has also been a popular language choice for modelling railway systems \cite{butler2002system, EventBBook, kiss2016developing}. 
+The formal specification language offers a fairly high-level mathematical language
+based on a first-order logic and Zermelo-Fraenkel set theory as well as an economical yet expressive modelling notation.
+The formalism belongs to a family of state-based modelling languages where a state of a discrete system is simply a
+collection of variables and constants whereas the transition is a guarded variable transformation. 
+
+\begin{figure}[h]
+	\footnotesize{
+		\centering
+		\EventBSystem{M}{
+			\EventBSees{Context}
+			\EventBVarsC{v}
+			\EventBInvC{I(c, s, v)}
+			\EventBInitC{R(c, s, v')}
+			\EventBEvents{
+				\EventBAnyC{E_1}{vl}{g(c, s, vl, v)}{S(c, s, vl, v, v')}
+				\dots \\
+			}
+		}  
+	}
+	\caption{Event-B machine structure.}
+	\label{EventB_structure}
+\end{figure}
+
+A cornerstone of the Event-B method is the stepwise development that facilitates a gradual design of a system implementation through a number of correctness preserving refinement steps. The model development starts with a creation of a very abstract specification and the model is completed
+when all requirements and specifications are covered. The Event-B model is made of two key components - machines and contexts which respectively describe dynamic and static parts of the system. The context contains modeller
+declared constants and associated axioms which can be made visible in machines. The dynamic part of the model contains
+variables which are constrained by invariants and initialised by an action. The state variables are then transformed by actions which are part of events and the modeller may use predicate
+guards to denote when event is triggered (see Fig. 1). 
+
+Specifying a model is not sufficient one must provide evidence about the correctness of the model as well. The Event-B
+method is a proof driven specification language where model  correctness is demonstrated by generating and discharging
+proof obligations - theorems in the first-order logic. The model is considered to be correct when all proof obligations
+are discharged. To facilitate the formal development and verification of Event-B models the Rodin Platform \cite{RodinPlatform} was developed. In recent years a number of
+useful plug-ins were developed for the Rodin Platform to automate verification and reduce modelling efforts.
+
+
+
+
+
+
+
+%At the same time Andr{\'e} Platzer introduced an alternative approach to exploring a state-space with model checkers in verifying systems safety. A developed formalism and logic for reasoning about hybrid systems uses a deductive verification and can be implemented in a KeyMaera X verification tool\cite{platzer2008differential, platzer2008keymaera}. The later work presented  a case study where differential dynamic logic was applied for a safety verification of the European Train Control System \cite{platzer2009european}. Differential Dynamic Logic was also used to model and verify a handover protocol between two trackside train control systems (radio-block centres) by Liu et al. \cite{liu2011formal}. In a work by Cimatti et al. \cite{Cimatti2009} authors proposed a different logic based on the temporal logic with regular expressions. Their motivation was driven by a need of the automatic verification method for verifying hybrid requirements for hybrid railway system. A more recent work by Iliasov et al. \cite{iliasov2014unified} proposed a domain specific language - Unified Train Driving Policy. The formal notation allows to express both static and dynamic properties of railway in readable syntax which can be interpreted by railway engineers without prior knowledge of formal methods. A few recent formal methods projects on cyber-physical systems applied their novel techniques for modelling and verification of hybrid railway systems  \cite{intocps, advanced, atr2}. 
+

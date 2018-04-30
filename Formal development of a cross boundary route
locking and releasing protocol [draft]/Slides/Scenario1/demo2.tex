@@ -1,0 +1,375 @@
+\documentclass[10pt]{beamer}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{fit}
+
+\usetikzlibrary{arrows,positioning, calc,lindenmayersystems,decorations.pathmorphing,intersections}
+\tikzstyle{resource}= [draw,minimum size=16pt,inner sep=0pt]
+\tikzstyle{process} = [draw,minimum size=16pt,inner sep=0pt,circle]
+\tikzstyle{allocated} = [->,thick,arrows={-latex}]
+\tikzstyle{requested} = [<-,thick,arrows={latex-}, dashed]
+
+\usepackage{tikz}
+
+
+
+\usetikzlibrary{positioning}
+\newcommand{\MonetaryLevel}{Monetary level}
+\newcommand{\RealLevel}{Real level}
+\newcommand{\Firms}{Firms}
+\newcommand{\Households}{Households}
+\newcommand{\Banks}{Banks}
+\newcommand{\Commodities}{Commodities}
+\newcommand{\LaborPower}{Labor power}
+\newcommand{\Wages}{Wages}
+\newcommand{\Consumption}{Consumption}
+\newcommand{\Credits}{Credits}
+\newcommand{\Withdrawals}{Withdrawals}
+\newcommand{\Deposits}{Deposits}
+\newcommand{\Repayments}{Repayments}
+
+\newcommand{\yslant}{0.5}
+\newcommand{\xslant}{-0.6}
+
+
+
+\newcommand{\VALID}		{\mathsf{valid}}
+\newcommand{\INVALID}	{\mathsf{invalid}}
+\newcommand{\UNKNOWN}	{\mathsf{unknown}}
+\newcommand{\FAILED}	{\mathsf{failed}}
+\newcommand{\prover}	{\mathrm{prover}}
+\newcommand{\INTER}[1] 	{\llbracket #1 \rrbracket}
+
+\providecommand{\keywords}[1]{\textbf{{Keyword:}} #1}
+
+\usepackage{bsymb}
+\input{railheader}
+
+\newtheorem*{remark}{PhD Objective.}
+
+
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{lightblue}{rgb}{0.3,0.3,1}
+\definecolor{darkred}{rgb}{0.7,0,0}
+\definecolor{lightred}{rgb}{1,0.3,0.3}
+\definecolor{orange}{rgb}{0.6,0.1,0.1}
+\newcommand{\VAR}[1] {\textcolor{darkblue}{\mathit{#1}}}
+
+\newcommand{\PAR}[1] {\textcolor{lightblue}{\mathit{#1}}}
+\newcommand{\CST}[1] {\textcolor{lightred}{\mathsf{#1}}}
+\input{convheader}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Theories, Techniques and Tools for Engineering
+	Heterogeneous Railway Networks}
+
+
+%\date{}
+\author{Paulius Stankaitis and Alexei Iliasov}
+\institute{Centre for Software Reliability, Newcastle University, UK \vspace{0.2cm}\\ \begin{center} \small
+		RSSRail Conference '17\vspace{0.1cm}\\ November 16th, Pistoia
+	\end{center}}
+\titlegraphic{\hfill\includegraphics[height=0.8cm]{Newcastle_University_Logo.pdf}}
+\date{}
+\begin{document}
+
+
+
+\begin{frame}{Distributed Resource Reservation - Problems}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (2,2) {$a_0$};
+		\node (p1)[process]  at (6,2) {$a_1$};
+		
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		
+		
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.3,left,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.5,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.3,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r0) -- (p1) node [pos=0.5,right,font=\footnotesize] {q$_1$};
+		
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		
+		
+		\begin{tabular}{ c | c} 
+			
+			&	r$_0$  \\  
+			\hline 
+			0 &	     	\\ 
+			1 &	   \\ 
+			2 &	     \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}
+		\quad
+		\begin{tabular}{ c | c} 
+			
+			&	r$_1$  \\  
+			\hline 
+			1 &	     	\\ 
+			2 &	 \\ 
+			3 &	     \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}	
+		
+	\end{center}
+	\textbf{Remark}: Suppose, we have a scenario where a$_0$ and a$_1$ completed lane negotiation step, and now can write (create lanes) a$_0 \rightarrow 1$, a$_0 \rightarrow 2$.	
+\end{frame}
+
+\begin{frame}{Distributed Resource Reservation - Problems}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (2,2) {$a_0$};
+		\node (p1)[process]  at (6,2) {$a_1$};
+		
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		
+		
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.3,left,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.5,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.3,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r0) -- (p1) node [pos=0.5,right,font=\footnotesize] {q$_1$};
+		
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		
+		
+		\begin{tabular}{ c | c} 
+			
+			& r$_0$	  \\  
+			\hline 
+			0 &	     	\\ 
+			1 &	   \\ 
+			2 &	 a$_0$    \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}
+		\quad
+		\begin{tabular}{ c | c} 
+			
+			&	r$_1$  \\  
+			\hline 
+			1 &	     	\\ 
+			2 &	 \\ 
+			3 &	     \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}	
+		
+	\end{center}
+	\textbf{Remark}: When r$_0$ receives write(a$_0$, 2) messages, it stores a$_0$ at position slot 2 and since there is none else in r$_0$ request pool it will send a ready message to a$_0$ (a$_0$ is still waiting ready message from r$_1$ to starting consuming resources). 	
+\end{frame}
+
+\begin{frame}{Distributed Resource Reservation - Problems}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (2,2) {$a_0$};
+		\node (p1)[process]  at (6,2) {$a_1$};
+		
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		
+		
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.3,left,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.5,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.3,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r0) -- (p1) node [pos=0.5,right,font=\footnotesize] {q$_1$};
+		
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		
+		
+		\begin{tabular}{ c | c} 
+			
+			& r$_0$	  \\  
+			\hline 
+			0 &	     	\\ 
+			1 &	   \\ 
+			2 &	 a$_0$    \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}
+		\quad
+		\begin{tabular}{ c | c} 
+			
+			&	r$_1$  \\  
+			\hline 
+			1 &	a$_1$     	\\ 
+			2 &	 \\ 
+			3 &	     \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}	
+		
+	\end{center}
+	\textbf{Remark}: Now let's say the next a$_1$ write message arrives at r$_1$ and same happens again. Ready message is sent to a$_1$ by r$_1$ (a$_1$ still waits another ready message from r$_0$ to consume).
+\end{frame}
+
+\begin{frame}{Distributed Resource Reservation - Problems}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (2,2) {$a_0$};
+		\node (p1)[process]  at (6,2) {$a_1$};
+		
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		
+		
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.3,left,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.5,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.3,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r0) -- (p1) node [pos=0.5,right,font=\footnotesize] {q$_1$};
+		
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		
+		
+		\begin{tabular}{ c | c} 
+			
+			& r$_0$	  \\  
+			\hline 
+			0 &	     	\\ 
+			1 &	 a$_1$   \\ 
+			2 &	 a$_0$    \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}
+		\quad
+		\begin{tabular}{ c | c} 
+			
+			&	r$_1$  \\  
+			\hline 
+			1 &	a$_1$     	\\ 
+			2 &	 \\ 
+			3 &	     \\ 
+			\vdots &\\ 
+			n & 
+			
+		\end{tabular}	
+		
+	\end{center}
+	\textbf{Remark}: Now let's say a$_1$ is written to r$_0$ but ready message already has been sent to a$_0$ - so system deadlocks. 
+\end{frame}
+
+\begin{frame}{Distributed Resource Reservation - Problems}
+	\begin{itemize}
+		\item In the previous version of the protocol once a ready message is sent another one couldn't be sent until release message would be received. 
+		\item I think allowing ready messages to be sent if someone else writes to the smaller index to the current one, still might result in unsafe situation too.
+		\item Solution is to introduce few more message exchanges with pre-ready step and also prohibiting ready message sending while someone has locked a resource.
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Distributed Resource Reservation - 2$^{nd}$ Protocol Part}
+
+\small
+
+	\begin{itemize}
+		\item Resource keeps sending pre-ready message to agents, if:
+			\begin{itemize}
+				\item Read-pointer is not locked;
+				\item A received write message contains the new minimum value of the request pool.
+			\end{itemize}
+			\item Once agent received all pre-ready message:
+				\begin{itemize}
+					\item it sends lock messsages to all interested resources;
+				\end{itemize}
+			\item If resource receives a lock message it can reply in two ways:
+			\begin{itemize}
+				\item READY message if read pointer still points at that agent (also stops sending pready messages).
+				\item DENY message if someone wrote to the resource with the new minimum value.
+			\end{itemize}
+			\item Once agent receives all DENY/READY messages it can act in two ways:
+			\begin{itemize}
+				\item if all messages were READY then consume resources;
+				\item if exists a DENY message then send unlock messages to resources which sent READY message.
+			\end{itemize}
+			\item If resource receives a unlock message it continues sending pre-ready messages.
+	\end{itemize}
+		
+
+\end{frame}
+
+
+\end{document}

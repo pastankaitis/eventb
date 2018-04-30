@@ -1,0 +1,204 @@
+\begin{thebibliography}{10}
+
+\bibitem{abrial2005b}
+J.-R. Abrial.
+\newblock {\em The B-book: Assigning Programs to Meanings}.
+\newblock Cambridge University Press, New York, NY, USA, 1996.
+
+\bibitem{EventBBook}
+J.-R. Abrial.
+\newblock {\em Modeling in Event-B: System and Software Engineering}.
+\newblock Cambridge University Press, New York, NY, USA, 2013.
+
+\bibitem{alur2011formal}
+R.~Alur.
+\newblock Formal verification of hybrid systems.
+\newblock In {\em Proceedings of the Ninth ACM International Conference on
+  Embedded Software}, EMSOFT '11, pages 273--278, New York, NY, USA, 2011. ACM.
+
+\bibitem{alur1995algorithmic}
+R.~Alur, C.~Courcoubetis, N.~Halbwachs, T.~A. Henzinger, P.-H. Ho, X.~Nicollin,
+  A.~Olivero, J.~Sifakis, and S.~Yovine.
+\newblock The algorithmic analysis of hybrid systems.
+\newblock {\em Theor. Comput. Sci.}, 138(1):3--34, February 1995.
+
+\bibitem{babin2015refinement}
+G.~Babin, Y.~A{\"\i}t-Ameur, S.~Nakajima, and M.~Pantel.
+\newblock Refinement and proof based development of systems characterized by
+  continuous functions.
+\newblock In {\em International Symposium on Dependable Software Engineering:
+  Theories, Tools, and Applications}, pages 55--70. Springer, 2015.
+
+\bibitem{ActionSystems}
+R.-J. Back.
+\newblock Refinement calculus, part ii: Parallel and reactive programs.
+\newblock In {\em Proceedings on Stepwise Refinement of Distributed Systems:
+  Models, Formalisms, Correctness}, REX workshop, pages 67--93, New York, NY,
+  USA, 1990. Springer-Verlag New York, Inc.
+
+\bibitem{banach2015core}
+R.~Banach, M.~Butler, S.~Qin, N.~Verma, and H.~Zhu.
+\newblock Core hybrid event-b i: single hybrid event-b machines.
+\newblock {\em Science of Computer Programming}, 105:92--123, 2015.
+
+\bibitem{banci2004role}
+M.~Banci, A.~Fantechi, and S.~Gnesi.
+\newblock The role of formal methods in developing a distributed railway
+  interlocking system.
+\newblock In {\em Proceedings of the 5th Symposium on Formal Methods for
+  Automation and Safety in Railway and Automotive Systems (FORMS/FORMAT 2004)},
+  pages 220--230, 2004.
+
+\bibitem{butler2002system}
+M.~Butler.
+\newblock A system-based approach to the formal development of embedded
+  controllers for a railway.
+\newblock {\em Design Automation for Embedded Systems}, 6(4):355--366, July
+  2002.
+
+\bibitem{cimatti1999formal}
+A.~Cimatti, P.~L. Pieraccini, R.~Sebastiani, P.~Traverso, and A.~Villafiorita.
+\newblock Formal specification and validation of a vital communication
+  protocol.
+\newblock In {\em Proceedings of the Wold Congress on Formal Methods in the
+  Development of Computing Systems-Volume II}, FM '99, pages 1584--1604.
+  Springer-Verlag, 1999.
+
+\bibitem{Cimatti2009}
+A.~Cimatti, M.~Roveri, and S.~Tonetta.
+\newblock Requirements validation for hybrid systems.
+\newblock In {\em Proceedings of the 21st International Conference on Computer
+  Aided Verification}, CAV '09, pages 188--203. Springer-Verlag, 2009.
+
+\bibitem{damm2006verification}
+W.~Damm, H.~Hungar, and E.R. Olderog.
+\newblock Verification of cooperating traffic agents.
+\newblock {\em International Journal of Control}, 79(5):395--421, 2006.
+
+\bibitem{george1995raise}
+C.~George, A.E. Haxthausen, S.~Hughes, R.~Milne, S.~Prehn, and J.S. Pedersen.
+\newblock {\em The RAISE development method}.
+\newblock Prentice Hall Int., 1995.
+
+\bibitem{haxthausen2000formal}
+A.E. Haxthausen and J.~Peleska.
+\newblock Formal development and verification of a distributed railway control
+  system.
+\newblock {\em IEEE Transactions on Software Engineering}, 26(8):687--701,
+  2000.
+
+\bibitem{hei2008toward}
+X.~Hei, S.~Takahashi, and N.~Hideo.
+\newblock Toward developing a decentralized railway signalling system using
+  petri nets.
+\newblock In {\em Proceedings of the IEEE Conference on Robotics, Automation
+  and Mechatronics}, pages 851--855, 2008.
+
+\bibitem{atr2}
+H.~Hermanns, D.N. Jansen, and Y.S. Usenko.
+\newblock A comparative reliability analysis of {ETCS} train radio
+  communications.
+\newblock Reports of SFB/TR 14 AVACS~2, SFB/TR 14 AVACS, February 2005.
+\newblock ISSN: 1860-9821, http://www.avacs.org.
+
+\bibitem{iliasov2014unified}
+A.~Iliasov, I.~Lopatkin, and A.~Romanovsky.
+\newblock {\em Unified Train Driving Policy}, pages 447--474.
+\newblock John Wiley \& Sons, Inc., 2014.
+
+\bibitem{kim2012cyber}
+K.~D. Kim and P.~R. Kumar.
+\newblock Cyber--physical systems: A perspective at the centennial.
+\newblock {\em Proceedings of the IEEE}, 100(Special Centennial
+  Issue):1287--1308, May 2012.
+
+\bibitem{kiss2016developing}
+T.~Kiss and K.~T. J{\'a}nosi-Rancz.
+\newblock Developing railway interlocking systems with session types and
+  event-b.
+\newblock In {\em Proceedings of the IEEE 11th International Symposium on
+  Applied Computational Intelligence and Informatics (SACI)}, pages 93--98, May
+  2016.
+
+\bibitem{knudsen2007design}
+J.~Knudsen, A.P Ravn, and A.~Skou.
+\newblock Design verification patterns.
+\newblock In {\em Formal methods and hybrid real-time systems}, pages 399--413.
+  Springer, 2007.
+
+\bibitem{liu2011formal}
+Y.~Liu, T.~Tang, J.~Liu, L.~Zhao, and T.~Xu.
+\newblock Formal modeling and verification of rbc handover of etcs using
+  differential dynamic logic.
+\newblock In {\em Proceedings of the International Symposium on the Autonomous
+  Decentralized Systems (ISADS)}, pages 67--72. IEEE, 2011.
+
+\bibitem{madsen2005modelling}
+M.S. Madsen and M.M. B{\ae}k.
+\newblock Modelling a distributed railway control system.
+\newblock Master's thesis, Technical University of Denmark, DTU, DK-2800 Kgs.
+  Lyngby, Denmark, 2005.
+
+\bibitem{morley1996safety}
+M.J. Morley.
+\newblock {\em Safety assurance in interlocking design}.
+\newblock PhD thesis, 1996.
+
+\bibitem{platzer2008differential}
+A.~Platzer.
+\newblock Differential dynamic logic for hybrid systems.
+\newblock {\em Journal of Automated Reasoning}, 41(2):143--189, 2008.
+
+\bibitem{platzer2010quantified}
+A.~Platzer.
+\newblock Quantified differential dynamic logic for distributed hybrid systems.
+\newblock In {\em Proceedings of the International Workshop on Computer Science
+  Logic}, pages 469--483. Springer, 2010.
+
+\bibitem{platzer2008keymaera}
+A.~Platzer and J.-D. Quesel.
+\newblock Keymaera: A hybrid theorem prover for hybrid systems (system
+  description).
+\newblock In {\em Proceedings of the International Joint Conference on
+  Automated Reasoning}, pages 171--178. Springer, 2008.
+
+\bibitem{platzer2009european}
+A.~Platzer and J.-D. Quesel.
+\newblock European train control system: A case study in formal verification.
+\newblock In {\em Proceedings of the International Conference on Formal
+  Engineering Methods}, pages 246--265. Springer, 2009.
+
+\bibitem{advanced}
+ADVANCE project.
+\newblock Final report on application on railway domai, deliverable d1.4
+  workpackage 1.
+\newblock Technical report, November 30, 2014.
+
+\bibitem{intocps}
+INTO-CPS project.
+\newblock Case studies 2, deliverable d1.2.
+\newblock Technical report, 11 2016.
+
+\bibitem{sha2009cyber}
+L.~Sha, S.~Gopalakrishnan, X.~Liu, and Q.~Wang.
+\newblock Cyber-physical systems: A new frontier.
+\newblock In {\em Proceedings of the IEEE International Conference on Sensor
+  Networks, Ubiquitous, and Trustworthy Computing (SUTC 2008)}, pages 1--9,
+  June 2008.
+
+\bibitem{silva2001assessment}
+B.I. Silva, O.~Stursberg, B.H. Krogh, and S.~Engell.
+\newblock An assessment of the current status of algorithmic approaches to the
+  verification of hybrid systems.
+\newblock In {\em Proceedings of the 40th IEEE Conference on Decision and
+  Control}, volume~3, pages 2867--2874. IEEE, 2001.
+
+\bibitem{stankaitis2016safety}
+P.~Stankaitis and A.~Iliasov.
+\newblock Safety verification of heterogeneous railway networks.
+\newblock In {\em Proceedings of the First International Conference on
+  Reliability, Safety, and Security of Railway Systems. Modelling, Analysis,
+  Verification, and Certification: RSSRail 2016}, pages 150--159. Springer,
+  2016.
+
+\end{thebibliography}

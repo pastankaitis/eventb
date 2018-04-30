@@ -1,0 +1,334 @@
+\documentclass[10pt]{beamer}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{fit}
+
+\usetikzlibrary{arrows,positioning, calc,lindenmayersystems,decorations.pathmorphing,intersections}
+\tikzstyle{resource}= [draw,minimum size=16pt,inner sep=0pt]
+\tikzstyle{process} = [draw,minimum size=16pt,inner sep=0pt,circle]
+\tikzstyle{allocated} = [->,thick,arrows={-latex}]
+\tikzstyle{requested} = [<-,thick,arrows={latex-}, dashed]
+
+\usepackage{tikz}
+
+
+
+\usetikzlibrary{positioning}
+\newcommand{\MonetaryLevel}{Monetary level}
+\newcommand{\RealLevel}{Real level}
+\newcommand{\Firms}{Firms}
+\newcommand{\Households}{Households}
+\newcommand{\Banks}{Banks}
+\newcommand{\Commodities}{Commodities}
+\newcommand{\LaborPower}{Labor power}
+\newcommand{\Wages}{Wages}
+\newcommand{\Consumption}{Consumption}
+\newcommand{\Credits}{Credits}
+\newcommand{\Withdrawals}{Withdrawals}
+\newcommand{\Deposits}{Deposits}
+\newcommand{\Repayments}{Repayments}
+
+\newcommand{\yslant}{0.5}
+\newcommand{\xslant}{-0.6}
+
+
+
+\newcommand{\VALID}		{\mathsf{valid}}
+\newcommand{\INVALID}	{\mathsf{invalid}}
+\newcommand{\UNKNOWN}	{\mathsf{unknown}}
+\newcommand{\FAILED}	{\mathsf{failed}}
+\newcommand{\prover}	{\mathrm{prover}}
+\newcommand{\INTER}[1] 	{\llbracket #1 \rrbracket}
+
+\providecommand{\keywords}[1]{\textbf{{Keyword:}} #1}
+
+\usepackage{bsymb}
+\input{railheader}
+
+\newtheorem*{remark}{PhD Objective.}
+
+
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{lightblue}{rgb}{0.3,0.3,1}
+\definecolor{darkred}{rgb}{0.7,0,0}
+\definecolor{lightred}{rgb}{1,0.3,0.3}
+\definecolor{orange}{rgb}{0.6,0.1,0.1}
+\newcommand{\VAR}[1] {\textcolor{darkblue}{\mathit{#1}}}
+
+\newcommand{\PAR}[1] {\textcolor{lightblue}{\mathit{#1}}}
+\newcommand{\CST}[1] {\textcolor{lightred}{\mathsf{#1}}}
+\input{convheader}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Theories, Techniques and Tools for Engineering
+	Heterogeneous Railway Networks}
+
+
+%\date{}
+\author{Paulius Stankaitis and Alexei Iliasov}
+\institute{Centre for Software Reliability, Newcastle University, UK \vspace{0.2cm}\\ \begin{center} \small
+		RSSRail Conference '17\vspace{0.1cm}\\ November 16th, Pistoia
+	\end{center}}
+\titlegraphic{\hfill\includegraphics[height=0.8cm]{Newcastle_University_Logo.pdf}}
+\date{}
+\begin{document}
+
+
+
+
+ 
+
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		\begin{tikzpicture}[scale=.75,every node/.style={minimum size=1cm},on grid]
+		
+		% Real level
+		
+		
+
+		\node (r1)[resource] at (6, 3.7) {$R_{1}$};
+		\node (r4)[resource] at (2,3.7) {$R_{4}$};
+		\node (r2)[resource] at (6,.3) {$R_{2}$};
+		\node (r3)[resource] at (2,.3) {$R_{3}$};
+		
+		\node (p1)[process]  at (4,5) {$P_1$};
+		\node (p2)[process]  at (7,2) {$P_2$};
+		\node (p4)[process]  at (1,2) {$P_4$};
+		\node (p3)[process]  at (4,-1) {$P_3$};
+		% Agents:
+		
+		\draw[requested] (r1) -- (p1);
+		\draw[requested] (r4) -- (p1);
+		
+		\draw[requested] (r1) -- (p2);
+		\draw[requested] (r2) -- (p2);
+
+		\draw[requested] (r2) -- (p3);
+		\draw[requested] (r3) -- (p3);	
+		
+		\draw[requested] (r4) -- (p4);
+		\draw[requested] (r3) -- (p4);		
+	
+		\end{tikzpicture}
+		
+	\end{center}
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Assumptions}
+	\begin{center}
+		
+
+	\begin{tabular}{ c|c| c |c | c |} 
+		
+		&	r$_1$ & r$_2$ & r$_3$ & r$_4$ \\  
+		1 &	 &  & & \\ 
+		2 &	 &  &  &\\ 
+		3 &	 &  &  &\\ 
+		\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+		n & & & &
+		
+	\end{tabular}
+		
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+
+	\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+
+			\node (p2)[process]  at (7,2) {$P_2$};
+			\node (r1)[resource] at (6,5) {$R_{1}$};		
+			\node (r2)[resource] at (6,-1) {$R_{2}$};
+
+			
+			\draw[requested] (r1) -- (p2) node [pos=0.5,right,font=\footnotesize] {ask};
+
+			\draw[requested] (r2) -- (p2) node [pos=0.5,right,font=\footnotesize] {ask};	
+
+	\end{tikzpicture}
+	\end{center}	
+	
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+		
+		\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p2)[process]  at (7,2) {$P_2$};
+		\node (r1)[resource] at (6,5) {$R_{1}$};		
+		\node (r2)[resource] at (6,-1) {$R_{2}$};
+		
+		
+		\draw[requested] (p2) -- (r1) node [pos=0.5,right,font=\footnotesize] {reply(pp$_1$)};
+		
+		\draw[requested] (p2) -- (r2) node [pos=0.5,right,font=\footnotesize] {reply(pp$_2$)};	
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+		
+		\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+		
+		\node[label={[xshift=1.2cm, yshift=-.75cm]confirm?}] (p2)[process]  at (7,2) {$P_2$};
+		\node (r1)[resource] at (6,5) {$R_{1}$};		
+		\node (r2)[resource] at (6,-1) {$R_{2}$};
+		
+	
+		
+				\draw[requested] (r1) -- (p2);
+				\draw[requested] (r2) -- (p2);	
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+		
+		\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+		
+		\node[label={[xshift=3.0cm, yshift=-.75cm]\small compute max(reply(pp$_1$), reply(pp$_2$))}] (p2)[process]  at (7,2) {$P_2$};
+		\node (r1)[resource] at (6,5) {$R_{1}$};		
+		\node (r2)[resource] at (6,-1) {$R_{2}$};
+		
+		
+		
+		\draw[requested] (r1) -- (p2);
+		\draw[requested] (r2) -- (p2);	
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+		
+		\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p2)[process]  at (7,2) {$P_2$};
+		\node (r1)[resource] at (6,5) {$R_{1}$};		
+		\node (r2)[resource] at (6,-1) {$R_{2}$};
+		
+		
+		\draw[requested] (r1) -- (p2) node [pos=0.5,right,font=\footnotesize] {lock(p$_2$, max)};
+		
+		\draw[requested] (r2) -- (p2) node [pos=0.5,right,font=\footnotesize] {lock(p$_2$, max)};	
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Protocol}
+	\begin{center}
+		
+		
+		\begin{tikzpicture}[scale=.7,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p2)[process]  at (7,2) {$P_2$};
+		\node (r1)[resource] at (6,5) {$R_{1}$};		
+		\node (r2)[resource] at (6,-1) {$R_{2}$};
+		
+		
+		\draw[requested] (r1) -- (p2) node [pos=0.5,right,font=\footnotesize] {capture/release};
+		
+		\draw[requested] (r2) -- (p2) node [pos=0.5,right,font=\footnotesize] {capture/release};	
+		
+		\end{tikzpicture}
+	\end{center}	
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Problems}
+	\textbf{Problem$_1$}: qpp(r$_n$) is incremented (at reply) but if not used (at confirm) points to the wrong location. Incrementing qpp(r$_n$) at confirm would result in multiple request receiving the same qpp(r$_n$). \vspace{.5cm} \\ \textbf{Fix}: update qpp(r$_n$) again at locking;
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Problems}
+	\textbf{Problem$_2$}: Suppose, p$_1$ requested \{r$_1$, r$_2$\}. \\ r$_1$ replies p$_1$ with n$_1$ and before r$_2$ replies with n$_2$ (n$_1$ $<$ n$_2$); \\
+	 Suppose pp(r$_1$) has been incremented few times (because someone else also asked for the same resource). Thus when eventually he gets both replies and computes max(n$_1$, n$_2$) = n$_2$ for p$_1$ cannot write to r$_1$ at r$_1($n$_2$).   \\ 
+	
+	\textbf{Fix}: 
+\end{frame}
+
+\begin{frame}{Dining Philosophers - Problems}
+	\textbf{Problem$_3$}: Confirming that all requests and reply messages have been received, and a maximum number can be returned. \vspace{.5cm} \\ 
+	
+	\textbf{Fix}: 
+\end{frame}
+
+
+
+	
+
+
+
+
+
+
+
+\end{document}

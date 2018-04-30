@@ -1,0 +1,462 @@
+\documentclass[10pt]{beamer}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{fit}
+
+\usetikzlibrary{arrows,positioning, calc,lindenmayersystems,decorations.pathmorphing,intersections}
+\tikzstyle{resource}= [draw,minimum size=16pt,inner sep=0pt]
+\tikzstyle{process} = [draw,minimum size=16pt,inner sep=0pt,circle]
+\tikzstyle{allocated} = [->,thick,arrows={-latex}]
+\tikzstyle{requested} = [<-,thick,arrows={latex-}, dashed]
+
+\usepackage{tikz}
+
+
+
+\usetikzlibrary{positioning}
+\newcommand{\MonetaryLevel}{Monetary level}
+\newcommand{\RealLevel}{Real level}
+\newcommand{\Firms}{Firms}
+\newcommand{\Households}{Households}
+\newcommand{\Banks}{Banks}
+\newcommand{\Commodities}{Commodities}
+\newcommand{\LaborPower}{Labor power}
+\newcommand{\Wages}{Wages}
+\newcommand{\Consumption}{Consumption}
+\newcommand{\Credits}{Credits}
+\newcommand{\Withdrawals}{Withdrawals}
+\newcommand{\Deposits}{Deposits}
+\newcommand{\Repayments}{Repayments}
+
+\newcommand{\yslant}{0.5}
+\newcommand{\xslant}{-0.6}
+
+
+
+\newcommand{\VALID}		{\mathsf{valid}}
+\newcommand{\INVALID}	{\mathsf{invalid}}
+\newcommand{\UNKNOWN}	{\mathsf{unknown}}
+\newcommand{\FAILED}	{\mathsf{failed}}
+\newcommand{\prover}	{\mathrm{prover}}
+\newcommand{\INTER}[1] 	{\llbracket #1 \rrbracket}
+
+\providecommand{\keywords}[1]{\textbf{{Keyword:}} #1}
+
+\usepackage{bsymb}
+\input{railheader}
+
+\newtheorem*{remark}{PhD Objective.}
+
+
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{lightblue}{rgb}{0.3,0.3,1}
+\definecolor{darkred}{rgb}{0.7,0,0}
+\definecolor{lightred}{rgb}{1,0.3,0.3}
+\definecolor{orange}{rgb}{0.6,0.1,0.1}
+\newcommand{\VAR}[1] {\textcolor{darkblue}{\mathit{#1}}}
+
+\newcommand{\PAR}[1] {\textcolor{lightblue}{\mathit{#1}}}
+\newcommand{\CST}[1] {\textcolor{lightred}{\mathsf{#1}}}
+\input{convheader}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Theories, Techniques and Tools for Engineering
+	Heterogeneous Railway Networks}
+
+
+%\date{}
+\author{Paulius Stankaitis and Alexei Iliasov}
+\institute{Centre for Software Reliability, Newcastle University, UK \vspace{0.2cm}\\ \begin{center} \small
+		RSSRail Conference '17\vspace{0.1cm}\\ November 16th, Pistoia
+	\end{center}}
+\titlegraphic{\hfill\includegraphics[height=0.8cm]{Newcastle_University_Logo.pdf}}
+\date{}
+\begin{document}
+
+\section{Scenario 1}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &        & 2 &	\\ 
+			1 &		  	   & 2  & 	    & 3	&			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+\textbf{Comment}: Suppose r$_0$ replies to p$_0$ first with 0 and increments pp(r$_0$) to pp(r$_0$) = 1 (* means promised, not locked yet).
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &  q$_1$*       & 2 &	\\ 
+			1 &		  	   & 2  & 	    & 3	&			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_1$ replies to p$_1$ with 1 and increments pp(r$_1$) to pp(r$_1$) = 2.
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &  q$_1$*       & 2 & q$_1$*	\\ 
+			1 &		  	   & 2  & 	    & 3	& 			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_2$ replies to p$_1$ with 2 and increments pp(r$_2$) to pp(r$_1$) = 3.
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &  q$_1$*       & 2 & q$_1$*	\\ 
+			1 &		  	   & 2  & 	q$_0$*    & 3	& 			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_1$ replies to p$_0$ with 2 and increments pp(r$_2$) to pp(r$_1$) = 3.
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &  q$_1$*       & 2 & q$_1$*	\\ 
+			1 &		  	   & 2  & 	q$_0$*    & 3	& 			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Both p$_0$ and p$_1$ can confirm they received all replies they needed, but max(p$_0$) = max(p$_1$) = 2 and so they both would like to lock r$_1$(2).
+\end{frame}
+
+\section{Scenario 2}
+ \begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (0,2) {$p_0$};
+		\node (p1)[process]  at (4,2) {$p_1$};
+		\node (p2)[process]  at (8,2) {$p_2$};
+		\node (r0)[resource] at (0,-1) {$r_{0}$};		
+		\node (r1)[resource] at (5,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0);
+		\draw[requested] (r1) -- (p0);
+		
+		\draw[requested] (r2) -- (p1);
+		\draw[requested] (r0) -- (p1);
+		
+		\draw[requested] (r2) -- (p2);
+		\draw[requested] (r0) -- (p2);
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	 q$_0$*     & 1  &        & 2 &	\\ 
+			1 &		  	   & 2  & 	    & 3	&			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_0$ replies to p$_0$ with 0 and increments pp(r$_0$) to pp(r$_0$) = 1.
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (0,2) {$p_0$};
+		\node (p1)[process]  at (4,2) {$p_1$};
+		\node (p2)[process]  at (8,2) {$p_2$};
+		\node (r0)[resource] at (0,-1) {$r_{0}$};		
+		\node (r1)[resource] at (5,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0);
+		\draw[requested] (r1) -- (p0);
+		
+		\draw[requested] (r2) -- (p1);
+		\draw[requested] (r0) -- (p1);
+		
+		\draw[requested] (r2) -- (p2);
+		\draw[requested] (r0) -- (p2);
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	 q$_0$*     & 1  &        & 2 &	\\ 
+			1 &	q$_1$*	  	   & 2  & 	    & 3	&			 \\ 
+			2 &	 p$_2$*     	   & 3  &        & 4 &                  \\ 
+			3 &	     	   & 4  &        & 5 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_0$ replies to p$_1$ and p$_2$ (r$_1$ hasn't replied to p$_0$ yet) respectively with 1 and 2, now pp(r$_0$) = 3
+\end{frame}
+
+\begin{frame}{Dining Philosophers}
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.5,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (0,2) {$p_0$};
+		\node (p1)[process]  at (4,2) {$p_1$};
+		\node (p2)[process]  at (8,2) {$p_2$};
+		\node (r0)[resource] at (0,-1) {$r_{0}$};		
+		\node (r1)[resource] at (5,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0);
+		\draw[requested] (r1) -- (p0);
+		
+		\draw[requested] (r2) -- (p1);
+		\draw[requested] (r0) -- (p1);
+		
+		\draw[requested] (r2) -- (p2);
+		\draw[requested] (r0) -- (p2);
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	 q$_0$*     & 1  &   q$_0$*      & 2 &	\\ 
+			1 &	q$_1$*	  	   & 2  & 	    & 3	&			 \\ 
+			2 &	 q$_2$*     	   & 3  &        & 4 &                  \\ 
+			3 &	     	   & 4  &        & 5 &                  \\ 
+		
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_1$ now replies to p$_0$ with 1 and increments pp(r$_1$) and now  p$_0$ could lock max(0, 1) = 1, but  r$_0$(1) is promised for someone else. Sure, it's possible that these will be released as other values might be higher, but it's likely they won't. (I'm considering locking lane with keys(q$_n$), but that's not a particularly nice solution)
+\end{frame}
+
+
+\end{document}

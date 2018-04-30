@@ -1,0 +1,37 @@
+\section{Formal Model in Event-B/5p.}
+\label{fmodel}
+
+
+\subsection{Distributed Lane}
+\begin{footnotesize}
+	\begin{description}
+		
+		\EVT {detect\_contention}
+		\begin{description}
+			\AnyPrm 
+			\begin{description}
+					\Item{f }
+					\Item{r }
+					\Item{n } 
+			\end{description}
+			\WhereGrd \vspace{-.3cm }
+			\begin{description}
+			\nItem{ grd1 }{ r \in  req }
+			\nItem{ grd2 }{ f \in  req\_forks(r) }
+			\nItem{ grd3 }{ cnt[\{ r\} ] = req\_forks(r) }
+			\nItemY{ grd4 }{ card(req\_rep(r)) = 1 }{} 
+			\nItem{ grd5 }{ n \in  req\_rep(r) }
+			\end{description}
+			\ThenAct \vspace{-.3cm }
+			\begin{description}
+				\nItem{ act1 }{ cnt :=  cnt \bunion  (req \ranres  p) }
+			\end{description}
+			\EndAct
+		\end{description}
+	\end{description}
+\end{footnotesize}
+
+
+\subsection{Localisation}
+
+\subsection{Railway}

@@ -1,0 +1,89 @@
+\section{Protocol Faults and Solutions (not part of the paper)}
+\label{problems}
+
+\subsection{Scenario 1: non-symmetric lanes}
+
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.8,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (4,2) {$p_0$};
+		\node (p1)[process]  at (8,2) {$p_1$};
+		\node (r0)[resource] at (2,-1) {$r_{0}$};		
+		\node (r1)[resource] at (6,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0) node [pos=0.1,right,font=\footnotesize] {q$_0$};
+		\draw[requested] (r1) -- (p0) node [pos=0.1,left,font=\footnotesize] {q$_0$};
+		
+		\draw[requested] (r1) -- (p1) node [pos=0.1,right,font=\footnotesize] {q$_1$};
+		\draw[requested] (r2) -- (p1) node [pos=0.1,left,font=\footnotesize] {q$_1$};
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			\large
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	  q$_0$*    & 1  &  q$_1$*       & 2 & q$_1$*	\\ 
+			1 &		  	   & 2  & 	q$_0$*    & 3	& 			 \\ 
+			2 &	      	   & 3  &        & 4 &                  \\ 
+			\vdots &	\vdots & \vdots  & \vdots  & \vdots\\ 
+			n & & n & &n
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Both p$_0$ and p$_1$ can confirm they received all replies they needed, but max(p$_0$) = max(p$_1$) = 2 and so they both would like to lock r$_1$(2).
+
+\newpage
+
+\subsection{Scenario 2: timing problems of non-symetric lanes}
+
+	\begin{center}
+		
+		\begin{tikzpicture}[scale=.8,every node/.style={minimum size=1cm},on grid]
+		
+		\node (p0)[process]  at (0,2) {$p_0$};
+		\node (p1)[process]  at (4,2) {$p_1$};
+		\node (p2)[process]  at (8,2) {$p_2$};
+		\node (r0)[resource] at (0,-1) {$r_{0}$};		
+		\node (r1)[resource] at (5,-1) {$r_{1}$};
+		\node (r2)[resource] at (10,-1) {$r_{2}$};
+		
+		\draw[requested] (r0) -- (p0);
+		\draw[requested] (r1) -- (p0);
+		
+		\draw[requested] (r2) -- (p1);
+		\draw[requested] (r0) -- (p1);
+		
+		\draw[requested] (r2) -- (p2);
+		\draw[requested] (r0) -- (p2);
+		
+		
+		\end{tikzpicture}
+	\end{center}	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c c| c c |c c} 
+			
+			&	r$_0$ &  & r$_1$ & & r$_2$   \\  
+			\hline 
+			0 &	 q$_0$*     & 1  &   q$_0$*      & 2 &	\\ 
+			1 &	q$_1$*	  	   & 2  & 	    & 3	&			 \\ 
+			2 &	 q$_2$*     	   & 3  &        & 4 &                  \\ 
+			3 &	     	   & 4  &        & 5 &                  \\ 
+			
+			
+		\end{tabular}
+		
+	\end{center}
+	\textbf{Comment}: Suppose r$_1$ now replies to p$_0$ with 1 and increments pp(r$_1$) and now  p$_0$ could lock max(0, 1) = 1, but  r$_0$(1) is promised for someone else. Sure, it's possible that these will be released as other values might be higher, but it's likely they won't. (I'm considering locking lane with keys(q$_n$), but that's not a particularly nice solution)

@@ -1,0 +1,147 @@
+\section{Distributed Resource Allocation Protocol Description}
+\label{section3}
+
+The objective of the protocol is to enable distributed atomic reservation of a collection of resources, for instance, two distinct agents $A_0$ and $A_1$ may require any resource collections $r_1$ and $r_2$ where $r_1, r_2 \subseteq R$. The protocol must guarantee that each agent gets all or nothing - partial request satisfaction is not permitted and ensure that every agent request will be eventually satisfied as long as certain degenerate situations are avoided. 
+
+A resource itself has an attributed memory where requests can be stored also a read pointer $\mathsf{rp}(r_k)$ and a promise pointer $\mathsf{pp}(r_k)$ - the largest {promised} index in the $r_k$ request pool. The initial value $\mathsf{pp}(r_k)$ is unique for every request pool and is assigned statically. In our protocol concept a resource is only allowed to exchange messages with agents (and agents only with resources). Since we do not consider degenerate or mallicious situations messages cannot be altered or lost but requests can arrive at resources in any order.
+
+\begin{figure}
+		\begin{center}
+			\begin{tabular}{ c c | c c | c c | c c } 
+			\hspace{.1cm}  r$_0$ \hspace{.1cm} & &  \hspace{.1cm} r$_1$ \hspace{.1cm} & & \hspace{.1cm} r$_2$ \hspace{.1cm}  & & \hspace{.1cm} r$_3$ \hspace{.1cm} \\[1mm]  
+			\hline  	
+		  	\Tstrut \hspace{.1cm} 0 \hspace{.1cm} & \textcolor{white}{a$_0$} \hspace{.1cm} &  \hspace{.1cm} 0 \hspace{.1cm} & ${A_0}^*$ \hspace{.1cm} &  \hspace{.1cm} 0 \hspace{.1cm}  & ${A_1}^*$ \hspace{.1cm} & \hspace{.1cm} 0 \hspace{.1cm} & \textcolor{white}{$a_0$} \hspace{.1cm} \\[1mm]
+		  	 \hspace{.1cm} 1 \hspace{.1cm} & &  \hspace{.1cm} 1 \hspace{.1cm} & ${A_1}^*$ \hspace{.1cm} &  \hspace{.1cm} 1 \hspace{.1cm}  & ${A_0}^*$ \hspace{.1cm} & \hspace{.1cm} 1 \hspace{.1cm} \\[1mm]
+		  	  \hspace{.01cm} \vdots \hspace{.1cm} & &  \hspace{.01cm} \vdots  \hspace{.1cm} & &  \hspace{.01cm} \vdots  \hspace{.1cm}  &  & \hspace{.01cm} \vdots  \hspace{.1cm} \\[1mm]
+		  	 \hspace{.1cm} n \hspace{.1cm} & &  \hspace{.1cm} n \hspace{.1cm} & &  \hspace{.1cm} n \hspace{.1cm}  &  & \hspace{.1cm} n \hspace{.1cm} 
+		\end{tabular}
+		
+	\end{center}
+		\caption{Distributed resource allocation blocking scenario. An asterisk symbol indicates that a slot has been promised but not locked for the agent.}
+	\label{lane1}
+\end{figure}
+
+Permitting request arrival delays can cause situations where different requests are blocking each other and causes the system to livelock. A blocking scenario is depicted in Figure \ref{lane} where agents ${A_0}$ and ${A_1}$ have both requested resources ${(r_1, r_2)}$ and they were promised slots ${(1, 2)}$ and ${(2, 1)}$ in ${(r_1, r_2)}$ respectively. Consequently if both agents would go ahead and lock these slots agents ${A_0}$ and ${A_1}$ would block each other and their requests could never be satisfied as partial request satisfaction is not permitted. 
+
+\begin{figure}
+	
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{ c | c | c | c | c | c } 
+			
+			& \hspace{.1cm} r$_0$ \hspace{.1cm} &   \hspace{.1cm} r$_1$ \hspace{.1cm} &  \hspace{.1cm} r$_2$ \hspace{.1cm}  &  \hspace{.1cm} r$_3$ \hspace{.1cm} \\[3mm]  
+			\hline  
+			\hspace{.05cm}&	\Tstrut	\hspace{.1cm} 		0 &     \hspace{.1cm} 1  &        \hspace{.1cm} 2 &  \cellcolor{gray!65}\hspace{.1cm} 3  \\[1mm]
+			
+			\hspace{.05cm}&		\hspace{.1cm}	    	1 &		  	   \hspace{.1cm} 2  & 	     \cellcolor{gray!65}\hspace{.1cm} 3 &  \cellcolor{gray!45}\hspace{.1cm} 4 \\[1mm]
+			
+			\hspace{.05cm}&		\hspace{.1cm}	    	2 &	      	   \cellcolor{gray!65}\hspace{.1cm} 3  &   \cellcolor{gray!45}\hspace{.1cm} 4 &  \cellcolor{gray!25}\hspace{.1cm} 5  \\[1mm]
+			
+			\cellcolor{gray!65}	$l_0$\hspace{.05cm}&\cellcolor{gray!65}	\hspace{.1cm} 3 & \cellcolor{gray!45}\hspace{.1cm} 4  &  \cellcolor{gray!25}\hspace{.1cm} 5 &\cellcolor{gray!10}\hspace{.1cm} 6  \\[1mm]
+			
+			\cellcolor{gray!45}	$l_1$\hspace{.05cm}&\cellcolor{gray!45}		\hspace{.1cm}			4 &	      	   \cellcolor{gray!25}\hspace{.1cm} 5    &\cellcolor{gray!10}\hspace{.1cm} 6    \\[1mm] 
+			
+			\cellcolor{gray!25}	$l_2$\hspace{.05cm}&\cellcolor{gray!25}		\hspace{.1cm}		    5 &	     \cellcolor{gray!10}\hspace{.1cm} 6                  \\[1mm] 
+			
+			\cellcolor{gray!10}	$l_3$\hspace{.05cm}&\cellcolor{gray!10}	\hspace{.1cm} 	6   	                  \\[1mm]
+			
+		\end{tabular}
+		
+	\end{center}
+	
+	\caption{An example virtual distributed lane data structure}
+	\label{lane}
+\end{figure}
+
+
+The principal mechanism of a solution we offer to prevent blocking situations and ensure progress is \textit{distributed lane} - a virtual data structure which is only present at a conceptual level. To be more specific a distributed lane is a distributed data structure made of at first approximation a collection of resource request pools one per each resource where columns represent resources request pools and rows represent lane. 
+
+To lock (form a lane) a resource an agent has to go through a number of steps defined by the protocol described below. \\
+%Request pools are modelled explicitly with one private pool per resource. 
+
+
+\noindent \textbf{Request.} An agent $A_i$ which intends to lock a set of resources $res \subseteq R$ generates a request to request pools associated with resources $\mathbf{r}$. Such requests are sent and received in no particular order and contain only agent name $A_i$. We define such message as $\mathsf{request(A_i)}$ and write $\mathsf{request(A_i) \rightarrow r_k}$ to state it is addressed to resource $r_k \in \mathbf{r}$. \\
+
+
+\noindent \textbf{Reply.} Once a request pool $r_k$ receives request $\mathsf{request(A_i)}$ it replies with a message $\mathsf{reply(\mathsf r_k, {pp}(r_k))} \rightarrow A_i$ and then increments $\mathsf{pp}(r_k)$. \\
+
+\noindent \textbf{ConfirmWR.} After sending all $\mathsf{request(A_i)}$ messages an agent $A_i$ awaits for all replies to arrive which carry values $\mathsf{pp}(r_k)$. Depending on these values following actions should be taken: \\
+
+\textbf{Write.} If all reply values on reception are equal then $A_i$ should write at index $n$ to request pools $\mathsf{write(A_i, n) \rightarrow r_k}$. \\
+
+\textbf{sRequest.} If all values on reception are not equal then the agent must renegotiate a new index. This time an agent sends new (special) requests to a subset of resources. We define such message as \textbf{$\mathsf{srequest(A_i, max) \rightarrow r_k}$} where $r_k$ is $\mathsf{r_k \subset \mathbf{r}}$ and must satisfy $\mathsf{\forall r \cdot r \in r_k \Rightarrow reply(r_k)} < \mathsf{max(replies(A_i))}$.  \\
+
+\textbf{sReply.}  Once a request pool $r_k$ receives a special request it replies with the following message $\mathsf{reply(\mathsf r_k, max)} \rightarrow A_i$ where $\mathsf{max}$ the maximum value of $\mathsf{pp(r_k)}$ and received $\mathsf{srequest(A_i)}$. \\
+
+\noindent \textbf{pReady.} A pre-ready message is sent by a resource to inform an agent that it is available for consumption and we define such message $\mathsf{pready(\mathsf r_k)} \rightarrow A_i$.\\
+
+\textbf{pReady (wr).} \\
+
+\textbf{pReady (rl).} \\
+
+\noindent \textbf{Lock.} An agent waits for all pre-ready messages to arrive and once it receives them it sends a lock message to resources as follows $\mathsf{lock(\mathsf A_i)} \rightarrow r_k$.\\
+
+\noindent \textbf{Respond.} A request pool $r_k$ which receives a lock message will respond with a message $\mathsf{respond(\mathsf r_k, response)} \rightarrow A_i$ where $\mathsf{response \in \{confirm, deny\}}$. \\
+
+\noindent \textbf{Decide.} An agent waits for all respond messages to arrive and depending on these messages following actions will be taken. \\
+
+\textbf{Unlock.} If one of the messages is a deny message, an agent $\mathsf{A_i}$ will send an unlock messages to all resources which replied with confirm message. \\
+
+\textbf{Consumption.} If all messages were confirm messages, an agent $\mathsf{A_i}$ can proceed with resource consumption.\\
+
+\noindent \textbf{Release.} An agent $A_i$ will eventually release a resource by sending a message to to resource. \vspace{1cm} \\
+
+
+%\noindent \textbf{Ready.} When some $A_y$ releases a resource $r_k$, read pointer is updated to the next minimum value of the request pool $\mathsf{rp}(r_k)$ and a ready message is sent to subsequent agent in the request pool $\mathsf{ready(\mathsf{r_k})} \rightarrow A_i$.  \\
+
+%Once all messages are received, the agent computes $n=max_{r \in \mathbf{r}} \mathsf{pp}(r)$. This value is used to generate message $\mathsf{reserve(A_i, n)} \rightarrow r, r \in \mathbf{r}$, carrying maximum value $n$ and addressed to all the pools.
+
+%\subsection*{Step 3-4. Accept/Reply (Paulius)}
+
+% In this version one can combine Steps 3 and 4. Since the approach of this protocol version is to iteratively try to form a lane. A basic solution could be as follows:
+
+%\begin{enumerate}
+%	\item After receiving all replies one can check  $\mathsf \forall e \cdot e \in reply[\{A_i\}]^{-1} \Rightarrow e = n$
+%	\begin{enumerate}
+%		\item If true proceed to Step 5a.
+%		\item Else prooced to Step 5b.
+%	\end{enumerate}
+%\end{enumerate}
+
+%\textbf{Remark}: In order to allow $\mathsf \forall e \cdot e \in reply[\{A_i\}]^{-1} \Rightarrow e \leq n$ one must make an assumption on request arriving frequency. 
+
+%\noindent \textbf{Write (request).} Agent $A_i$ again awaits for all replies to arrive. In a general case, these are made of  $\mathsf{accept}(n)$ (all $n$ values are same by the nature of the protocol) and  $\mathsf{reject}$ messages. This step applies only to the situation when there are no rejections.
+
+%Since all the pools replied with the acceptance, it is now possible to write into all the pools and thus form a new lane. The agent replies with message $\mathsf{write}(A_i, n) \rightarrow r_k$ to each pool $r_k$.
+
+
+%The protocol steps above describe how to form lanes from distributed pools. The pragmatics of such lanes is atomic reservation of resource sets. The lanes semantics guarantees, as we shall prove in the model, the following two properties:
+
+%\begin{enumerate}
+%	\item every reserved value $A_i$ forms a valid lane: it has same index in each request pool;
+%	\item the smallest index of all request pools (i.e., the lane with a smallest index) define a valid set of requested resources that can be locked;
+%	\item there are no deadlocks.
+%\end{enumerate}
+
+
+%\noindent \textbf{System Requirement 1.} Cross boundary route locking and releasing protocol must ensure that a cross boundary route has been reserved only to a single train at a time. \\
+
+%\noindent \textbf{System Requirement 2.} Cross boundary route locking mechanism must ensure that a locked cross boundary route has points properly positioned and signals sets.
+
+
+
+In addition to safety and deadlock-freedom one must ensure agent starvation freedom property in developing a distributed protocol. A protocol must ensure that agents will eventually be allocated resources which have been requested. A starvation could potentially occur with our protocol if multiple agents require similar resources and because of diagonal blocking agents would continuously need to renegotiate a new lane.
+
+
+
+%The protocol steps above describe how to form lanes from distributed pools. The pragmatics of such lanes is atomic reservation of resource sets. The lanes semantics guarantees, as we shall prove in the model, the following two properties:
+
+%\begin{enumerate}
+%	\item every reserved value $A_i$ forms a valid lane: it has same index in each request pool;
+%	\item the smallest index of all request pools (i.e., the lane with a smallest index) define a valid set of requested resources that can be locked;
+%	\item there are no deadlocks.
+%\end{enumerate}
+
+\subsection{Refinement Plan}

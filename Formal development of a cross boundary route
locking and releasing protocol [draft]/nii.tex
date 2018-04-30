@@ -1,0 +1,63 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shadows,positioning}
+\begin{document}
+	\title{Distributed Resource Allocation Protocol Verification in Event-B: \vspace{.5cm} \\ \large NII Model Notes}
+	\author{Paulius Stankaitis}
+	\date{}
+	\maketitle
+	
+\subsection*{Distributed Resource Allocation Model Description}
+	
+	\noindent \textbf{Request.} An agent $A_i$ which intends to lock a set of resources $res \subseteq R$ generates a request to request pools associated with resources $\mathbf{r}$. Such requests are sent and received in no particular order and contain only agent name $A_i$. We define such message as $\mathsf{request(A_i)}$ and write $\mathsf{request(A_i) \rightarrow r_k}$ to state it is addressed to resource $r_k \in \mathbf{r}$. \\
+	
+	
+	\noindent \textbf{Reply.} Once a request pool $r_k$ receives request $\mathsf{request(A_i)}$ it replies with a message $\mathsf{reply(\mathsf r_k, {pp}(r_k))} \rightarrow A_i$ and then increments $\mathsf{pp}(r_k)$. \\
+	
+	\noindent \textbf{ConfirmWR.} After sending all $\mathsf{request(A_i)}$ messages an agent $A_i$ awaits for all replies to arrive which carry values $\mathsf{pp}(r_k)$. Depending on these values following actions should be taken: \\
+	
+	\textbf{Write.} If all reply values on reception are equal then $A_i$ should write at index $n$ to request pools $\mathsf{write(A_i, n) \rightarrow r_k}$. \\
+	
+	\textbf{sRequest.} If all values on reception are not equal then the agent must renegotiate a new index. This time an agent sends new (special) requests to a subset of resources. We define such message as \textbf{$\mathsf{srequest(A_i, max) \rightarrow r_k}$} where $r_k$ is $\mathsf{r_k \subset \mathbf{r}}$ and must satisfy $\mathsf{\forall r \cdot r \in r_k \Rightarrow reply(r_k)} < \mathsf{max(replies(A_i))}$.  \\
+	
+	\textbf{sReply.}  Once a request pool $r_k$ receives a special request it replies with the following message $\mathsf{reply(\mathsf r_k, max)} \rightarrow A_i$ where $\mathsf{max}$ the maximum value of $\mathsf{pp(r_k)}$ and received $\mathsf{srequest(A_i)}$. \\
+	
+	\noindent \textbf{pReady.} A pre-ready message is sent by a resource to inform an agent that it is available for consumption and we define such message $\mathsf{pready(\mathsf r_k)} \rightarrow A_i$.\\
+	
+	\textbf{pReady (wr).} \\
+	
+	\textbf{pReady (rl).} \\
+	
+	\noindent \textbf{Lock.} An agent waits for all pre-ready messages to arrive and once it receives them it sends a lock message to resources as follows $\mathsf{lock(\mathsf A_i)} \rightarrow r_k$.\\
+	
+	\noindent \textbf{Respond.} A request pool $r_k$ which receives a lock message will respond with a message $\mathsf{respond(\mathsf r_k, response)} \rightarrow A_i$ where $\mathsf{response \in \{confirm, deny\}}$. \\
+	
+	\noindent \textbf{Decide.} An agent waits for all respond messages to arrive and depending on these messages following actions will be taken. \\
+	
+	\textbf{Unlock.} If one of the messages is a deny message, an agent $\mathsf{A_i}$ will send an unlock messages to all resources which replied with confirm message. \\
+	
+	\textbf{Consumption.} If all messages were confirm messages, an agent $\mathsf{A_i}$ can proceed with resource consumption.\\
+	
+	\noindent \textbf{Release.} An agent $A_i$ will eventually release a resource by sending a message to to resource. \vspace{1cm} \\
+	
+		\pagebreak
+	\subsection*{Distributed Resource Allocation Model Verification} 
+	\vspace{.5cm}
+	
+	\noindent \textbf{Model Refinement M2.}
+	
+	\begin{itemize}
+		\item Deadlock Freedom (DF).
+		\begin{itemize}
+			\item DF: all lock messages must be delete when agent status is consume.
+			\item DF: all response messages must be delete when agent status is release.
+		\end{itemize}
+		\item Distributed Lane Forming (DLF). 
+	\end{itemize}
+
+\end{document}
