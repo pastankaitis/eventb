@@ -1,0 +1,65 @@
+\documentclass{llncs}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\begin{document}
+	
+	\title{A Framework for Developing Distributed Protocols with Event-B/Rodin}
+	
+	\author{Paulius Stankaitis\inst{1}, Alexei Iliasov\inst{1}, Tsutomu Kobayashi\inst{2}, Alexander Romanovsky\inst{1}, Fuyuki Ishikawa\inst{2}}
+	\institute{
+		Newcastle University, Newcastle upon Tyne, United Kingdom \\
+		\email{\{p.stankaitis|alexei.iliasov|alexander.romanovsky\}@ncl.ac.uk} \vspace{.1cm}\\
+		\and 
+		National Institute of Informatics, Tokyo, Japan\\
+		\email{\{t-kobayashi|f-ishikawa\}@nii.ac.jp}}
+	
+	\maketitle
+	
+	\setcounter{footnote}{0}
+	
+	\section{Introduction}
+	
+	Formal notations such as Event-B \cite{EventBBook} are well suited for development and verification of various protocols. The stepwise and proof driven development provided by such methods is attractive to developers and can notably reduce modelling effort. Yet effectively utilizing the refinement of the Event-B method can be challenging and often result in a poor readability/maintainability of the model as well as reduced verification automation. This is particularly significant for modelling complex distributed systems because of concurrency and communication. Furthermore from our experience in modelling various distributed protocols the model often needs a complete remake which makes the modelling process rather challenging and tedious.
+	
+	
+	
+	In this short paper we present an ongoing work on developing a toolkit and technique for developing distributed protocols. Such a toolkit would take a semi-formal graphical definition of a protocol and automatically generate Event-B refinement chain. In the following section we summarise the main ongoing work directions and technical challenges.
+	
+	
+	
+	%
+	
+	%From our experience   We propose to design a tool-kit to generate protocol models from a high-level description. Such a tool-kit would take a semi-formal, graphical definition of a protocol and automatically generate Event-B refinement chain.
+	
+	
+	
+	
+	
+	%\noindent \textbf{Problem.} From our experience developing a protocol requires a often remake of the model which makes the process rather challenging and tedious. Furthermore effectively utilizing the refinement of the Event-B method is a challenge which often results in a poor readability/maintainability of the model (verification automation can be reduced too).\\
+	
+	%\noindent \textbf{Proposed Solution.} We propose to design a toolkit to generate protocol models from a high-level
+	%	description. Such a toolkit would take a semi-formal, graphical definition of a protocol and automatically generate Event-B refinement chain.\\
+	
+	%\noindent \textbf{Actions Required.}
+	
+	
+	
+	
+	\section{Framework for Developing Distributed Protocols}
+	First of all we propose to start developing a distributed protocol by providing its semi-formal graphical definition. A graphical model would then be automatically translated and proved in Event-B. Not only this would provide a better protocol overview for the developer but should also reduce the effort in case user needs to remake the model. At this moment we are in the process of developing the prototype of such graphical language as existing approaches were not adequate. 
+	
+	The literature review also showed that similar proposed approaches for modelling and reasoning about distributed protocols did not utilize the stepwise development of the Event-B method. The design of a distributed protocol in Event-B generally follows a number of principles in order to be considered an adequate rendering of a protocol\footnote{These principles can be noticed from existing literature on modelling distributed systems in Event-B (e.g. \cite{Cansell} \cite{Hoang} \cite{Yadav}).}. This requires a faithful model of communication, a convincing argument of localisation and finally a formal decomposition of a model into independent communicating parts. In order to transform a graphical definition of a distributed protocol to the Event-B model we propose to develop translation patterns for classes of distributed protocols. Translation patterns would allow automatically generating Event-B refinement chains which could make models more readable and potentially reduce the verification effort. In addition to syntactic model translation patterns, these patterns could contain invariants for correctness verification of distributed protocols. 
+	
+	As another direction we would like to derive generic verification conditions for classes of distributed consensus or resource allocation protocols. To reason about additional distributed protocol properties (e.g. liveness) we also would like to take advantage of other existing Rodin Platform plug-ins such as the Flow plug-in \cite{flow}. We are still in early stages of this work and there are many important questions to address. For instance how one should specify the objective of the distributed protocol in a semi-formal graphical language. Since it is common to use Dijkstra backward elicitation style where an abstract model summarises protocol effect and following refinement steps gradually introduce preceding steps. Inferring the objective is particularly important in order to make to make an efficient use of refinement as abstraction and proof structuring technique. 
+	
+	
+	
+	
+	
+	
+	\bibliographystyle{plain}
+	\bibliography{main}
+\end{document}

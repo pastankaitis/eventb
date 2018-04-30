@@ -1,0 +1,87 @@
+\documentclass{llncs}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\begin{document}
+	
+	\title{A Framework for Developing Distributed Protocols with Event-B/Rodin}
+	
+	\author{Paulius Stankaitis\inst{1}, Alexei Iliasov\inst{1}, Tsutomu Kobayashi\inst{2}, Alexander Romanovsky\inst{1}, Fuyuki Ishikawa\inst{2}}
+\institute{
+	Newcastle University, Newcastle upon Tyne, United Kingdom \\
+	\email{\{p.stankaitis|alexei.iliasov|alexander.romanovsky\}@ncl.ac.uk} \vspace{.1cm}\\
+	\and 
+	National Institute of Informatics, Tokyo, Japan\\
+	\email{\{t-kobayashi,f-ishikawa@nii.ac.jp\}@nii.ac.jp}}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Model based notations such as Event-B are understood to be well suited for formalisation and verification of various protocols. In general the design of a protocol in Event-B follows a number of principles. 	To make efficient use of refinement as abstraction and proof structuring techniques it common to use Dijkstra backward elicitation style where an abstract model summarises protocol effect and following refinement steps gradually introduce preceding steps. A model must follow certain design principles in order to be considered an adequate rendering of a protocol. This requires a faithful model of communication, a convincing argument of localisation and, finally, a formal decomposition of a model into independent communicating parts. From our experience developing a protocol requires a often remake of the model which makes the process rather challenging and tedious. Furthermore effectively utilizing the refinement of the Event-B method is a challenge which often results in a poor readability/maintainability of the model (verification automation can be reduced too). We propose to design a toolkit to generate protocol models from a high-level description. Such a toolkit would take a semi-formal, graphical definition of a protocol and automatically generate Event-B refinement chain.
+	\end{abstract}
+	
+	\section{Introduction}
+	
+%	Model based notations and Event-B specifically are understood well suited to formalisation and verification of various protocols. Typical protocol has fairly
+%	complex behaviour defined but comparatively simple logic. That is protocols are deep (offer rich verification opportunities) and compact.
+%	Design of a protocol in Event-B follows a number of general principles. 
+	
+
+	
+	\noindent \textbf{Problem.} From our experience developing a protocol requires a often remake of the model which makes the process rather challenging and tedious. Furthermore effectively utilizing the refinement of the Event-B method is a challenge which often results in a poor readability/maintainability of the model (verification automation can be reduced too).\\
+	
+	\noindent \textbf{Proposed Solution.} We propose to design a toolkit to generate protocol models from a high-level
+	description. Such a toolkit would take a semi-formal, graphical definition of a protocol and automatically generate Event-B refinement chain.\\
+	
+	\noindent \textbf{Actions Required.}
+	
+	\begin{itemize}
+		\item Need to decide on the class of algorithms we want to verify (i.e. distributed-consensus, distributed resource allocation).  
+		\item Need to decide on a high-level specification language.
+
+	\end{itemize}
+	\section{Background}
+	
+
+		\section{Framework Requirements}
+		
+		\begin{description}
+			\item[REQ1] The toolkit should be generic enough to cover most forms of communication and consensus protocols;
+			\item[REQ2] The toolkit should integrate with Rodin;
+			\item[REQ3] Refinement chain must be constructed automatically from a high-level description;
+			\item[REQ4] A user should be able to define message types, message payload (fields);
+			\item[REQ5] A user should be able to define behaviour logic driving message generation, specifically: 
+			\begin{description}
+				\item[REQ5.a] use of Event-B mathematical language to define predicates and expressions;
+				\item[REQ5.b] \textbf{if/then/else} statement to define branching (alternatively, a graphical notation can be employed to capture branching).
+			\end{description}
+			\item[REQ6] There should be a facility to express what each protocol party knows at different stages. (Note that this is separate from model of a party state: state is an underlying, implementation concern). This is the basis for expressing verification goals and auxiliary invariants. It is not clear whether there should be explicit definition of a model separately or it can be inferred.
+			\item[REQ7] Communication mechanism should be implicit however there should be a way to define communication properties: message loss, out of order, duplicates;
+			\item[REQ8] The protocol should be able to generate Event-B model and refinement steps completely automatically. It is not clear whether a user would be expected to manually change the model afterwards or all annotations can be provided in the toolkit.
+			\item[REQ9] Verification is to happen at the level Event-B model in Rodin.
+		\end{description}
+	\section{Utilizing Refinement for Distributed Protocol Class}
+	\begin{itemize}
+
+		\item Refactoring Refinement Structure of Event-B Machines \cite{refactoring};
+		\item Formal Derivation of a Distributed Program in Event B \cite{alexei_distributed}; 
+		\item Systematic Translation Rules from astd to Event-B \cite{astd2eb};
+		\item An Event-B Development Process for the Distributed BIP Framework \cite{bip2eb};
+
+	\end{itemize}
+	\section{Proof Rules for Distributed Protocol Class}
+	\begin{itemize}
+		\item Use Case Scenarios as Verification Conditions: Event-B/Flow Approach; \cite{flow}
+		
+			
+	\end{itemize}
+
+	
+	\section{Case Study?}
+	\section{Discussions and Conclusions}
+	
+	\bibliographystyle{plain}
+	\bibliography{main}
+\end{document}

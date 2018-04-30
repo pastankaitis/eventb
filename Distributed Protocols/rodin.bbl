@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{EventBBook}
+J.-R. Abrial.
+\newblock {\em Modeling in Event-B: System and Software Engineering}.
+\newblock Cambridge University Press, New York, NY, USA, 2013.
+
+\bibitem{Cansell}
+D.~Cansell and D.~M{\'e}ry.
+\newblock Formal and incremental construction of distributed algorithms: On the
+  distributed reference counting algorithm.
+\newblock {\em Theor. Comput. Sci.}, 364(3):318--337, November 2006.
+
+\bibitem{Hoang}
+T.S. Hoang, H.~Kuruma, D.~Basin, and J.-R. Abrial.
+\newblock Developing topology discovery in event-b.
+\newblock In {\em Proceedings of the 7th International Conference on Integrated
+  Formal Methods}, IFM '09, pages 1--19, Berlin, Heidelberg, 2009.
+  Springer-Verlag.
+
+\bibitem{flow}
+Alexei Iliasov.
+\newblock Use case scenarios as verification conditions: Event-b/flow approach.
+\newblock In Elena~A. Troubitsyna, editor, {\em Software Engineering for
+  Resilient Systems}, pages 9--23, Berlin, Heidelberg, 2011. Springer Berlin
+  Heidelberg.
+
+\bibitem{Yadav}
+D.~Yadav and M.~Butler.
+\newblock Methods, models and tools for fault tolerance.
+\newblock chapter Formal Development of a Total Order Broadcast for Distributed
+  Transactions Using Event-B, pages 152--176. Springer-Verlag, Berlin,
+  Heidelberg, 2009.
+
+\end{thebibliography}

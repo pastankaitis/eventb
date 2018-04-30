@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: rodin.aux
+The style file: plain.bst
+Database file #1: main.bib
+Repeated entry---line 126 of file main.bib
+ : @inproceedings{Flow
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in Yadav
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            539 strings with 5020 characters,
+and the built_in function-call counts, 1897 in all, are:
+= -- 197
+> -- 67
+< -- 4
++ -- 26
+- -- 21
+* -- 123
+:= -- 302
+add.period$ -- 18
+call.type$ -- 5
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 85
+empty$ -- 160
+format.name$ -- 21
+if$ -- 419
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 6
+newline$ -- 28
+num.names$ -- 12
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 20
+quote$ -- 0
+skip$ -- 58
+stack$ -- 0
+substring$ -- 120
+swap$ -- 24
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 1
+while$ -- 22
+width$ -- 6
+write$ -- 63
+(There was 1 error message)

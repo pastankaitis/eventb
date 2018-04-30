@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{flow}
+Alexei Iliasov.
+\newblock Use case scenarios as verification conditions: Event-b/flow approach.
+\newblock In Elena~A. Troubitsyna, editor, {\em Software Engineering for
+  Resilient Systems}, pages 9--23, Berlin, Heidelberg, 2011. Springer Berlin
+  Heidelberg.
+
+\bibitem{alexei_distributed}
+Alexei Iliasov, Linas Laibinis, Elena Troubitsyna, and Alexander Romanovsky.
+\newblock Formal derivation of a distributed program in event b.
+\newblock In {\em Proceedings of the 13th International Conference on Formal
+  Methods and Software Engineering}, ICFEM'11, pages 420--436, Berlin,
+  Heidelberg, 2011. Springer-Verlag.
+
+\bibitem{refactoring}
+Tsutomu Kobayashi, Fuyuki Ishikawa, and Shinichi Honiden.
+\newblock Refactoring refinement structure of event-b machines.
+\newblock In John Fitzgerald, Constance Heitmeyer, Stefania Gnesi, and Anna
+  Philippou, editors, {\em FM 2016: Formal Methods}, pages 444--459, Cham,
+  2016. Springer International Publishing.
+
+\bibitem{astd2eb}
+J{\'e}r{\'e}my Milhau, Marc Frappier, Fr{\'e}d{\'e}ric Gervais, and R{\'e}gine
+  Laleau.
+\newblock Systematic translation rules from astd to event-b.
+\newblock In Dominique M{\'e}ry and Stephan Merz, editors, {\em Integrated
+  Formal Methods}, pages 245--259, Berlin, Heidelberg, 2010. Springer Berlin
+  Heidelberg.
+
+\bibitem{bip2eb}
+Badr Siala, Mohamed~Tahar Bhiri, Jean-Paul Bodeveix, and Mamoun Filali.
+\newblock An event-b development process for the distributed bip framework.
+\newblock In Kazuhiro Ogata, Mark Lawford, and Shaoying Liu, editors, {\em
+  Formal Methods and Software Engineering}, pages 313--328, Cham, 2016.
+  Springer International Publishing.
+
+\end{thebibliography}
