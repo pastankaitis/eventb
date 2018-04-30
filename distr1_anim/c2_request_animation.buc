@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c2_reply_animation"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="REQ"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="REQ1"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="REQ2"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="REQ3"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="REQ4"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="REQ5"/>
+<org.eventb.core.constant name="." org.eventb.core.identifier="REQ6"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="REQ7"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="REQ8"/>
+<org.eventb.core.constant name="1" org.eventb.core.identifier="REQ9"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(REQ, {REQ1}, {REQ2}, {REQ3}, {REQ4}, {REQ5}, {REQ6}, {REQ7}, {REQ8}, {REQ9})"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm4" org.eventb.core.predicate="reqs = {REQ1 ↦ AGT1, REQ2 ↦ AGT1, REQ3 ↦ AGT1,&#10;&#9;&#9;&#9;REQ4 ↦ AGT2, REQ5 ↦ AGT2, REQ6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;REQ7 ↦ AGT3, REQ8 ↦ AGT3, REQ9 ↦ AGT3} "/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm5" org.eventb.core.predicate="reqd = {REQ1 ↦ RES1, REQ2 ↦ RES2, REQ3 ↦ RES3,&#10;&#9;&#9;&#9;&#9;REQ4 ↦ RES1, REQ5 ↦ RES2, REQ6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;REQ7 ↦ RES1, REQ8 ↦ RES2, REQ9 ↦ RES3}"/>
+<org.eventb.core.constant name="3" org.eventb.core.comment="request source" org.eventb.core.identifier="reqs"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.comment="request destination" org.eventb.core.identifier="reqd"/>
+</org.eventb.core.contextFile>

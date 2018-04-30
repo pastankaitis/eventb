@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst1" org.eventb.core.identifier="LCK1"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst2" org.eventb.core.identifier="LCK2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst3" org.eventb.core.identifier="LCK3"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst4" org.eventb.core.identifier="LCK4"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst5" org.eventb.core.identifier="LCK5"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst6" org.eventb.core.identifier="LCK6"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst7" org.eventb.core.identifier="LCK7"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst8" org.eventb.core.identifier="LCK8"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst9" org.eventb.core.identifier="LCK9"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst10" org.eventb.core.identifier="lcks"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst11" org.eventb.core.identifier="lckd"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(LCK, {LCK1}, {LCK2}, {LCK3}, {LCK4}, {LCK5}, {LCK6}, {LCK7}, {LCK8}, {LCK9})"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm2" org.eventb.core.predicate="lcks = {LCK1 ↦ AGT1, LCK2 ↦ AGT1, LCK3 ↦ AGT1,&#10;&#9;&#9;&#9;LCK4 ↦ AGT2, LCK5 ↦ AGT2, LCK6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;LCK7 ↦ AGT3, LCK8 ↦ AGT3, LCK9 ↦ AGT3} "/>
+<org.eventb.core.axiom name="axm3" org.eventb.core.label="axm3" org.eventb.core.predicate="lckd = {LCK1 ↦ RES1, LCK2 ↦ RES2, LCK3 ↦ RES3,&#10;&#9;&#9;&#9;&#9;LCK4 ↦ RES1, LCK5 ↦ RES2, LCK6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;LCK7 ↦ RES1, LCK8 ↦ RES2, LCK9 ↦ RES3}"/>
+<org.eventb.core.carrierSet name="cst12" org.eventb.core.identifier="LCK"/>
+<org.eventb.core.extendsContext name="cst13" org.eventb.core.target="c1_ready_animation"/>
+</org.eventb.core.contextFile>

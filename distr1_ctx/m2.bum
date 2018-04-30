@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="m1"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="c2_confirm"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="capt"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="objt"/>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="pct1"/>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="rdpt ≔ RES × {∅}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="lck ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="lcke ≔ AGT × {∅}" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pct2 ≔ AGT × {LOCK}" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="rsp ≔ ∅" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="rel ≔ ∅" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_c"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pct2(ag) ≔ LOCK" org.eventb.core.comment="change program counter to lock" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter must be at release" org.eventb.core.label="grd4" org.eventb.core.predicate="pct2(ag) = RELEASE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_p"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter at release" org.eventb.core.label="grd4" org.eventb.core.predicate="pct2(ag) = RELEASE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="lcke(ag) ≔ lcke(ag) ∖ {rs}" org.eventb.core.comment="remove local lock message copies" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="create new release message" org.eventb.core.label="grd5" org.eventb.core.predicate="rl ∈ REL ∖ rel"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="release message source is agent - ag" org.eventb.core.label="grd6" org.eventb.core.predicate="rels(rl) = ag"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="rl"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="release message destination is resource - rs" org.eventb.core.label="grd7" org.eventb.core.predicate="reld(rl) = rs"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="rel ≔ rel ∪ {rl}" org.eventb.core.comment="create release message" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_c"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pct2(ag) ≔ RELEASE" org.eventb.core.comment="update proram counter" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter must be at consume" org.eventb.core.label="grd4" org.eventb.core.predicate="pct2(ag) = CONSUME"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="pct2(ag) = CONSUME"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="to remove correct response message" org.eventb.core.label="grd6" org.eventb.core.predicate="rsps(cf) = rs"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="to remove correct response message" org.eventb.core.label="grd7" org.eventb.core.predicate="rspd(cf) = ag"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="to remove correct response message" org.eventb.core.label="grd8" org.eventb.core.predicate="rspn(cf) = READY"/>
+<org.eventb.core.parameter name="grd4" org.eventb.core.identifier="cf"/>
+<org.eventb.core.action name="grd5" org.eventb.core.assignment="rsp ≔ rsp ∖ {cf}" org.eventb.core.comment="remove response message" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="rdpt"/>
+<org.eventb.core.invariant name=":" org.eventb.core.comment="Resource read pointer." org.eventb.core.label="inv1" org.eventb.core.predicate="rdpt ∈ RES → ℙ(AGT)"/>
+<org.eventb.core.variable name="A" org.eventb.core.identifier="lcke"/>
+<org.eventb.core.variable name="?" org.eventb.core.identifier="lck"/>
+<org.eventb.core.invariant name="B" org.eventb.core.comment="Local variable for storing lock messages." org.eventb.core.label="inv2" org.eventb.core.predicate="lcke ∈ AGT → ℙ(RES)"/>
+<org.eventb.core.invariant name="@" org.eventb.core.comment="Global lock messages." org.eventb.core.label="inv3" org.eventb.core.predicate="lck ⊆ LCK"/>
+<org.eventb.core.variable name="C" org.eventb.core.identifier="pct2"/>
+<org.eventb.core.variable name="E" org.eventb.core.identifier="rsp"/>
+<org.eventb.core.event name="L" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="resource_release">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="rl"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="rdpt(reld(rl)) ≔ rdpt(reld(rl)) ∖ {rels(rl)}" org.eventb.core.comment="unlock read pointer" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="take a sent release message" org.eventb.core.label="grd1" org.eventb.core.predicate="rl ∈ rel"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="rel ≔ rel ∖ {rl}" org.eventb.core.comment="remove release message" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="I" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_unlock_c">
+<org.eventb.core.action name="'" org.eventb.core.assignment="pct2(ag) ≔ LOCK" org.eventb.core.comment="update program counter to lock" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="unlock is completed when no local copies of lock have been left" org.eventb.core.label="grd1" org.eventb.core.predicate="lcke(ag) = ∅"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="and program counter must be at unlock" org.eventb.core.label="grd2" org.eventb.core.predicate="pct2(ag) = UNLOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="J" org.eventb.core.identifier="rel"/>
+<org.eventb.core.invariant name="F" org.eventb.core.comment="Global response messages." org.eventb.core.label="inv5" org.eventb.core.predicate="rsp ⊆ RSP"/>
+<org.eventb.core.invariant name="K" org.eventb.core.comment="Global unlock messages." org.eventb.core.label="inv6" org.eventb.core.predicate="rel ⊆ REL"/>
+<org.eventb.core.event name="H" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_unlock_p">
+<org.eventb.core.guard name="-" org.eventb.core.comment="take a received confirm message" org.eventb.core.label="grd1" org.eventb.core.predicate="cf ∈ rsp"/>
+<org.eventb.core.guard name="3" org.eventb.core.comment="created new unlock message" org.eventb.core.label="grd2" org.eventb.core.predicate="rl ∈ REL ∖ rel"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="cf"/>
+<org.eventb.core.parameter name="0" org.eventb.core.comment="unlock" org.eventb.core.identifier="rl"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="rel ≔ rel ∪ ms" org.eventb.core.comment="send new release message" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="rsp ≔ rsp ∖ {cf}" org.eventb.core.comment="delete confirm message" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="8" org.eventb.core.identifier="ms"/>
+<org.eventb.core.action name="9" org.eventb.core.assignment="lcke(rspd(cf)) ≔ lcke(rspd(cf)) ∖ {rsps(cf)}" org.eventb.core.comment="remove locally saved lock message" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="1" org.eventb.core.comment="release message destination, must be the soure of respond message" org.eventb.core.label="grd3" org.eventb.core.predicate="reld(rl) = rsps(cf)"/>
+<org.eventb.core.guard name="/" org.eventb.core.comment="release message source, must be the destination of repond message" org.eventb.core.label="grd4" org.eventb.core.predicate="rels(rl) = rspd(cf)"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="confirm message receive must be CONFIRM" org.eventb.core.label="grd5" org.eventb.core.predicate="rspn(cf) = READY ⇒ ms = {rl}"/>
+<org.eventb.core.guard name="6" org.eventb.core.comment="if message is deny do nothing, just remove that message" org.eventb.core.label="grd6" org.eventb.core.predicate="rspn(cf) = DENY ⇒ ms = ∅"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="the program counter of the cnfd(cf) must be at UNLOCK" org.eventb.core.label="grd7" org.eventb.core.predicate="pct2(rspd(cf)) = UNLOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_decide">
+<org.eventb.core.guard name="'" org.eventb.core.comment="confirm that all lock messages have been replied with confirm (ready/deny) messages" org.eventb.core.label="grd1" org.eventb.core.predicate="rsps[rsp ∩ rspd∼[{ag}]] = lcke(ag)"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="confirm that objective has been fulfilled" org.eventb.core.label="grd2" org.eventb.core.predicate="rsps[rsp ∩ rspd∼[{ag}]] = objr(objt(ag))"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="if all messages are ready then update progam counter to consume" org.eventb.core.label="grd3" org.eventb.core.predicate="rspn[rsp ∩ rspd∼[{ag}]] = {READY} ⇒ pc = CONSUME"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="if exists deny message then update program counter to unlock" org.eventb.core.label="grd4" org.eventb.core.predicate="DENY ∈ rspn[rsp ∩ rspd∼[{ag}]] ⇒ pc = UNLOCK"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="pc"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="pct2(ag) ≔ pc" org.eventb.core.comment="update with new program counter value" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="program counter mus be at confirmc" org.eventb.core.label="grd5" org.eventb.core.predicate="pct2(ag) = CONFIRMC"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.comment="[EVT:RESPOND]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="resource_respond">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="lc"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="take a lock message" org.eventb.core.label="grd1" org.eventb.core.predicate="lc ∈ lck"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="create new confirm message" org.eventb.core.label="grd2" org.eventb.core.predicate="re ∈ RSP ∖ rsp"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="re"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="rsps(re) = lckd(lc)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="rspd(re) = lcks(lc)"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="if resource's read pointer is not locked, lock it and send ready message to the agent" org.eventb.core.label="grd5" org.eventb.core.predicate="rdpt(rsps(re)) = ∅ ⇒ rspn(re) = READY ∧ rp = {rspd(re)}"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="if resource's read pointer is locked, send deny message and remain locked" org.eventb.core.label="grd6" org.eventb.core.predicate="rdpt(rsps(re)) ≠ ∅ ⇒ rspn(re) = DENY ∧ rp = rdpt(rsps(re))"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="rsp ≔ rsp ∪ {re}" org.eventb.core.comment="create confirm message" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="lck ≔ lck ∖ {lc}" org.eventb.core.comment="remove received lock message" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="1" org.eventb.core.identifier="rp"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="rdpt(rsps(re)) ≔ rp" org.eventb.core.comment="update read pointer (or else stick the same)" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_lock_c">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="objective has been fulfilled with lock messages" org.eventb.core.label="grd1" org.eventb.core.predicate="lcke(ag) = objr(objt(ag))"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter at lock" org.eventb.core.label="grd2" org.eventb.core.predicate="pct2(ag) = LOCK"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pct2(ag) ≔ CONFIRMC" org.eventb.core.comment="next step is to confirm and decide whether consume/unlock" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_lock_p">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="lc"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="create a new lock message" org.eventb.core.label="grd1" org.eventb.core.predicate="lc ∈ LCK ∖ lck"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="message must not be sent already" org.eventb.core.label="grd2" org.eventb.core.predicate="lckd(lc) ∉ lcke(lcks(lc))"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="lock message must be within the objective" org.eventb.core.label="grd3" org.eventb.core.predicate="lckd(lc) ∈ objr(objt(lcks(lc)))"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="lck ≔ lck ∪ {lc}" org.eventb.core.comment="send new lock message" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="lcke(lcks(lc)) ≔ lcke(lcks(lc)) ∪ {lckd(lc)}" org.eventb.core.comment="save a copy locally" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="program counter must be at lock" org.eventb.core.label="grd4" org.eventb.core.predicate="pct2(lcks(lc)) = LOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="M" org.eventb.core.comment="Agent program countre." org.eventb.core.label="inv7" org.eventb.core.predicate="pct2 ∈ AGT → AST"/>
+<org.eventb.core.invariant name="N" org.eventb.core.comment="All lock messages must be deleted if status = CONSUME." org.eventb.core.label="inv8" org.eventb.core.predicate="∀a · pct2(a) = CONSUME ⇒ lck ∩ lcks∼[{a}] = ∅"/>
+</org.eventb.core.machineFile>

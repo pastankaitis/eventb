@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="UNK"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="UNK1"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="UNK2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="UNK3"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="+" org.eventb.core.identifier="UNK4"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.identifier="UNK5"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.identifier="UNK6"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="UNK7"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="UNK8"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="UNK9"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(UNK, {UNK1}, {UNK2}, {UNK3}, {UNK4}, {UNK5}, {UNK6}, {UNK7}, {UNK8}, {UNK9})"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm2" org.eventb.core.predicate="unks = {UNK1 ↦ AGT1, UNK2 ↦ AGT1, UNK3 ↦ AGT1,&#10;&#9;&#9;&#9;UNK4 ↦ AGT2, UNK5 ↦ AGT2, UNK6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;UNK7 ↦ AGT3, UNK8 ↦ AGT3, UNK9 ↦ AGT3} "/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm3" org.eventb.core.predicate="unkd = {UNK1 ↦ RES1, UNK2 ↦ RES2, UNK3 ↦ RES3,&#10;&#9;&#9;&#9;&#9;UNK4 ↦ RES1, UNK5 ↦ RES2, UNK6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;UNK7 ↦ RES1, UNK8 ↦ RES2, UNK9 ↦ RES3}"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="unks"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="unkd"/>
+<org.eventb.core.extendsContext name="axm2" org.eventb.core.target="c1_confirm_animation"/>
+</org.eventb.core.contextFile>

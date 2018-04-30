@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="AGT"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="RES"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(RES)"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(AGT)"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="∅ ⊂ RES"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm4" org.eventb.core.predicate="resin  ∈ RES → ℕ"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.comment="function to assign fo indices to break symmetry" org.eventb.core.label="axm5" org.eventb.core.predicate="resin∼ ∈ ℕ ⇸ RES"/>
+<org.eventb.core.constant name="axm3" org.eventb.core.identifier="resin"/>
+</org.eventb.core.contextFile>

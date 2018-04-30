@@ -1,0 +1,525 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{m4}
+\MACHINE{m4}{m3}{c4\_srequest}{}
+\VARIABLES{
+	\Variable{capt}{M1}
+	\Variable{objt}{M1}
+	\Variable{pct1}{M1}
+	\Variable{rdpt}{M2}
+	\Variable{lcke}{M2}
+	\Variable{lck}{M2}
+	\Variable{pct2}{M2}
+	\Variable{rsp}{M3}
+	\Variable{rel}{M3}
+	\Variable{wrt}{M3}
+	\Variable{wrte}{M3}
+	\Variable{prd}{M3}
+	\Variable{pct3}{M3}
+	\Variable{req}{M4}
+	\Variable{rep}{M4}
+	\Variable{rqs}{M4}
+	\Variable{rqts}{M4}
+	\Variable{rqst}{M4}
+	\Variable{ppt}{M4}
+	\Variable{rpt}{M4}
+	\Variable{lan}{M4}
+	\Variable{pct4}{M4}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$req \subseteq{} REQ$}{\\Global request messages.}
+	\Invariant{inv2}{false}{$rep \subseteq{} REP$}{\\Global reply messages.}
+	\Invariant{inv3}{false}{$rqs \subseteq{} RQS$}{\\Global special request messages.}
+	\Invariant{inv4}{false}{$rqts \in{} AGT \tfun{} \pow{}(RES)$}{\\Local special request message copies.}
+	\Invariant{inv5}{false}{$rqst \in{} AGT \tfun{} \pow{}(RES)$}{\\Local request message copies.}
+	\Invariant{inv6}{false}{$ppt \in{} RES \tfun{} \nat{}$}{\\Promised pointer.}
+	\Invariant{inv7}{false}{$rpt \in{} RES \pfun{} \nat{}$}{\\Read pointer.}
+	\Invariant{inv8}{false}{$lan \in{} RES \tfun{} (\nat{} \pfun{} AGT)$}{\\Distributed lane.}
+	\Invariant{inv9}{false}{$pct4 \in{} AGT \tfun{} AST$}{\\Agent program counter.}
+}
+\EVENTS{
+\INITIALISATION{true}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$capt \bcmeq{} AGT \cprod{} \{\emptyset{}\}$}{false}{}
+		\Action{act2}{$objt \bcmsuch{} objt' \in{} AGT \tfun{} OBJ$}{false}{\\Every agent has an objective to begin with.}
+		\Action{act3}{$pct1 \bcmeq{} AGT \cprod{} \{CONSUME\}$}{false}{\\Every agent starts with program counter at consume (@ m1).}
+		\Action{act4}{$rdpt \bcmeq{} RES \cprod{} \{\emptyset{}\}$}{false}{}
+		\Action{act5}{$lck \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act6}{$lcke \bcmeq{} AGT \cprod{} \{\emptyset{}\}$}{false}{}
+		\Action{act7}{$pct2 \bcmeq{} AGT \cprod{} \{LOCK\}$}{false}{}
+		\Action{act8}{$rsp \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act9}{$rel \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act10}{$wrt \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act11}{$wrte \bcmeq{} AGT \cprod{} \{\emptyset{}\}$}{false}{}
+		\Action{act12}{$prd \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act13}{$pct3 \bcmeq{} AGT \cprod{} \{WRITE\}$}{false}{}
+		\Action{act14}{$req \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act15}{$rep \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act16}{$rqs \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act17}{$rqts \bcmeq{} AGT \cprod{} \{\emptyset{}\}$}{true}{}
+		\Action{act18}{$rqst \bcmeq{} AGT \cprod{} \{\emptyset{}\}$}{true}{}
+		\Action{act19}{$ppt \bcmeq{} resin$}{true}{}
+		\Action{act20}{$rpt \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act21}{$lan \bcmeq{} RES \cprod{} \{\emptyset{}\}$}{true}{}
+		\Action{act22}{$pct4 \bcmeq{} AGT \cprod{} \{REQUEST\}$}{true}{}
+	}
+}
+\EVT{agent\_release\_c}{true}{ordinary}{agent\_release\_c}{\\[EVT:RELEASE]}{
+	\ANY{
+		\Param{ag}{false}{}
+		\Param{ob}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$capt(ag) = \emptyset{}$}{false}{\\reset capture variable}
+		\Guard{grd2}{false}{$ob \in{} OBJ$}{false}{\\take (new) objective}
+		\Guard{grd3}{false}{$pct1(ag) = RELEASE$}{false}{\\program counter must be at release }
+		\Guard{grd4}{false}{$pct2(ag) = RELEASE$}{false}{\\program counter must be at release}
+		\Guard{grd5}{false}{$pct3(ag) = RELEASE$}{false}{}
+		\Guard{grd6}{false}{$pct4(ag) = RELEASE$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct1(ag) \bcmeq{} CONSUME$}{false}{\\change program counter to consume}
+		\Action{act2}{$objt(ag) \bcmeq{} ob$}{false}{\\update agent objective}
+		\Action{act3}{$pct2(ag) \bcmeq{} LOCK$}{false}{\\change program counter to lock}
+		\Action{act4}{$pct3(ag) \bcmeq{} WRITE$}{false}{\\update program counter to write}
+		\Action{act5}{$pct4(ag) \bcmeq{} REQUEST$}{true}{\\update program counter to wrte}
+	}
+}
+\EVT{agent\_release\_p}{true}{ordinary}{agent\_release\_p}{\\[EVT:RELEASE]}{
+	\ANY{
+		\Param{rs}{false}{}
+		\Param{ag}{false}{}
+		\Param{rl}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} dom(capt)$}{false}{\\an active agent}
+		\Guard{grd2}{false}{$rs \in{} capt(ag)$}{false}{\\already captured resource}
+		\Guard{grd3}{false}{$pct1(ag) = RELEASE$}{false}{\\program counter at release}
+		\Guard{grd4}{false}{$pct2(ag) = RELEASE$}{false}{\\program counter at release}
+		\Guard{grd5}{false}{$rl \in{} REL \setminus{} rel$}{false}{\\create new release message}
+		\Guard{grd6}{false}{$rels(rl) = ag$}{false}{\\release message source is agent - ag}
+		\Guard{grd7}{false}{$reld(rl) = rs$}{false}{\\release message destination is resource - rs}
+		\Guard{grd8}{false}{$pct3(ag) = RELEASE$}{false}{\\program counter must be at release}
+		\Guard{grd9}{false}{$pct4(ag) = RELEASE$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$capt(ag) \bcmeq{} capt(ag) \setminus{} \{rs\}$}{false}{\\remove captured resource}
+		\Action{act2}{$lcke(ag) \bcmeq{} lcke(ag) \setminus{} \{rs\}$}{false}{\\remove local lock message copies}
+		\Action{act3}{$rel \bcmeq{} rel \bunion{} \{rl\}$}{false}{\\create release message}
+		\Action{act4}{$lan(reld(rl)) \bcmeq{} lan(reld(rl)) \ransub{} \{rels(rl)\}$}{true}{}
+	}
+}
+\EVT{agent\_consume\_c}{true}{ordinary}{agent\_consume\_c}{\\[EVT:CONSUME]}{
+	\ANY{
+		\Param{ag}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$capt(ag) = objr(objt(ag))$}{false}{\\objective of an agent has been fulfilled}
+		\Guard{grd2}{false}{$pct1(ag) = CONSUME$}{false}{\\program counter must be at consume}
+		\Guard{grd4}{false}{$pct2(ag) = CONSUME$}{false}{\\program counter must be at consume}
+		\Guard{grd5}{false}{$pct3(ag) = CONSUME$}{false}{\\program counter must be at consume}
+		\Guard{grd6}{false}{$pct4(ag) = CONSUME$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct1(ag) \bcmeq{} RELEASE$}{false}{\\update program counter}
+		\Action{act2}{$pct2(ag) \bcmeq{} RELEASE$}{false}{\\update proram counter}
+		\Action{act3}{$pct3(ag) \bcmeq{} RELEASE$}{false}{\\update program counter}
+		\Action{act4}{$pct4(ag) \bcmeq{} RELEASE$}{true}{}
+	}
+}
+\EVT{agent\_consume\_p}{true}{ordinary}{agent\_consume\_p}{\\[EVT:CONSUME]}{
+	\ANY{
+		\Param{rs}{false}{}
+		\Param{ag}{false}{}
+		\Param{cf}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} dom(capt)$}{false}{\\an active agent}
+		\Guard{grd2}{false}{$rs \in{} objr(objt(ag))$}{false}{\\resource to consume has to be within objective}
+		\Guard{grd3}{false}{$rs \notin{} union(ran(capt))$}{false}{\\resource to consume cannot be captured already (by any agent)}
+		\Guard{grd4}{false}{$pct1(ag) = CONSUME$}{false}{\\program counter must be at consume}
+		\Guard{grd5}{false}{$pct2(ag) = CONSUME$}{false}{}
+		\Guard{grd6}{false}{$rsps(cf) = rs$}{false}{\\to remove correct response message}
+		\Guard{grd7}{false}{$rspd(cf) = ag$}{false}{\\to remove correct response message}
+		\Guard{grd8}{false}{$rspn(cf) = READY$}{false}{\\to remove correct response message}
+		\Guard{grd9}{false}{$pct3(ag) = CONSUME$}{false}{}
+		\Guard{grd10}{false}{$pct4(ag) = CONSUME$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$capt(ag) \bcmeq{} capt(ag) \bunion{} \{rs\}$}{false}{}
+		\Action{act2}{$rsp \bcmeq{} rsp \setminus{} \{cf\}$}{false}{\\remove response message}
+	}
+}
+\EVT{resource\_preready\_release1}{true}{ordinary}{resource\_pready\_release1}{\\[EVT:UNLOCK] CREATE PRE-READY MESSAGE}{
+	\ANY{
+		\Param{rl}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rl \in{} rel$}{false}{\\take a sent release message}
+		\Guard{grd2}{false}{$lan(reld(rl)) = \emptyset{}$}{true}{\\updating read pointer, if there are other agents}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rdpt(reld(rl)) \bcmeq{} rdpt(reld(rl)) \setminus{} \{rels(rl)\}$}{false}{\\unlock read pointer}
+		\Action{act2}{$rel \bcmeq{} rel \setminus{} \{rl\}$}{false}{\\remove release message}
+		\Action{act3}{$rpt(reld(rl)) \bcmeq{} rpt(reld(rl)) + 1$}{true}{\\update read pointer}
+	}
+}
+\EVT{resource\_preready\_release2}{true}{ordinary}{resource\_pready\_release2}{\\[EVT:UNLOCK] CREATE PRE-READY MESSAGE}{
+	\ANY{
+		\Param{rl}{false}{}
+		\Param{pr}{false}{}
+		\Param{wr}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rl \in{} rel$}{false}{\\take a sent release message}
+		\Guard{grd2}{false}{$pr \in{} PRD \setminus{} prd$}{false}{}
+		\Guard{grd3}{false}{$prds(pr) = reld(rl)$}{false}{}
+		\Guard{grd4}{false}{$wr \in{} wrt$}{false}{}
+		\Guard{grd5}{false}{$prdd(pr) = lan(reld(rl))(min(dom(lan(reld(rl)))))$}{true}{}
+		\Guard{grd6}{false}{$lan(reld(rl)) \neq{} \emptyset{}$}{true}{\\updating read pointer, if there are not other agents}
+		\Guard{grd7}{false}{$wr \in{} wrt \land{} prdd(pr) = wrts(wr) \land{} prds(pr) = wrtd(wr) \land{} wrtn(wr) = min(dom(lan(reld(rl))))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rdpt(reld(rl)) \bcmeq{} rdpt(reld(rl)) \setminus{} \{rels(rl)\}$}{false}{\\unlock read pointer}
+		\Action{act2}{$rel \bcmeq{} rel \setminus{} \{rl\}$}{false}{\\remove release message}
+		\Action{act3}{$prd \bcmeq{} prd \bunion{} \{pr\}$}{false}{}
+		\Action{act4}{$wrt \bcmeq{} wrt \setminus{} \{wr\}$}{false}{}
+		\Action{act5}{$rpt(reld(rl)) \bcmeq{} min(dom(lan(reld(rl))))$}{true}{\\update read pointer}
+	}
+}
+\EVT{resource\_preready\_release3}{true}{ordinary}{resource\_pready\_release3}{\\[EVT:UNLOCK] CREATE PRE-READY MESSAGE}{
+	\ANY{
+		\Param{rl}{false}{}
+		\Param{pr}{false}{}
+		\Param{wr}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rl \in{} rel$}{false}{\\take a sent release message}
+		\Guard{grd2}{false}{$pr \in{} PRD \setminus{} prd$}{false}{}
+		\Guard{grd3}{false}{$prds(pr) = reld(rl)$}{false}{}
+		\Guard{grd4}{false}{$prdd(pr) = lan(reld(rl))(min(dom(lan(reld(rl)))))$}{true}{}
+		\Guard{grd5}{false}{$lan(reld(rl)) \neq{} \emptyset{}$}{true}{\\updating read pointer, if there are not other agents}
+		\Guard{grd6}{false}{$wr \notin{} wrt \land{} prdd(pr) = wrts(wr) \land{} prds(pr) = wrtd(wr) \land{} wrtn(wr) = min(dom(lan(reld(rl))))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rdpt(reld(rl)) \bcmeq{} rdpt(reld(rl)) \setminus{} \{rels(rl)\}$}{false}{\\unlock read pointer}
+		\Action{act2}{$rel \bcmeq{} rel \setminus{} \{rl\}$}{false}{\\remove release message}
+		\Action{act3}{$prd \bcmeq{} prd \bunion{} \{pr\}$}{false}{}
+		\Action{act4}{$rpt(reld(rl)) \bcmeq{} min(dom(lan(reld(rl))))$}{true}{\\update read pointer}
+	}
+}
+\EVT{agent\_unlock\_c}{true}{ordinary}{agent\_unlock\_c}{\\[EVT:UNLOCK]}{
+	\ANY{
+		\Param{ag}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$lcke(ag) = \emptyset{}$}{false}{\\unlock is completed when no local copies of lock have been left}
+		\Guard{grd2}{false}{$pct2(ag) = UNLOCK$}{false}{\\and program counter must be at unlock}
+		\Guard{grd3}{false}{$pct3(ag) = UNLOCK$}{false}{}
+		\Guard{grd4}{false}{$pct4(ag) = UNLOCK$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct2(ag) \bcmeq{} LOCK$}{false}{\\update program counter to lock}
+		\Action{act2}{$pct3(ag) \bcmeq{} CONFIRMP$}{false}{}
+		\Action{act3}{$pct4(ag) \bcmeq{} CONFIRMP$}{true}{}
+	}
+}
+\EVT{agent\_unlock\_p}{true}{ordinary}{agent\_unlock\_p}{\\[EVT:UNLOCK]}{
+	\ANY{
+		\Param{cf}{false}{}
+		\Param{rl}{false}{unlock}
+		\Param{ms}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$cf \in{} rsp$}{false}{\\take a received confirm message}
+		\Guard{grd2}{false}{$rl \in{} REL \setminus{} rel$}{false}{\\created new unlock message}
+		\Guard{grd3}{false}{$reld(rl) = rsps(cf)$}{false}{\\release message destination, must be the soure of respond message}
+		\Guard{grd4}{false}{$rels(rl) = rspd(cf)$}{false}{\\release message source, must be the destination of repond message}
+		\Guard{grd5}{false}{$rspn(cf) = READY \limp{} ms = \{rl\}$}{false}{\\confirm message receive must be CONFIRM}
+		\Guard{grd6}{false}{$rspn(cf) = DENY \limp{} ms = \emptyset{}$}{false}{\\if message is deny do nothing, just remove that message}
+		\Guard{grd7}{false}{$pct2(rspd(cf)) = UNLOCK$}{false}{\\the program counter of the cnfd(cf) must be at UNLOCK}
+		\Guard{grd8}{false}{$pct3(rspd(cf)) = UNLOCK$}{false}{\\program counte must be at at unlock}
+		\Guard{grd9}{false}{$pct4(rspd(cf)) = UNLOCK$}{true}{\\program counter must be at unlock}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rel \bcmeq{} rel \bunion{} ms$}{false}{\\send new release message}
+		\Action{act2}{$rsp \bcmeq{} rsp \setminus{} \{cf\}$}{false}{\\delete confirm message}
+		\Action{act3}{$lcke(rspd(cf)) \bcmeq{} lcke(rspd(cf)) \setminus{} \{rsps(cf)\}$}{false}{\\remove locally saved lock message}
+	}
+}
+\EVT{agent\_decide}{true}{ordinary}{agent\_decide}{}{
+	\ANY{
+		\Param{ag}{false}{}
+		\Param{pc}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rsps[rsp \binter{} rspd\converse{}[\{ag\}]] = lcke(ag)$}{false}{\\confirm that all lock messages have been replied with confirm (ready/deny) messages}
+		\Guard{grd2}{false}{$rsps[rsp \binter{} rspd\converse{}[\{ag\}]] = objr(objt(ag))$}{false}{\\confirm that objective has been fulfilled}
+		\Guard{grd3}{false}{$rspn[rsp \binter{} rspd\converse{}[\{ag\}]] = \{READY\} \limp{} pc = CONSUME$}{false}{\\if all messages are ready then update progam counter to consume}
+		\Guard{grd4}{false}{$DENY \in{} rspn[rsp \binter{} rspd\converse{}[\{ag\}]] \limp{} pc = UNLOCK$}{false}{\\if exists deny message then update program counter to unlock}
+		\Guard{grd5}{false}{$pct2(ag) = CONFIRMC$}{false}{\\program counter mus be at confirmc}
+		\Guard{grd6}{false}{$pct3(ag) = CONFIRMC$}{false}{}
+		\Guard{grd7}{false}{$pct4(ag) = CONFIRMC$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct2(ag) \bcmeq{} pc$}{false}{\\update with new program counter value}
+		\Action{act2}{$pct3(ag) \bcmeq{} pc$}{false}{\\update program counter}
+		\Action{act3}{$pct4(ag) \bcmeq{} pc$}{true}{\\update program counter value}
+	}
+}
+\EVT{resource\_respond}{true}{ordinary}{resource\_respond}{\\[EVT:RESPOND]}{
+	\ANY{
+		\Param{lc}{false}{}
+		\Param{re}{false}{}
+		\Param{rp}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$lc \in{} lck$}{false}{\\take a lock message}
+		\Guard{grd2}{false}{$re \in{} RSP \setminus{} rsp$}{false}{\\create new confirm message}
+		\Guard{grd3}{false}{$rsps(re) = lckd(lc)$}{false}{}
+		\Guard{grd4}{false}{$rspd(re) = lcks(lc)$}{false}{}
+		\Guard{grd5}{false}{$rdpt(rsps(re)) = \emptyset{} \limp{} rspn(re) = READY \land{} rp = \{rspd(re)\}$}{false}{\\if resource's read pointer is not locked, lock it and send ready message to the agent}
+		\Guard{grd6}{false}{$rdpt(rsps(re)) \neq{} \emptyset{} \limp{} rspn(re) = DENY \land{} rp = rdpt(rsps(re))$}{false}{\\if resource's read pointer is locked, send deny message and remain locked}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rsp \bcmeq{} rsp \bunion{} \{re\}$}{false}{\\create confirm message}
+		\Action{act2}{$lck \bcmeq{} lck \setminus{} \{lc\}$}{false}{\\remove received lock message}
+		\Action{act3}{$rdpt(rsps(re)) \bcmeq{} rp$}{false}{\\update read pointer (or else stick the same)}
+	}
+}
+\EVT{agent\_lock\_c}{true}{ordinary}{agent\_lock\_c}{\\[EVT:LOCK]}{
+	\ANY{
+		\Param{ag}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$lcke(ag) = objr(objt(ag))$}{false}{\\objective has been fulfilled with lock messages}
+		\Guard{grd2}{false}{$pct2(ag) = LOCK$}{false}{\\program counter at lock}
+		\Guard{grd3}{false}{$pct3(ag) = LOCK$}{false}{\\program counter at lock}
+		\Guard{grd4}{false}{$pct4(ag) = LOCK$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct2(ag) \bcmeq{} CONFIRMC$}{false}{\\next step is to confirm and decide whether consume/unlock}
+		\Action{act2}{$pct3(ag) \bcmeq{} CONFIRMC$}{false}{}
+		\Action{act3}{$pct4(ag) \bcmeq{} CONFIRMC$}{true}{}
+	}
+}
+\EVT{agent\_lock\_p}{true}{ordinary}{agent\_lock\_p}{\\[EVT:LOCK]}{
+	\ANY{
+		\Param{lc}{false}{}
+		\Param{pr}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$lc \in{} LCK \setminus{} lck$}{false}{\\create a new lock message}
+		\Guard{grd2}{false}{$lckd(lc) \notin{} lcke(lcks(lc))$}{false}{\\message must not be sent already}
+		\Guard{grd3}{false}{$lckd(lc) \in{} objr(objt(lcks(lc)))$}{false}{\\lock message must be within the objective}
+		\Guard{grd4}{false}{$pct2(lcks(lc)) = LOCK$}{false}{\\program counter must be at lock}
+		\Guard{grd5}{false}{$pct3(lcks(lc)) = LOCK$}{false}{\\program counter at lock}
+		\Guard{grd6}{false}{$pr \in{} prd$}{false}{\\take a received pre-ready message}
+		\Guard{grd7}{false}{$lcks(lc) = prdd(pr)$}{false}{}
+		\Guard{grd8}{false}{$lckd(lc) = prds(pr)$}{false}{}
+		\Guard{grd9}{false}{$pct4(lcks(lc)) = LOCK$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$lck \bcmeq{} lck \bunion{} \{lc\}$}{false}{\\send new lock message}
+		\Action{act2}{$lcke(lcks(lc)) \bcmeq{} lcke(lcks(lc)) \bunion{} \{lckd(lc)\}$}{false}{\\save a copy locally}
+		\Action{act3}{$prd \bcmeq{} prd \setminus{} \{pr\}$}{false}{\\delete a pre-ready message}
+		\Action{act4}{$wrte(lcks(lc)) \bcmeq{} wrte(lcks(lc)) \setminus{} \{lckd(lc)\}$}{false}{\\remove locally saved lock messages}
+	}
+}
+\EVT{agent\_pready\_confirm}{true}{ordinary}{agent\_pready\_confirm}{}{
+	\ANY{
+		\Param{ag}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$prds[prd \binter{} prdd\converse{}[\{ag\}]] = objr(objt(ag))$}{false}{\\objective must be fulfilled with pre-ready messages}
+		\Guard{grd2}{false}{$pct3(ag) = CONFIRMP$}{false}{\\program counter must be at comfirm pre-ready}
+		\Guard{grd4}{false}{$pct4(ag) = CONFIRMP$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct3(ag) \bcmeq{} LOCK$}{false}{\\update program counter to lock}
+		\Action{act2}{$pct4(ag) \bcmeq{} LOCK$}{true}{}
+	}
+}
+\EVT{resource\_pready\_write}{true}{ordinary}{resource\_pready\_write}{\\[EVT:PRE-READY]}{
+	\ANY{
+		\Param{wr}{false}{}
+		\Param{pr}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$wr \in{} wrt$}{false}{\\take a write message}
+		\Guard{grd2}{false}{$pr \in{} PRD \setminus{} prd$}{false}{\\create new pre-ready message}
+		\Guard{grd3}{false}{$rdpt(wrtd(wr)) = \emptyset{}$}{false}{\\send pre-ready only if read pointer is not locked (taken by other agent)}
+		\Guard{grd4}{false}{$prdd(pr) = wrts(wr)$}{false}{}
+		\Guard{grd5}{false}{$prds(pr) = wrtd(wr)$}{false}{}
+		\Guard{grd6}{false}{$rpt(prds(pr)) = wrtn(wr)$}{true}{\\if read pointer points at your lane}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$prd \bcmeq{} prd \bunion{} \{pr\}$}{false}{\\create new pre-ready message}
+		\Action{act2}{$wrt \bcmeq{} wrt \setminus{} \{wr\}$}{false}{\\delete write message}
+	}
+}
+\EVT{agent\_write\_c}{true}{ordinary}{write\_complete}{\\[EVT:WRITE]}{
+	\ANY{
+		\Param{ag}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} dom(wrte)$}{false}{\\an active agent}
+		\Guard{grd2}{false}{$wrte(ag) = objr(objt(ag))$}{false}{\\an objective has been fulfiled}
+		\Guard{grd3}{false}{$pct3(ag) = WRITE$}{false}{\\program counter at write}
+		\Guard{grd4}{false}{$pct4(ag) = WRITE$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct3(ag) \bcmeq{} CONFIRMP$}{false}{\\writting completed, proceed to consuming}
+		\Action{act2}{$pct4(ag) \bcmeq{} CONFIRMP$}{true}{}
+	}
+}
+\EVT{agent\_write\_p}{true}{ordinary}{agent\_write\_p}{\\[EVT:WRITE]}{
+	\ANY{
+		\Param{wr}{false}{}
+		\Param{rp}{true}{}
+		\Param{ag}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$wr \in{} WRT \setminus{} wrt$}{false}{\\generate a new write message}
+		\Guard{grd2}{false}{$wrtd(wr) \notin{} wrte(wrts(wr))$}{false}{\\cannot send the same content twice}
+		\Guard{grd3}{false}{$wrtd(wr) \in{} objr(objt(wrts(wr)))$}{false}{\\write just to resources which belong to your objective}
+		\Guard{grd4}{false}{$pct3(wrts(wr)) = WRITE$}{false}{\\program counter must be at write}
+		\Guard{grd5}{false}{$pct4(wrts(wr)) = WRITE$}{true}{}
+		\Guard{grd6}{false}{$ag \in{} repd[rep]$}{true}{}
+		\Guard{grd7}{false}{$rp \in{} rep$}{true}{}
+		\Guard{grd8}{false}{$rp \in{} repd\converse{}[\{ag\}]$}{true}{}
+		\Guard{grd9}{false}{$wrtd(wr) = reps(rp)$}{true}{}
+		\Guard{grd10}{false}{$wrts(wr) = repd(rp)$}{true}{}
+		\Guard{grd11}{false}{$wrtn(wr) = repn(rp)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$wrt \bcmeq{} wrt \bunion{} \{wr\}$}{false}{\\add a write message}
+		\Action{act2}{$wrte(wrts(wr)) \bcmeq{} wrte(wrts(wr)) \bunion{} \{wrtd(wr)\}$}{false}{\\store a local copy of write message}
+		\Action{act3}{$rep \bcmeq{} rep \setminus{} \{rp\}$}{true}{\\remove reply message}
+		\Action{act4}{$rqts(wrts(wr)) \bcmeq{} rqts(wrts(wr)) \setminus{} \{wrtd(wr)\}$}{true}{\\remove local request}
+		\Action{act5}{$rqst(wrts(wr)) \bcmeq{} rqst(wrts(wr)) \setminus{} \{wrtd(wr)\}$}{true}{\\remove local special requests}
+		\Action{act6}{$lan(wrtd(wr)) \bcmeq{} lan(wrtd(wr)) \ovl{} \{wrtn(wr) \mapsto{} ag\}$}{true}{\\create a lane }
+		\Action{act7}{$rpt(wrtd(wr)) \bcmeq{} min(dom(lan(wrtd(wr)) \ovl{} \{wrtn(wr) \mapsto{} ag\}))$}{true}{\\update read pointer}
+	}
+}
+\EVT{agent\_renegotiate\_c}{false}{ordinary}{}{\\[EVT:RENEGOTIATE]}{
+	\ANY{
+		\Param{ag}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$card(repn[rep \binter{} repd\converse{}[\{ag\}]]) = 1$}{true}{\\all replies must contain the same index}
+		\Guard{grd2}{false}{$reps[rep \binter{} repd\converse{}[\{ag\}]] = objr(objt(ag))$}{true}{\\agent objective must be fulfilled by reply messages}
+		\Guard{grd3}{false}{$pct4(ag) = RENEGOTIATE$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct4(ag) \bcmeq{} WRITE$}{true}{}
+	}
+}
+\EVT{agent\_renegotiate\_p}{false}{ordinary}{}{\\[EVT:RENEGOTIATE]}{
+	\ANY{
+		\Param{ag}{true}{agent}
+		\Param{rp}{true}{replies of the interest}
+		\Param{rq}{true}{generated special requests}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} repd[rep]$}{true}{\\an active agent}
+		\Guard{grd2}{false}{$pct4(ag) = RENEGOTIATE$}{true}{}
+		\Guard{grd3}{false}{$rp \in{} dom(((rep \binter{} repd\converse{}[\{ag\}]) \domres{} repn) \ransub{} \{max(repn[rep \binter{} repd\converse{}[\{ag\}]])\})$}{true}{\\reply message subpool with slot number lower than maximum}
+		\Guard{grd4}{false}{$rq \in{} RQS \setminus{} rqs$}{true}{\\generate special request messages}
+		\Guard{grd5}{false}{$rqss(rq) = ag$}{true}{\\the source of special request messages must be the same}
+		\Guard{grd6}{false}{$rqsd(rq) = reps(rp)$}{true}{\\special request messages must be sent to all resources which previously replied with with slot number smaller than maximum.}
+		\Guard{grd7}{false}{$rqsn(rq) = max(repn[rep \binter{} repd\converse{}[\{ag\}]])$}{true}{\\special request slot number is the maximum of all reply messages}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rep \bcmeq{} rep \setminus{} \{rp\}$}{true}{\\delete replies}
+		\Action{act2}{$rqs \bcmeq{} rqs \bunion{} \{rq\}$}{true}{\\generate special requests}
+		\Action{act4}{$rqts(rqss(rq)) \bcmeq{} rqts(rqss(rq)) \bunion{} \{rqsd(rq)\}$}{true}{\\generate special requests}
+		\Action{act5}{$rqst(rqss(rq)) \bcmeq{} rqst(rqss(rq)) \setminus{} \{rqsd(rq)\}$}{true}{\\remove request}
+	}
+}
+\EVT{agent\_confirm\_write\_renegotiate}{false}{ordinary}{}{\\[EVT:CONFIRM-WRITE-RENEGOTIATE]}{
+	\ANY{
+		\Param{ag}{true}{agent}
+		\Param{pc}{true}{program counter}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} repd[rep]$}{true}{\\an active agent}
+		\Guard{grd2}{false}{$card(rqst(ag) \bunion{} rqts(ag)) = card(rep \binter{} repd\converse{}[\{ag\}])$}{true}{\\all request and special$\_$request messages have been replied}
+		\Guard{grd3}{false}{$reps[rep \binter{} repd\converse{}[\{ag\}]] = objr(objt(ag))$}{true}{\\an objective has been fulfiled with reply messsages}
+		\Guard{grd4}{false}{$pct4(ag) = CONFIRMW$}{true}{\\program counter at confirmw}
+		\Guard{grd5}{false}{$card(repn[rep \binter{} repd\converse{}[\{ag\}]]) > 1 \limp{} pc = RENEGOTIATE$}{true}{\\if reply indedexes heterogeneous then renegotiate renegotiate (update program counter)}
+		\Guard{grd6}{false}{$card(repn[rep \binter{} repd\converse{}[\{ag\}]]) = 1 \limp{} pc = WRITE$}{true}{\\if reply indexes homogeneous then write (update program counter) }
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct4(ag) \bcmeq{} pc$}{true}{\\update program counter}
+	}
+}
+\EVT{resource\_reply\_special}{false}{ordinary}{}{\\[EVT:REPLY]}{
+	\ANY{
+		\Param{rq}{true}{}
+		\Param{rp}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rq \in{} rqs$}{true}{\\special request message}
+		\Guard{grd2}{false}{$rp \in{} REP \setminus{} rep$}{true}{\\new reply message}
+		\Guard{grd3}{false}{$repd(rp) = rqss(rq)$}{true}{\\destination of the reply message is the source of the request message}
+		\Guard{grd4}{false}{$reps(rp) = rqsd(rq)$}{true}{\\source of the reply message is the destination of the request message}
+		\Guard{grd5}{false}{$repn(rp) = max(\{ppt(reps(rp)), rqsn(rq)\})$}{true}{\\reply slot number is the maximum of promised pointer and special request slot number}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rep \bcmeq{} rep \bunion{} \{rp\}$}{true}{\\generate a reply}
+		\Action{act2}{$rqs \bcmeq{} rqs \setminus{} \{rq\}$}{true}{\\delete special request message}
+		\Action{act3}{$ppt(reps(rp)) \bcmeq{} max(\{ppt(reps(rp)), rqsn(rq)\}) + 1$}{true}{\\increment promised pointer}
+	}
+}
+\EVT{resource\_reply\_general}{false}{ordinary}{}{\\[EVT:REPLY]}{
+	\ANY{
+		\Param{rp}{true}{}
+		\Param{rq}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rq \in{} req$}{true}{\\take a request message}
+		\Guard{grd2}{false}{$rp \in{} REP \setminus{} rep$}{true}{\\generate a new reply message}
+		\Guard{grd3}{false}{$repd(rp) = reqs(rq)$}{true}{\\the destination of reply message is the source of the request message}
+		\Guard{grd4}{false}{$reps(rp) = reqd(rq)$}{true}{\\the source of reply message is the destination of the request message}
+		\Guard{grd5}{false}{$repn(rp) = ppt(reps(rp))$}{true}{\\reply slot number is the promised pointer}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$rep \bcmeq{} rep \bunion{} \{rp\}$}{true}{\\generate a reply message}
+		\Action{act2}{$req \bcmeq{} req \setminus{} \{rq\}$}{true}{\\delete the request message}
+		\Action{act3}{$ppt(reps(rp)) \bcmeq{} ppt(reps(rp)) + 1$}{true}{\\increment promised pointer}
+	}
+}
+\EVT{agent\_request\_c}{false}{ordinary}{}{\\[EVT: REUQEST]}{
+	\ANY{
+		\Param{ag}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$ag \in{} dom(rqst)$}{true}{}
+		\Guard{grd2}{false}{$rqst(ag) \bunion{} rqts(ag) = objr(objt(ag))$}{true}{\\all request messages have been sent (objective fulfilled)}
+		\Guard{grd3}{false}{$pct4(ag) = REQUEST$}{true}{\\program counter at request}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$pct4(ag) \bcmeq{} CONFIRMW$}{true}{\\update program counter}
+	}
+}
+\EVT{agent\_request\_p}{false}{ordinary}{}{\\[EVT:REQUEST]}{
+	\ANY{
+		\Param{rq}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$rq \in{} REQ \setminus{} req$}{true}{\\take a new request message}
+		\Guard{grd2}{false}{$reqd(rq) \notin{} rqst(reqs(rq))$}{true}{\\request message cannot be sent already (grd1 is not enough, since we allow multiple messages to have the same source/destination)}
+		\Guard{grd3}{false}{$reqd(rq) \notin{} rqts(reqs(rq))$}{true}{\\request message cannot be sent already (special request)}
+		\Guard{grd4}{false}{$reqd(rq) \in{} objr(objt(reqs(rq)))$}{true}{\\requested resource must be within objective}
+		\Guard{grd5}{false}{$pct4(reqs(rq)) = REQUEST$}{true}{\\program counter at request}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$req \bcmeq{} req \bunion{} \{rq\}$}{true}{\\create a request message}
+		\Action{act2}{$rqst(reqs(rq)) \bcmeq{} rqst(reqs(rq)) \bunion{} \{reqd(rq)\}$}{true}{\\local copy of the request}
+	}
+}
+}
+\END
+\end{document}

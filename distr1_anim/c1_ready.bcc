@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/distr1_anim/c0_objective.bcc|org.eventb.core.scContextFile#c0_objective" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scInternalContext name="c0">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(RES)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(AGT)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="resin∈RES → ℕ" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="resin∼∈ℕ ⇸ RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm2" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="AGT" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(AGT)"/>
+<org.eventb.core.scCarrierSet name="RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(RES)"/>
+<org.eventb.core.scConstant name="resin" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.constant#axm3" org.eventb.core.type="ℙ(RES×ℤ)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="c0_objective">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/distr1_anim/c0.bcc|org.eventb.core.scContextFile#c0" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scAxiom name="c1" org.eventb.core.label="axm1" org.eventb.core.predicate="objr∈OBJ → ℙ1(RES)" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="c2" org.eventb.core.label="axm3" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="OBJ" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.scConstant name="objr" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.constant#)" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scAxiom name="c0_objectivf" org.eventb.core.label="axm1" org.eventb.core.predicate="rdys∈RDY ↠ RES" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="c0_objectivg" org.eventb.core.label="axm2" org.eventb.core.predicate="rdyd∈RDY ↠ AGT" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="c0_objectivh" org.eventb.core.label="axm3" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂RDY·q∈RDY∧rdyd(q)=a∧rdys(q)=r)" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="RDY" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(RDY)"/>
+<org.eventb.core.scConstant name="rdyd" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.constant#+" org.eventb.core.type="ℙ(RDY×AGT)"/>
+<org.eventb.core.scConstant name="rdys" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.constant#)" org.eventb.core.type="ℙ(RDY×RES)"/>
+</org.eventb.core.scContextFile>

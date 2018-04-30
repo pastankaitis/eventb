@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c0_objective"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="RDY"/>
+<org.eventb.core.constant name=")" org.eventb.core.comment="ready message source" org.eventb.core.identifier="rdys"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="rdys ∈ RDY ↠ RES"/>
+<org.eventb.core.constant name="+" org.eventb.core.comment="ready message destination" org.eventb.core.identifier="rdyd"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm2" org.eventb.core.predicate="rdyd ∈ RDY ↠ AGT"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.comment="suitable message exists" org.eventb.core.label="axm3" org.eventb.core.predicate="∀a, r · a ∈ AGT ∧ r ∈ RES ⇒ (∃q · q ∈ RDY ∧ rdyd(q) = a ∧ rdys(q) = r)"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="m2"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="c1_write_animation"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="capt"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="objt"/>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="pct1"/>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="rdpt"/>
+<org.eventb.core.variable name="A" org.eventb.core.identifier="lcke"/>
+<org.eventb.core.variable name="?" org.eventb.core.identifier="lck"/>
+<org.eventb.core.variable name="C" org.eventb.core.identifier="pct2"/>
+<org.eventb.core.variable name="E" org.eventb.core.identifier="rsp"/>
+<org.eventb.core.variable name="J" org.eventb.core.identifier="rel"/>
+<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="wrt ≔ ∅" org.eventb.core.label="act10"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="wrte ≔ AGT × {∅}" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="prd ≔ ∅" org.eventb.core.label="act12"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct3 ≔ AGT × {WRITE}" org.eventb.core.label="act13"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="L" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_c"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pct3(ag) ≔ WRITE" org.eventb.core.comment="update program counter to write" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="pct3(ag) = RELEASE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="M" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counter must be at release" org.eventb.core.label="grd8" org.eventb.core.predicate="pct3(ag) = RELEASE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="N" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counter must be at consume" org.eventb.core.label="grd5" org.eventb.core.predicate="pct3(ag) = CONSUME"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct3(ag) ≔ RELEASE" org.eventb.core.comment="update program counter" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="O" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd9" org.eventb.core.predicate="pct3(ag) = CONSUME"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="P" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_pready_release1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_release"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_pready_release2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_release"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="pr"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="pr ∈ PRD ∖ prd"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="prds(pr) = reld(rl)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="prd ≔ prd ∪ {pr}" org.eventb.core.label="act3"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="wr"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="wr ∈ wrt"/>
+<org.eventb.core.action name="grd2" org.eventb.core.assignment="wrt ≔ wrt ∖ {wr}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_pready_release3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_release"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="pr"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="pr ∈ PRD ∖ prd"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="prds(pr) = reld(rl)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="prd ≔ prd ∪ {pr}" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="Q" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_unlock_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_unlock_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="pct3(ag) = UNLOCK"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct3(ag) ≔ CONFIRMP" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="R" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_unlock_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_unlock_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counte must be at at unlock" org.eventb.core.label="grd8" org.eventb.core.predicate="pct3(rspd(cf)) = UNLOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="S" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_decide">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_decide"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pct3(ag) ≔ pc" org.eventb.core.comment="update program counter" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd6" org.eventb.core.predicate="pct3(ag) = CONFIRMC"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="T" org.eventb.core.comment="[EVT:RESPOND]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_respond">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_respond"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="U" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_lock_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_lock_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counter at lock" org.eventb.core.label="grd3" org.eventb.core.predicate="pct3(ag) = LOCK"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct3(ag) ≔ CONFIRMC" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="V" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_lock_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_lock_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counter at lock" org.eventb.core.label="grd5" org.eventb.core.predicate="pct3(lcks(lc)) = LOCK"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="pr"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="take a received pre-ready message" org.eventb.core.label="grd6" org.eventb.core.predicate="pr ∈ prd"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd7" org.eventb.core.predicate="lcks(lc) = prdd(pr)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd8" org.eventb.core.predicate="lckd(lc) = prds(pr)"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="prd ≔ prd ∖ {pr}" org.eventb.core.comment="delete a pre-ready message" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="wrte(lcks(lc)) ≔ wrte(lcks(lc)) ∖ {lckd(lc)}" org.eventb.core.comment="remove locally saved lock messages" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt;" org.eventb.core.comment="[EVT:CONFIRMP]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_pready_confirm">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="objective must be fulfilled with pre-ready messages" org.eventb.core.label="grd1" org.eventb.core.predicate="prds[prd ∩ prdd∼[{ag}]] = objr(objt(ag))"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter must be at comfirm pre-ready" org.eventb.core.label="grd2" org.eventb.core.predicate="pct3(ag) = CONFIRMP"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="pct3(ag) ≔ LOCK" org.eventb.core.comment="update program counter to lock" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="W" org.eventb.core.comment="[EVT:PRE-READY]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="resource_pready_write">
+<org.eventb.core.guard name="'" org.eventb.core.comment="take a write message" org.eventb.core.label="grd1" org.eventb.core.predicate="wr ∈ wrt"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="wr"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="create new pre-ready message" org.eventb.core.label="grd2" org.eventb.core.predicate="pr ∈ PRD ∖ prd"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="send pre-ready only if read pointer is not locked (taken by other agent)" org.eventb.core.label="grd3" org.eventb.core.predicate="rdpt(wrtd(wr)) = ∅"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="pr"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="prdd(pr) = wrts(wr)"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="prds(pr) = wrtd(wr)"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="prd ≔ prd ∪ {pr}" org.eventb.core.comment="create new pre-ready message" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="wrt ≔ wrt ∖ {wr}" org.eventb.core.comment="delete write message" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.comment="[EVT:WRITE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write_complete">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="an active agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ dom(wrte)"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="an objective has been fulfiled" org.eventb.core.label="grd2" org.eventb.core.predicate="wrte(ag) = objr(objt(ag))"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="program counter at write" org.eventb.core.label="grd3" org.eventb.core.predicate="pct3(ag) = WRITE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct3(ag) ≔ CONFIRMP" org.eventb.core.comment="writting completed, proceed to consuming" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="[EVT:WRITE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_write_p">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="wr"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="generate a new write message" org.eventb.core.label="grd1" org.eventb.core.predicate="wr ∈ WRT ∖ wrt"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="cannot send the same content twice" org.eventb.core.label="grd2" org.eventb.core.predicate="wrtd(wr) ∉ wrte(wrts(wr))"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="wrt ≔ wrt ∪ {wr}" org.eventb.core.comment="add a write message" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd2" org.eventb.core.assignment="wrte(wrts(wr)) ≔ wrte(wrts(wr)) ∪ {wrtd(wr)}" org.eventb.core.comment="store a local copy of write message" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="write just to resources which belong to your objective" org.eventb.core.label="grd3" org.eventb.core.predicate="wrtd(wr) ∈ objr(objt(wrts(wr)))"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.comment="program counter must be at write" org.eventb.core.label="grd4" org.eventb.core.predicate="pct3(wrts(wr)) = WRITE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt3" org.eventb.core.identifier="wrt"/>
+<org.eventb.core.invariant name="evt4" org.eventb.core.comment="Global write messages." org.eventb.core.label="inv1" org.eventb.core.predicate="wrt ⊆ WRT"/>
+<org.eventb.core.variable name="evt5" org.eventb.core.identifier="wrte"/>
+<org.eventb.core.invariant name="evt6" org.eventb.core.comment="Local write message memory." org.eventb.core.label="inv2" org.eventb.core.predicate="wrte ∈ AGT → ℙ(RES)"/>
+<org.eventb.core.variable name="evt9" org.eventb.core.identifier="prd"/>
+<org.eventb.core.variable name="evt7" org.eventb.core.identifier="pct3"/>
+<org.eventb.core.invariant name="evt:" org.eventb.core.comment="Global pre-ready messages." org.eventb.core.label="inv3" org.eventb.core.predicate="prd ⊆ PRD"/>
+<org.eventb.core.invariant name="evt8" org.eventb.core.comment="Agent program counter." org.eventb.core.label="inv4" org.eventb.core.predicate="pct3 ∈ AGT → AST"/>
+</org.eventb.core.machineFile>

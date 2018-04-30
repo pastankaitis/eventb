@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="cons ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pct0 ≔ AGT × {CONSUME} " org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="c0_agent_state"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="cons"/>
+<org.eventb.core.invariant name="*" org.eventb.core.comment="a global variable to store consumed objectives" org.eventb.core.label="inv1" org.eventb.core.predicate="cons ∈ AGT ⇸ OBJ"/>
+<org.eventb.core.event name="," org.eventb.core.comment="[EVT: RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_release">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ob"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="take an agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ dom(cons)"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="take an objective which belongs to the agent - ag" org.eventb.core.label="grd2" org.eventb.core.predicate="ob = cons(ag)"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="cons ≔ cons ∖ {ag ↦ ob}" org.eventb.core.comment="release an objective (eventually resources)" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="agent program counter must be at release" org.eventb.core.label="grd3" org.eventb.core.predicate="pct0(ag) = RELEASE"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="pct0(ag) ≔ CONSUME" org.eventb.core.comment="update program counter to consume" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="-" org.eventb.core.comment="safety requirement (no two or more agents can have consumed the same objective)" org.eventb.core.label="inv2" org.eventb.core.predicate="cons∼ ∈ OBJ ⇸ AGT"/>
+<org.eventb.core.event name="+" org.eventb.core.comment="[EVT: CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_consume">
+<org.eventb.core.parameter name="(" org.eventb.core.comment="agent" org.eventb.core.identifier="ag"/>
+<org.eventb.core.parameter name="'" org.eventb.core.comment="objective" org.eventb.core.identifier="ob"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="cons(ag) ≔ ob" org.eventb.core.comment="consume an agent" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="objective cannot be yet consumed by an agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ob ∈ OBJ ∖ ran(cons)"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="agent has not consumed anything yet" org.eventb.core.label="grd2" org.eventb.core.predicate="ag ∈ AGT ∖ dom(cons)"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="agent program counter must be at consume" org.eventb.core.label="grd3" org.eventb.core.predicate="pct0(ag) = CONSUME"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="pct0(ag) ≔ RELEASE" org.eventb.core.comment="update program counter to release" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="." org.eventb.core.identifier="pct0"/>
+<org.eventb.core.invariant name="/" org.eventb.core.comment="agent program counter" org.eventb.core.label="inv3" org.eventb.core.predicate="pct0 ∈ AGT → AST"/>
+</org.eventb.core.machineFile>

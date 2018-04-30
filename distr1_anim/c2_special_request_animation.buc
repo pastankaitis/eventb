@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c2_request_animation"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="RQS"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.identifier="RQS1"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="RQS2"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="RQS3"/>
+<org.eventb.core.constant name="cst4" org.eventb.core.identifier="RQS4"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="RQS5"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="RQS6"/>
+<org.eventb.core.constant name="cst7" org.eventb.core.identifier="RQS7"/>
+<org.eventb.core.constant name="cst8" org.eventb.core.identifier="RQS8"/>
+<org.eventb.core.constant name="cst9" org.eventb.core.identifier="RQS9"/>
+<org.eventb.core.constant name="cst10" org.eventb.core.identifier="RQS10"/>
+<org.eventb.core.constant name="cst11" org.eventb.core.identifier="RQS11"/>
+<org.eventb.core.constant name="cst12" org.eventb.core.identifier="RQS12"/>
+<org.eventb.core.constant name="cst13" org.eventb.core.identifier="RQS13"/>
+<org.eventb.core.constant name="cst14" org.eventb.core.identifier="RQS14"/>
+<org.eventb.core.constant name="cst15" org.eventb.core.identifier="RQS15"/>
+<org.eventb.core.constant name="cst16" org.eventb.core.identifier="RQS16"/>
+<org.eventb.core.constant name="cst17" org.eventb.core.identifier="RQS17"/>
+<org.eventb.core.constant name="cst18" org.eventb.core.identifier="RQS18"/>
+<org.eventb.core.constant name="cst19" org.eventb.core.identifier="RQS19"/>
+<org.eventb.core.constant name="cst20" org.eventb.core.identifier="RQS20"/>
+<org.eventb.core.constant name="cst21" org.eventb.core.identifier="RQS21"/>
+<org.eventb.core.constant name="cst22" org.eventb.core.identifier="RQS22"/>
+<org.eventb.core.constant name="cst23" org.eventb.core.identifier="RQS23"/>
+<org.eventb.core.constant name="cst24" org.eventb.core.identifier="RQS24"/>
+<org.eventb.core.constant name="cst25" org.eventb.core.identifier="RQS25"/>
+<org.eventb.core.constant name="cst26" org.eventb.core.identifier="RQS26"/>
+<org.eventb.core.constant name="cst27" org.eventb.core.identifier="RQS27"/>
+<org.eventb.core.constant name="cst28" org.eventb.core.identifier="RQS28"/>
+<org.eventb.core.constant name="cst29" org.eventb.core.identifier="RQS29"/>
+<org.eventb.core.constant name="cst30" org.eventb.core.identifier="RQS30"/>
+<org.eventb.core.constant name="cst31" org.eventb.core.identifier="RQS31"/>
+<org.eventb.core.constant name="cst32" org.eventb.core.identifier="RQS32"/>
+<org.eventb.core.constant name="cst33" org.eventb.core.identifier="RQS33"/>
+<org.eventb.core.constant name="cst34" org.eventb.core.identifier="RQS34"/>
+<org.eventb.core.constant name="cst35" org.eventb.core.identifier="RQS35"/>
+<org.eventb.core.constant name="cst36" org.eventb.core.identifier="RQS36"/>
+<org.eventb.core.constant name="cst37" org.eventb.core.identifier="RQS37"/>
+<org.eventb.core.constant name="cst38" org.eventb.core.identifier="RQS38"/>
+<org.eventb.core.constant name="cst39" org.eventb.core.identifier="RQS39"/>
+<org.eventb.core.constant name="cst40" org.eventb.core.identifier="RQS40"/>
+<org.eventb.core.constant name="cst41" org.eventb.core.identifier="RQS41"/>
+<org.eventb.core.constant name="cst42" org.eventb.core.identifier="RQS42"/>
+<org.eventb.core.constant name="cst43" org.eventb.core.identifier="RQS43"/>
+<org.eventb.core.constant name="cst44" org.eventb.core.identifier="RQS44"/>
+<org.eventb.core.constant name="cst45" org.eventb.core.identifier="RQS45"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(RQS, {RQS1}, {RQS2}, {RQS3}, {RQS4}, {RQS5}, {RQS6}, {RQS7}, {RQS8}, {RQS9}, {RQS10}, {RQS11}, {RQS12}, {RQS13}, {RQS14}, {RQS15}, {RQS16}, {RQS17}, &#10;{RQS18}, {RQS19}, {RQS20}, {RQS21}, {RQS22}, {RQS23}, {RQS24}, {RQS25}, {RQS26}, {RQS27}, {RQS28}, {RQS29}, {RQS30}, {RQS31}, {RQS32}, {RQS33}, {RQS34}, {RQS35}, &#10;{RQS36}, {RQS37}, {RQS38}, {RQS39}, {RQS40}, {RQS41}, {RQS42}, {RQS43}, {RQS44}, {RQS45})"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm2" org.eventb.core.predicate="rqsd = {&#10;RQS1 ↦ RES1, RQS2 ↦ RES1, RQS3 ↦ RES1, RQS4 ↦ RES1, RQS5 ↦ RES1, &#10;&#9;RQS6 ↦ RES2, RQS7 ↦ RES2, RQS8 ↦ RES2, RQS9 ↦ RES2, RQS10 ↦ RES2, &#10;&#9;&#9;RQS11 ↦ RES3, RQS12 ↦ RES3, RQS13 ↦ RES3, RQS14 ↦ RES3, RQS15 ↦ RES3, &#10;&#10;RQS16 ↦ RES1, RQS17 ↦ RES1, RQS18 ↦ RES1, RQS19 ↦ RES1, RQS20 ↦ RES1, &#10;&#9;RQS21 ↦ RES2, RQS22 ↦ RES2, RQS23 ↦ RES2, RQS24 ↦ RES2, RQS25 ↦ RES2, &#10;&#9;&#9;RQS26 ↦ RES3, RQS27 ↦ RES3, RQS28 ↦ RES3, RQS29 ↦ RES3, RQS30 ↦ RES3, &#10;&#10;RQS31 ↦ RES1, RQS32 ↦ RES1, RQS33 ↦ RES1, RQS34 ↦ RES1, RQS35 ↦ RES1, &#10;&#9;RQS36 ↦ RES2, RQS37 ↦ RES2, RQS38 ↦ RES2, RQS39 ↦ RES2, RQS40 ↦ RES2, &#10;&#9;&#9;RQS41 ↦ RES3, RQS42 ↦ RES3, RQS43 ↦ RES3, RQS44 ↦ RES3, RQS45 ↦ RES3&#10;}"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm3" org.eventb.core.predicate="rqss = {&#10;RQS1 ↦ AGT1, RQS2 ↦ AGT1, RQS3 ↦ AGT1, RQS4 ↦ AGT1, RQS5 ↦ AGT1, &#10;&#9;RQS6 ↦ AGT1, RQS7 ↦ AGT1, RQS8 ↦ AGT1, RQS9 ↦ AGT1, RQS10 ↦ AGT1, &#10;&#9;&#9;RQS11 ↦ AGT1, RQS12 ↦ AGT1, RQS13 ↦ AGT1, RQS14 ↦ AGT1, RQS15 ↦ AGT1, &#10;&#10;RQS16 ↦ AGT2, RQS17 ↦ AGT2, RQS18 ↦ AGT2, RQS19 ↦ AGT2, RQS20 ↦ AGT2, &#10;&#9;RQS21 ↦ AGT2, RQS22 ↦ AGT2, RQS23 ↦ AGT2, RQS24 ↦ AGT2, RQS25 ↦ AGT2, &#10;&#9;&#9;RQS26 ↦ AGT2, RQS27 ↦ AGT2, RQS28 ↦ AGT2, RQS29 ↦ AGT2, RQS30 ↦ AGT2, &#10;&#10;RQS31 ↦ AGT3, RQS32 ↦ AGT3, RQS33 ↦ AGT3, RQS34 ↦ AGT3, RQS35 ↦ AGT3, &#10;&#9;RQS36 ↦ AGT3, RQS37 ↦ AGT3, RQS38 ↦ AGT3, RQS39 ↦ AGT3, RQS40 ↦ AGT3, &#10;&#9;&#9;RQS41 ↦ AGT3, RQS42 ↦ AGT3, RQS43 ↦ AGT3, RQS44 ↦ AGT3, RQS45 ↦ AGT3&#10;}"/>
+<org.eventb.core.axiom name="axm3" org.eventb.core.label="axm4" org.eventb.core.predicate="rqsn = {&#10;RQS1 ↦ 0, RQS2 ↦ 1, RQS3 ↦ 2, RQS4 ↦ 3, RQS5 ↦ 4,&#10;&#9;RQS6 ↦ 1, RQS7 ↦ 2, RQS8 ↦ 3, RQS9 ↦ 4, RQS10 ↦ 5, &#10;&#9;&#9;RQS11 ↦ 2, RQS12 ↦ 3, RQS13 ↦ 4, RQS14 ↦ 5, RQS15 ↦ 6,&#10;&#10;RQS16 ↦ 0, RQS17 ↦ 1, RQS18 ↦ 2, RQS19 ↦ 3, RQS20 ↦ 4,&#10;&#9;RQS21 ↦ 1, RQS22 ↦ 2, RQS23 ↦ 3, RQS24 ↦ 4, RQS25 ↦ 5, &#10;&#9;&#9;RQS26 ↦ 2, RQS27 ↦ 3, RQS28 ↦ 4, RQS29 ↦ 5, RQS30 ↦ 6, &#10;&#10;RQS31 ↦ 0, RQS32 ↦ 1, RQS33 ↦ 2, RQS34 ↦ 3, RQS35 ↦ 4, &#10;&#9;RQS36 ↦ 1, RQS37 ↦ 2, RQS38 ↦ 3, RQS39 ↦ 4, RQS40 ↦ 5,&#10;&#9;&#9;RQS41 ↦ 2, RQS42 ↦ 3, RQS43 ↦ 4, RQS44 ↦ 5, RQS45 ↦ 6&#10;}&#10;"/>
+<org.eventb.core.constant name="cst46" org.eventb.core.identifier="rqss"/>
+<org.eventb.core.constant name="cst47" org.eventb.core.identifier="rqsd"/>
+<org.eventb.core.constant name="cst48" org.eventb.core.identifier="rqsn"/>
+</org.eventb.core.contextFile>

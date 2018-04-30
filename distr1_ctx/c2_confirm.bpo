@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="AGT" org.eventb.core.type="ℙ(AGT)"/>
+<org.eventb.core.poIdentifier name="RES" org.eventb.core.type="ℙ(RES)"/>
+<org.eventb.core.poIdentifier name="resin" org.eventb.core.type="ℙ(RES×ℤ)"/>
+<org.eventb.core.poPredicate name="resio" org.eventb.core.predicate="finite(RES)" org.eventb.core.source="/distr1_ctx/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="resip" org.eventb.core.predicate="finite(AGT)" org.eventb.core.source="/distr1_ctx/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiq" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES" org.eventb.core.source="/distr1_ctx/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="resir" org.eventb.core.predicate="resin∈RES → ℕ" org.eventb.core.source="/distr1_ctx/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="resis" org.eventb.core.predicate="resin∼∈ℕ ⇸ RES" org.eventb.core.source="/distr1_ctx/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="OBJ" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.poIdentifier name="objr" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+<org.eventb.core.poPredicate name="resit" org.eventb.core.predicate="objr∈OBJ → ℙ1(RES)" org.eventb.core.source="/distr1_ctx/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiu" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1" org.eventb.core.source="/distr1_ctx/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.poIdentifier name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="UNLOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="WRITE" org.eventb.core.type="AST"/>
+<org.eventb.core.poPredicate name="RENEGOTIATF" org.eventb.core.predicate="partition(AST,{REQUEST},{CONFIRMW},{WRITE},{RENEGOTIATE},{CONFIRMR},{CONFIRMP},{LOCK},{UNLOCK},{CONFIRMC},{CONSUME},{RELEASE})" org.eventb.core.source="/distr1_ctx/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.axiom#."/>
+<org.eventb.core.poIdentifier name="REL" org.eventb.core.type="ℙ(REL)"/>
+<org.eventb.core.poIdentifier name="reld" org.eventb.core.type="ℙ(REL×RES)"/>
+<org.eventb.core.poIdentifier name="rels" org.eventb.core.type="ℙ(REL×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATG" org.eventb.core.predicate="rels∈REL ↠ AGT" org.eventb.core.source="/distr1_ctx/c2_release.buc|org.eventb.core.contextFile#c2_release|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="RENEGOTIATH" org.eventb.core.predicate="reld∈REL ↠ RES" org.eventb.core.source="/distr1_ctx/c2_release.buc|org.eventb.core.contextFile#c2_release|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="RENEGOTIATI" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂REL·q∈REL∧rels(q)=a∧reld(q)=r)" org.eventb.core.source="/distr1_ctx/c2_release.buc|org.eventb.core.contextFile#c2_release|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="LCK" org.eventb.core.type="ℙ(LCK)"/>
+<org.eventb.core.poIdentifier name="lckd" org.eventb.core.type="ℙ(LCK×RES)"/>
+<org.eventb.core.poIdentifier name="lcks" org.eventb.core.type="ℙ(LCK×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATJ" org.eventb.core.predicate="lcks∈LCK ↠ AGT" org.eventb.core.source="/distr1_ctx/c2_lock.buc|org.eventb.core.contextFile#c2_lock|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="RENEGOTIATK" org.eventb.core.predicate="lckd∈LCK ↠ RES" org.eventb.core.source="/distr1_ctx/c2_lock.buc|org.eventb.core.contextFile#c2_lock|org.eventb.core.axiom#6"/>
+<org.eventb.core.poIdentifier name="CNF" org.eventb.core.type="ℙ(CNF)"/>
+<org.eventb.core.poIdentifier name="RSP" org.eventb.core.type="ℙ(RSP)"/>
+<org.eventb.core.poIdentifier name="DENY" org.eventb.core.type="CNF"/>
+<org.eventb.core.poIdentifier name="READY" org.eventb.core.type="CNF"/>
+<org.eventb.core.poIdentifier name="rspd" org.eventb.core.type="ℙ(RSP×AGT)"/>
+<org.eventb.core.poIdentifier name="rspn" org.eventb.core.type="ℙ(RSP×CNF)"/>
+<org.eventb.core.poIdentifier name="rsps" org.eventb.core.type="ℙ(RSP×RES)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/distr1_ctx/c2_confirm.bpo|org.eventb.core.poFile#c2_confirm|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="rsps∈RSP ↠ RES" org.eventb.core.source="/distr1_ctx/c2_confirm.buc|org.eventb.core.contextFile#c2_confirm|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="rspd∈RSP ↠ AGT" org.eventb.core.source="/distr1_ctx/c2_confirm.buc|org.eventb.core.contextFile#c2_confirm|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(CNF,{READY},{DENY})" org.eventb.core.source="/distr1_ctx/c2_confirm.buc|org.eventb.core.contextFile#c2_confirm|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="rspn∈RSP ↠ CNF" org.eventb.core.source="/distr1_ctx/c2_confirm.buc|org.eventb.core.contextFile#c2_confirm|org.eventb.core.axiom#3"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

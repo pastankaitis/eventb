@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c0"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="OBJ"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="objr"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="objr ∈ OBJ → ℙ1(RES)"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm3" org.eventb.core.predicate="∃o · o ∈ dom(objr) ⇒ card(objr(o)) &gt; 1"/>
+</org.eventb.core.contextFile>

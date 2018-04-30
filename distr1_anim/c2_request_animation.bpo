@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="AGT" org.eventb.core.type="ℙ(AGT)"/>
+<org.eventb.core.poIdentifier name="RES" org.eventb.core.type="ℙ(RES)"/>
+<org.eventb.core.poIdentifier name="resin" org.eventb.core.type="ℙ(RES×ℤ)"/>
+<org.eventb.core.poPredicate name="resio" org.eventb.core.predicate="finite(RES)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="resip" org.eventb.core.predicate="finite(AGT)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiq" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="resir" org.eventb.core.predicate="resin∈RES → ℕ" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="resis" org.eventb.core.predicate="resin∼∈ℕ ⇸ RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="OBJ" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.poIdentifier name="objr" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+<org.eventb.core.poPredicate name="resit" org.eventb.core.predicate="objr∈OBJ → ℙ1(RES)" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiu" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.poIdentifier name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="UNLOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.poIdentifier name="WRITE" org.eventb.core.type="AST"/>
+<org.eventb.core.poPredicate name="RENEGOTIATF" org.eventb.core.predicate="partition(AST,{REQUEST},{CONFIRMW},{WRITE},{RENEGOTIATE},{CONFIRMR},{CONFIRMP},{LOCK},{UNLOCK},{CONFIRMC},{CONSUME},{RELEASE})" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.axiom#."/>
+<org.eventb.core.poIdentifier name="REL" org.eventb.core.type="ℙ(REL)"/>
+<org.eventb.core.poIdentifier name="AGT1" org.eventb.core.type="AGT"/>
+<org.eventb.core.poIdentifier name="AGT2" org.eventb.core.type="AGT"/>
+<org.eventb.core.poIdentifier name="AGT3" org.eventb.core.type="AGT"/>
+<org.eventb.core.poIdentifier name="REL1" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL2" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL3" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL4" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL5" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL6" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL7" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL8" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="REL9" org.eventb.core.type="REL"/>
+<org.eventb.core.poIdentifier name="RES1" org.eventb.core.type="RES"/>
+<org.eventb.core.poIdentifier name="RES2" org.eventb.core.type="RES"/>
+<org.eventb.core.poIdentifier name="RES3" org.eventb.core.type="RES"/>
+<org.eventb.core.poIdentifier name="reld" org.eventb.core.type="ℙ(REL×RES)"/>
+<org.eventb.core.poIdentifier name="rels" org.eventb.core.type="ℙ(REL×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATG" org.eventb.core.predicate="partition(REL,{REL1},{REL2},{REL3},{REL4},{REL5},{REL6},{REL7},{REL8},{REL9})" org.eventb.core.source="/distr1_anim/c0_release_animation.buc|org.eventb.core.contextFile#c0_release_animation|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="RENEGOTIATH" org.eventb.core.predicate="partition(AGT,{AGT1},{AGT2},{AGT3})" org.eventb.core.source="/distr1_anim/c0_release_animation.buc|org.eventb.core.contextFile#c0_release_animation|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATI" org.eventb.core.predicate="partition(RES,{RES1},{RES2},{RES3})" org.eventb.core.source="/distr1_anim/c0_release_animation.buc|org.eventb.core.contextFile#c0_release_animation|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="RENEGOTIATJ" org.eventb.core.predicate="rels={REL1 ↦ AGT1,REL2 ↦ AGT1,REL3 ↦ AGT1,REL4 ↦ AGT2,REL5 ↦ AGT2,REL6 ↦ AGT2,REL7 ↦ AGT3,REL8 ↦ AGT3,REL9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c0_release_animation.buc|org.eventb.core.contextFile#c0_release_animation|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="RENEGOTIATK" org.eventb.core.predicate="reld={REL1 ↦ RES1,REL2 ↦ RES2,REL3 ↦ RES3,REL4 ↦ RES1,REL5 ↦ RES2,REL6 ↦ RES3,REL7 ↦ RES1,REL8 ↦ RES2,REL9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c0_release_animation.buc|org.eventb.core.contextFile#c0_release_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poIdentifier name="RDY" org.eventb.core.type="ℙ(RDY)"/>
+<org.eventb.core.poIdentifier name="RDY1" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY2" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY3" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY4" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY5" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY6" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY7" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY8" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="RDY9" org.eventb.core.type="RDY"/>
+<org.eventb.core.poIdentifier name="rdyd" org.eventb.core.type="ℙ(RDY×AGT)"/>
+<org.eventb.core.poIdentifier name="rdys" org.eventb.core.type="ℙ(RDY×RES)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATL" org.eventb.core.predicate="partition(RDY,{RDY1},{RDY2},{RDY3},{RDY4},{RDY5},{RDY6},{RDY7},{RDY8},{RDY9})" org.eventb.core.source="/distr1_anim/c1_ready_animation.buc|org.eventb.core.contextFile#c1_ready_animation|org.eventb.core.axiom#cst1D"/>
+<org.eventb.core.poPredicate name="RENEGOTIATM" org.eventb.core.predicate="rdyd={RDY1 ↦ AGT1,RDY2 ↦ AGT1,RDY3 ↦ AGT1,RDY4 ↦ AGT2,RDY5 ↦ AGT2,RDY6 ↦ AGT2,RDY7 ↦ AGT3,RDY8 ↦ AGT3,RDY9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c1_ready_animation.buc|org.eventb.core.contextFile#c1_ready_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATN" org.eventb.core.predicate="rdys={RDY1 ↦ RES1,RDY2 ↦ RES2,RDY3 ↦ RES3,RDY4 ↦ RES1,RDY5 ↦ RES2,RDY6 ↦ RES3,RDY7 ↦ RES1,RDY8 ↦ RES2,RDY9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c1_ready_animation.buc|org.eventb.core.contextFile#c1_ready_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="LCK" org.eventb.core.type="ℙ(LCK)"/>
+<org.eventb.core.poIdentifier name="LCK1" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK2" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK3" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK4" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK5" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK6" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK7" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK8" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="LCK9" org.eventb.core.type="LCK"/>
+<org.eventb.core.poIdentifier name="lckd" org.eventb.core.type="ℙ(LCK×RES)"/>
+<org.eventb.core.poIdentifier name="lcks" org.eventb.core.type="ℙ(LCK×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATO" org.eventb.core.predicate="partition(LCK,{LCK1},{LCK2},{LCK3},{LCK4},{LCK5},{LCK6},{LCK7},{LCK8},{LCK9})" org.eventb.core.source="/distr1_anim/c2_lock_animation.buc|org.eventb.core.contextFile#c2_lock_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATP" org.eventb.core.predicate="lcks={LCK1 ↦ AGT1,LCK2 ↦ AGT1,LCK3 ↦ AGT1,LCK4 ↦ AGT2,LCK5 ↦ AGT2,LCK6 ↦ AGT2,LCK7 ↦ AGT3,LCK8 ↦ AGT3,LCK9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c2_lock_animation.buc|org.eventb.core.contextFile#c2_lock_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poPredicate name="RENEGOTIATQ" org.eventb.core.predicate="lckd={LCK1 ↦ RES1,LCK2 ↦ RES2,LCK3 ↦ RES3,LCK4 ↦ RES1,LCK5 ↦ RES2,LCK6 ↦ RES3,LCK7 ↦ RES1,LCK8 ↦ RES2,LCK9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c2_lock_animation.buc|org.eventb.core.contextFile#c2_lock_animation|org.eventb.core.axiom#axm3"/>
+<org.eventb.core.poIdentifier name="CONFIRM" org.eventb.core.type="ℙ(CONFIRM)"/>
+<org.eventb.core.poIdentifier name="RSP" org.eventb.core.type="ℙ(RSP)"/>
+<org.eventb.core.poIdentifier name="DENY" org.eventb.core.type="CONFIRM"/>
+<org.eventb.core.poIdentifier name="READY" org.eventb.core.type="CONFIRM"/>
+<org.eventb.core.poIdentifier name="RSP1" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP10" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP11" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP12" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP13" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP14" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP15" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP16" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP17" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP18" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP2" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP3" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP4" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP5" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP6" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP7" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP8" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="RSP9" org.eventb.core.type="RSP"/>
+<org.eventb.core.poIdentifier name="rspd" org.eventb.core.type="ℙ(RSP×AGT)"/>
+<org.eventb.core.poIdentifier name="rspn" org.eventb.core.type="ℙ(RSP×CONFIRM)"/>
+<org.eventb.core.poIdentifier name="rsps" org.eventb.core.type="ℙ(RSP×RES)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATR" org.eventb.core.predicate="partition(RSP,{RSP1},{RSP2},{RSP3},{RSP4},{RSP5},{RSP6},{RSP7},{RSP8},{RSP9},{RSP10},{RSP11},{RSP12},{RSP13},{RSP14},{RSP15},{RSP16},{RSP17},{RSP18})" org.eventb.core.source="/distr1_anim/c1_confirm_animation.buc|org.eventb.core.contextFile#c1_confirm_animation|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="RENEGOTIATS" org.eventb.core.predicate="partition(CONFIRM,{READY},{DENY})" org.eventb.core.source="/distr1_anim/c1_confirm_animation.buc|org.eventb.core.contextFile#c1_confirm_animation|org.eventb.core.axiom#axm="/>
+<org.eventb.core.poPredicate name="RENEGOTIATT" org.eventb.core.predicate="rsps={RSP1 ↦ RES1,RSP2 ↦ RES1,RSP3 ↦ RES2,RSP4 ↦ RES2,RSP5 ↦ RES3,RSP6 ↦ RES3,RSP7 ↦ RES1,RSP8 ↦ RES1,RSP9 ↦ RES2,RSP10 ↦ RES2,RSP11 ↦ RES3,RSP12 ↦ RES3,RSP13 ↦ RES1,RSP14 ↦ RES1,RSP15 ↦ RES2,RSP16 ↦ RES2,RSP17 ↦ RES3,RSP18 ↦ RES3}" org.eventb.core.source="/distr1_anim/c1_confirm_animation.buc|org.eventb.core.contextFile#c1_confirm_animation|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="RENEGOTIATU" org.eventb.core.predicate="rspd={RSP1 ↦ AGT1,RSP2 ↦ AGT1,RSP3 ↦ AGT1,RSP4 ↦ AGT1,RSP5 ↦ AGT1,RSP6 ↦ AGT1,RSP7 ↦ AGT2,RSP8 ↦ AGT2,RSP9 ↦ AGT2,RSP10 ↦ AGT2,RSP11 ↦ AGT2,RSP12 ↦ AGT2,RSP13 ↦ AGT3,RSP14 ↦ AGT3,RSP15 ↦ AGT3,RSP16 ↦ AGT3,RSP17 ↦ AGT3,RSP18 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c1_confirm_animation.buc|org.eventb.core.contextFile#c1_confirm_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATV" org.eventb.core.predicate="rspn={RSP1 ↦ READY,RSP2 ↦ DENY,RSP3 ↦ READY,RSP4 ↦ DENY,RSP5 ↦ READY,RSP6 ↦ DENY,RSP7 ↦ READY,RSP8 ↦ DENY,RSP9 ↦ READY,RSP10 ↦ DENY,RSP11 ↦ READY,RSP12 ↦ DENY,RSP13 ↦ READY,RSP14 ↦ DENY,RSP15 ↦ READY,RSP16 ↦ DENY,RSP17 ↦ READY,RSP18 ↦ DENY}" org.eventb.core.source="/distr1_anim/c1_confirm_animation.buc|org.eventb.core.contextFile#c1_confirm_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="PRD" org.eventb.core.type="ℙ(PRD)"/>
+<org.eventb.core.poIdentifier name="PRD1" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD2" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD3" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD4" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD5" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD6" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD7" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD8" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="PRD9" org.eventb.core.type="PRD"/>
+<org.eventb.core.poIdentifier name="prdd" org.eventb.core.type="ℙ(PRD×AGT)"/>
+<org.eventb.core.poIdentifier name="prds" org.eventb.core.type="ℙ(PRD×RES)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATW" org.eventb.core.predicate="partition(PRD,{PRD1},{PRD2},{PRD3},{PRD4},{PRD5},{PRD6},{PRD7},{PRD8},{PRD9})" org.eventb.core.source="/distr1_anim/c3_preready_animation.buc|org.eventb.core.contextFile#c3_preready_animation|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATX" org.eventb.core.predicate="prds={PRD1 ↦ RES1,PRD2 ↦ RES2,PRD3 ↦ RES3,PRD4 ↦ RES1,PRD5 ↦ RES2,PRD6 ↦ RES3,PRD7 ↦ RES1,PRD8 ↦ RES2,PRD9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c3_preready_animation.buc|org.eventb.core.contextFile#c3_preready_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poPredicate name="RENEGOTIATY" org.eventb.core.predicate="prdd={PRD1 ↦ AGT1,PRD2 ↦ AGT1,PRD3 ↦ AGT1,PRD4 ↦ AGT2,PRD5 ↦ AGT2,PRD6 ↦ AGT2,PRD7 ↦ AGT3,PRD8 ↦ AGT3,PRD9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c3_preready_animation.buc|org.eventb.core.contextFile#c3_preready_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poIdentifier name="WRT" org.eventb.core.type="ℙ(WRT)"/>
+<org.eventb.core.poIdentifier name="WRT1" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT10" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT11" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT12" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT13" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT14" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT15" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT16" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT17" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT18" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT19" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT2" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT20" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT21" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT22" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT23" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT24" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT25" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT26" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT27" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT28" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT29" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT3" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT30" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT31" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT32" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT33" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT34" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT35" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT36" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT37" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT38" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT39" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT4" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT40" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT41" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT42" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT43" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT44" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT45" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT5" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT6" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT7" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT8" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="WRT9" org.eventb.core.type="WRT"/>
+<org.eventb.core.poIdentifier name="wrtd" org.eventb.core.type="ℙ(WRT×RES)"/>
+<org.eventb.core.poIdentifier name="wrtn" org.eventb.core.type="ℙ(WRT×ℤ)"/>
+<org.eventb.core.poIdentifier name="wrts" org.eventb.core.type="ℙ(WRT×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATZ" org.eventb.core.predicate="partition(WRT,{WRT1},{WRT2},{WRT3},{WRT4},{WRT5},{WRT6},{WRT7},{WRT8},{WRT9},{WRT10},{WRT11},{WRT12},{WRT13},{WRT14},{WRT15},{WRT16},{WRT17},{WRT18},{WRT19},{WRT20},{WRT21},{WRT22},{WRT23},{WRT24},{WRT25},{WRT26},{WRT27},{WRT28},{WRT29},{WRT30},{WRT31},{WRT32},{WRT33},{WRT34},{WRT35},{WRT36},{WRT37},{WRT38},{WRT39},{WRT40},{WRT41},{WRT42},{WRT43},{WRT44},{WRT45})" org.eventb.core.source="/distr1_anim/c1_write_animation.buc|org.eventb.core.contextFile#c1_write_animation|org.eventb.core.axiom#M"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT[" org.eventb.core.predicate="wrts={WRT1 ↦ AGT1,WRT2 ↦ AGT1,WRT3 ↦ AGT1,WRT4 ↦ AGT1,WRT5 ↦ AGT1,WRT6 ↦ AGT1,WRT7 ↦ AGT1,WRT8 ↦ AGT1,WRT9 ↦ AGT1,WRT10 ↦ AGT1,WRT11 ↦ AGT1,WRT12 ↦ AGT1,WRT13 ↦ AGT1,WRT14 ↦ AGT1,WRT15 ↦ AGT1,WRT16 ↦ AGT2,WRT17 ↦ AGT2,WRT18 ↦ AGT2,WRT19 ↦ AGT2,WRT20 ↦ AGT2,WRT21 ↦ AGT2,WRT22 ↦ AGT2,WRT23 ↦ AGT2,WRT24 ↦ AGT2,WRT25 ↦ AGT2,WRT26 ↦ AGT2,WRT27 ↦ AGT2,WRT28 ↦ AGT2,WRT29 ↦ AGT2,WRT30 ↦ AGT2,WRT31 ↦ AGT3,WRT32 ↦ AGT3,WRT33 ↦ AGT3,WRT34 ↦ AGT3,WRT35 ↦ AGT3,WRT36 ↦ AGT3,WRT37 ↦ AGT3,WRT38 ↦ AGT3,WRT39 ↦ AGT3,WRT40 ↦ AGT3,WRT41 ↦ AGT3,WRT42 ↦ AGT3,WRT43 ↦ AGT3,WRT44 ↦ AGT3,WRT45 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c1_write_animation.buc|org.eventb.core.contextFile#c1_write_animation|org.eventb.core.axiom#O"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT\" org.eventb.core.predicate="wrtd={WRT1 ↦ RES1,WRT2 ↦ RES1,WRT3 ↦ RES1,WRT4 ↦ RES1,WRT5 ↦ RES1,WRT6 ↦ RES2,WRT7 ↦ RES2,WRT8 ↦ RES2,WRT9 ↦ RES2,WRT10 ↦ RES2,WRT11 ↦ RES3,WRT12 ↦ RES3,WRT13 ↦ RES3,WRT14 ↦ RES3,WRT15 ↦ RES3,WRT16 ↦ RES1,WRT17 ↦ RES1,WRT18 ↦ RES1,WRT19 ↦ RES1,WRT20 ↦ RES1,WRT21 ↦ RES2,WRT22 ↦ RES2,WRT23 ↦ RES2,WRT24 ↦ RES2,WRT25 ↦ RES2,WRT26 ↦ RES3,WRT27 ↦ RES3,WRT28 ↦ RES3,WRT29 ↦ RES3,WRT30 ↦ RES3,WRT31 ↦ RES1,WRT32 ↦ RES1,WRT33 ↦ RES1,WRT34 ↦ RES1,WRT35 ↦ RES1,WRT36 ↦ RES2,WRT37 ↦ RES2,WRT38 ↦ RES2,WRT39 ↦ RES2,WRT40 ↦ RES2,WRT41 ↦ RES3,WRT42 ↦ RES3,WRT43 ↦ RES3,WRT44 ↦ RES3,WRT45 ↦ RES3}" org.eventb.core.source="/distr1_anim/c1_write_animation.buc|org.eventb.core.contextFile#c1_write_animation|org.eventb.core.axiom#cst13"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT]" org.eventb.core.predicate="wrtn={WRT1 ↦ 0,WRT2 ↦ 1,WRT3 ↦ 2,WRT4 ↦ 3,WRT5 ↦ 4,WRT6 ↦ 1,WRT7 ↦ 2,WRT8 ↦ 3,WRT9 ↦ 4,WRT10 ↦ 5,WRT11 ↦ 2,WRT12 ↦ 3,WRT13 ↦ 4,WRT14 ↦ 5,WRT15 ↦ 6,WRT16 ↦ 0,WRT17 ↦ 1,WRT18 ↦ 2,WRT19 ↦ 3,WRT20 ↦ 4,WRT21 ↦ 1,WRT22 ↦ 2,WRT23 ↦ 3,WRT24 ↦ 4,WRT25 ↦ 5,WRT26 ↦ 2,WRT27 ↦ 3,WRT28 ↦ 4,WRT29 ↦ 5,WRT30 ↦ 6,WRT31 ↦ 0,WRT32 ↦ 1,WRT33 ↦ 2,WRT34 ↦ 3,WRT35 ↦ 4,WRT36 ↦ 1,WRT37 ↦ 2,WRT38 ↦ 3,WRT39 ↦ 4,WRT40 ↦ 5,WRT41 ↦ 2,WRT42 ↦ 3,WRT43 ↦ 4,WRT44 ↦ 5,WRT45 ↦ 6}" org.eventb.core.source="/distr1_anim/c1_write_animation.buc|org.eventb.core.contextFile#c1_write_animation|org.eventb.core.axiom#cst14"/>
+<org.eventb.core.poIdentifier name="WCT" org.eventb.core.type="ℙ(WCT)"/>
+<org.eventb.core.poIdentifier name="WCT1" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT2" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT3" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT4" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT5" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT6" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT7" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT8" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="WCT9" org.eventb.core.type="WCT"/>
+<org.eventb.core.poIdentifier name="wctd" org.eventb.core.type="ℙ(WCT×RES)"/>
+<org.eventb.core.poIdentifier name="wcts" org.eventb.core.type="ℙ(WCT×AGT)"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT^" org.eventb.core.predicate="partition(WCT,{WCT1},{WCT2},{WCT3},{WCT4},{WCT5},{WCT6},{WCT7},{WCT8},{WCT9})" org.eventb.core.source="/distr1_anim/c1_write_complete_animation.buc|org.eventb.core.contextFile#c1_write_complete_animation|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT_" org.eventb.core.predicate="wcts={WCT1 ↦ AGT1,WCT2 ↦ AGT1,WCT3 ↦ AGT1,WCT4 ↦ AGT2,WCT5 ↦ AGT2,WCT6 ↦ AGT2,WCT7 ↦ AGT3,WCT8 ↦ AGT3,WCT9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c1_write_complete_animation.buc|org.eventb.core.contextFile#c1_write_complete_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="RENEGOTIAT`" org.eventb.core.predicate="wctd={WCT1 ↦ RES1,WCT2 ↦ RES2,WCT3 ↦ RES3,WCT4 ↦ RES1,WCT5 ↦ RES2,WCT6 ↦ RES3,WCT7 ↦ RES1,WCT8 ↦ RES2,WCT9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c1_write_complete_animation.buc|org.eventb.core.contextFile#c1_write_complete_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="REP" org.eventb.core.type="ℙ(REP)"/>
+<org.eventb.core.poIdentifier name="REP1" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP10" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP11" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP12" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP13" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP14" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP15" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP16" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP17" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP18" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP19" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP2" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP20" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP21" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP22" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP23" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP24" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP25" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP26" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP27" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP28" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP29" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP3" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP30" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP31" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP32" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP33" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP34" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP35" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP36" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP37" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP38" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP39" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP4" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP40" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP41" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP42" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP43" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP44" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP45" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP5" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP6" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP7" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP8" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="REP9" org.eventb.core.type="REP"/>
+<org.eventb.core.poIdentifier name="repd" org.eventb.core.type="ℙ(REP×AGT)"/>
+<org.eventb.core.poIdentifier name="repn" org.eventb.core.type="ℙ(REP×ℤ)"/>
+<org.eventb.core.poIdentifier name="reps" org.eventb.core.type="ℙ(REP×RES)"/>
+<org.eventb.core.poPredicate name="RENEGOTIATa" org.eventb.core.predicate="partition(REP,{REP1},{REP2},{REP3},{REP4},{REP5},{REP6},{REP7},{REP8},{REP9},{REP10},{REP11},{REP12},{REP13},{REP14},{REP15},{REP16},{REP17},{REP18},{REP19},{REP20},{REP21},{REP22},{REP23},{REP24},{REP25},{REP26},{REP27},{REP28},{REP29},{REP30},{REP31},{REP32},{REP33},{REP34},{REP35},{REP36},{REP37},{REP38},{REP39},{REP40},{REP41},{REP42},{REP43},{REP44},{REP45})" org.eventb.core.source="/distr1_anim/c2_reply_animation.buc|org.eventb.core.contextFile#c2_reply_animation|org.eventb.core.axiom#W"/>
+<org.eventb.core.poPredicate name="RENEGOTIATb" org.eventb.core.predicate="reps={REP1 ↦ RES1,REP2 ↦ RES1,REP3 ↦ RES1,REP4 ↦ RES1,REP5 ↦ RES1,REP6 ↦ RES2,REP7 ↦ RES2,REP8 ↦ RES2,REP9 ↦ RES2,REP10 ↦ RES2,REP11 ↦ RES3,REP12 ↦ RES3,REP13 ↦ RES3,REP14 ↦ RES3,REP15 ↦ RES3,REP16 ↦ RES1,REP17 ↦ RES1,REP18 ↦ RES1,REP19 ↦ RES1,REP20 ↦ RES1,REP21 ↦ RES2,REP22 ↦ RES2,REP23 ↦ RES2,REP24 ↦ RES2,REP25 ↦ RES2,REP26 ↦ RES3,REP27 ↦ RES3,REP28 ↦ RES3,REP29 ↦ RES3,REP30 ↦ RES3,REP31 ↦ RES1,REP32 ↦ RES1,REP33 ↦ RES1,REP34 ↦ RES1,REP35 ↦ RES1,REP36 ↦ RES2,REP37 ↦ RES2,REP38 ↦ RES2,REP39 ↦ RES2,REP40 ↦ RES2,REP41 ↦ RES3,REP42 ↦ RES3,REP43 ↦ RES3,REP44 ↦ RES3,REP45 ↦ RES3}" org.eventb.core.source="/distr1_anim/c2_reply_animation.buc|org.eventb.core.contextFile#c2_reply_animation|org.eventb.core.axiom#Y"/>
+<org.eventb.core.poPredicate name="RENEGOTIATc" org.eventb.core.predicate="repd={REP1 ↦ AGT1,REP2 ↦ AGT1,REP3 ↦ AGT1,REP4 ↦ AGT1,REP5 ↦ AGT1,REP6 ↦ AGT1,REP7 ↦ AGT1,REP8 ↦ AGT1,REP9 ↦ AGT1,REP10 ↦ AGT1,REP11 ↦ AGT1,REP12 ↦ AGT1,REP13 ↦ AGT1,REP14 ↦ AGT1,REP15 ↦ AGT1,REP16 ↦ AGT2,REP17 ↦ AGT2,REP18 ↦ AGT2,REP19 ↦ AGT2,REP20 ↦ AGT2,REP21 ↦ AGT2,REP22 ↦ AGT2,REP23 ↦ AGT2,REP24 ↦ AGT2,REP25 ↦ AGT2,REP26 ↦ AGT2,REP27 ↦ AGT2,REP28 ↦ AGT2,REP29 ↦ AGT2,REP30 ↦ AGT2,REP31 ↦ AGT3,REP32 ↦ AGT3,REP33 ↦ AGT3,REP34 ↦ AGT3,REP35 ↦ AGT3,REP36 ↦ AGT3,REP37 ↦ AGT3,REP38 ↦ AGT3,REP39 ↦ AGT3,REP40 ↦ AGT3,REP41 ↦ AGT3,REP42 ↦ AGT3,REP43 ↦ AGT3,REP44 ↦ AGT3,REP45 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c2_reply_animation.buc|org.eventb.core.contextFile#c2_reply_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="RENEGOTIATd" org.eventb.core.predicate="repn={REP1 ↦ 0,REP2 ↦ 1,REP3 ↦ 2,REP4 ↦ 3,REP5 ↦ 4,REP6 ↦ 1,REP7 ↦ 2,REP8 ↦ 3,REP9 ↦ 4,REP10 ↦ 5,REP11 ↦ 2,REP12 ↦ 3,REP13 ↦ 4,REP14 ↦ 5,REP15 ↦ 6,REP16 ↦ 0,REP17 ↦ 1,REP18 ↦ 2,REP19 ↦ 3,REP20 ↦ 4,REP21 ↦ 1,REP22 ↦ 2,REP23 ↦ 3,REP24 ↦ 4,REP25 ↦ 5,REP26 ↦ 2,REP27 ↦ 3,REP28 ↦ 4,REP29 ↦ 5,REP30 ↦ 6,REP31 ↦ 0,REP32 ↦ 1,REP33 ↦ 2,REP34 ↦ 3,REP35 ↦ 4,REP36 ↦ 1,REP37 ↦ 2,REP38 ↦ 3,REP39 ↦ 4,REP40 ↦ 5,REP41 ↦ 2,REP42 ↦ 3,REP43 ↦ 4,REP44 ↦ 5,REP45 ↦ 6}" org.eventb.core.source="/distr1_anim/c2_reply_animation.buc|org.eventb.core.contextFile#c2_reply_animation|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="REQ" org.eventb.core.type="ℙ(REQ)"/>
+<org.eventb.core.poIdentifier name="REQ1" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ2" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ3" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ4" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ5" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ6" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ7" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ8" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="REQ9" org.eventb.core.type="REQ"/>
+<org.eventb.core.poIdentifier name="reqd" org.eventb.core.type="ℙ(REQ×RES)"/>
+<org.eventb.core.poIdentifier name="reqs" org.eventb.core.type="ℙ(REQ×AGT)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/distr1_anim/c2_request_animation.bpo|org.eventb.core.poFile#c2_request_animation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(REQ,{REQ1},{REQ2},{REQ3},{REQ4},{REQ5},{REQ6},{REQ7},{REQ8},{REQ9})" org.eventb.core.source="/distr1_anim/c2_request_animation.buc|org.eventb.core.contextFile#c2_request_animation|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="reqs={REQ1 ↦ AGT1,REQ2 ↦ AGT1,REQ3 ↦ AGT1,REQ4 ↦ AGT2,REQ5 ↦ AGT2,REQ6 ↦ AGT2,REQ7 ↦ AGT3,REQ8 ↦ AGT3,REQ9 ↦ AGT3}" org.eventb.core.source="/distr1_anim/c2_request_animation.buc|org.eventb.core.contextFile#c2_request_animation|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="reqd={REQ1 ↦ RES1,REQ2 ↦ RES2,REQ3 ↦ RES3,REQ4 ↦ RES1,REQ5 ↦ RES2,REQ6 ↦ RES3,REQ7 ↦ RES1,REQ8 ↦ RES2,REQ9 ↦ RES3}" org.eventb.core.source="/distr1_anim/c2_request_animation.buc|org.eventb.core.contextFile#c2_request_animation|org.eventb.core.axiom#axm2"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

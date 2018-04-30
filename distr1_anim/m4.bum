@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="m3"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="c2_special_request_animation"/>
+<org.eventb.core.variable name="*" org.eventb.core.comment="M1" org.eventb.core.identifier="capt"/>
+<org.eventb.core.variable name="0" org.eventb.core.comment="M1" org.eventb.core.identifier="objt"/>
+<org.eventb.core.variable name="3" org.eventb.core.comment="M1" org.eventb.core.identifier="pct1"/>
+<org.eventb.core.variable name="9" org.eventb.core.comment="M2" org.eventb.core.identifier="rdpt"/>
+<org.eventb.core.variable name="A" org.eventb.core.comment="M2" org.eventb.core.identifier="lcke"/>
+<org.eventb.core.variable name="?" org.eventb.core.comment="M2" org.eventb.core.identifier="lck"/>
+<org.eventb.core.variable name="C" org.eventb.core.comment="M2" org.eventb.core.identifier="pct2"/>
+<org.eventb.core.variable name="E" org.eventb.core.comment="M3" org.eventb.core.identifier="rsp"/>
+<org.eventb.core.variable name="J" org.eventb.core.comment="M3" org.eventb.core.identifier="rel"/>
+<org.eventb.core.variable name="evt3" org.eventb.core.comment="M3" org.eventb.core.identifier="wrt"/>
+<org.eventb.core.variable name="evt5" org.eventb.core.comment="M3" org.eventb.core.identifier="wrte"/>
+<org.eventb.core.variable name="evt9" org.eventb.core.comment="M3" org.eventb.core.identifier="prd"/>
+<org.eventb.core.variable name="evt7" org.eventb.core.comment="M3" org.eventb.core.identifier="pct3"/>
+<org.eventb.core.event name="evt:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="req ≔ ∅" org.eventb.core.label="act14"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="rep ≔ ∅" org.eventb.core.label="act15"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="rqs ≔ ∅" org.eventb.core.label="act16"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="rqts ≔ AGT × {∅}" org.eventb.core.label="act17"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="rqst ≔ AGT × {∅}" org.eventb.core.label="act18"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="ppt ≔ resin" org.eventb.core.label="act19"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="rpt ≔ ∅" org.eventb.core.label="act20"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="lan ≔ RES × {∅}" org.eventb.core.label="act21"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="pct4 ≔ AGT × {REQUEST}" org.eventb.core.label="act22"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt;" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd6" org.eventb.core.predicate="pct4(ag) = RELEASE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ REQUEST" org.eventb.core.comment="update program counter to wrte" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt=" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_release_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_release_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd9" org.eventb.core.predicate="pct4(ag) = RELEASE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="lan(reld(rl)) ≔ lan(reld(rl)) ⩥ {rels(rl)}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt&gt;" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd6" org.eventb.core.predicate="pct4(ag) = CONSUME"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ RELEASE" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt?" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_consume_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_consume_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd10" org.eventb.core.predicate="pct4(ag) = CONSUME"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt8" org.eventb.core.comment="[EVT:UNLOCK] CREATE PRE-READY MESSAGE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_preready_release1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_pready_release1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="rpt(reld(rl)) ≔ rpt(reld(rl)) + 1" org.eventb.core.comment="update read pointer" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="updating read pointer, if there are other agents" org.eventb.core.label="grd3" org.eventb.core.predicate="lan(reld(rl)) = ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt@" org.eventb.core.comment="[EVT:UNLOCK] CREATE PRE-READY MESSAGE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_preready_release2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_pready_release2"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="rpt(reld(rl)) ≔ min(dom(lan(reld(rl))))" org.eventb.core.comment="update read pointer" org.eventb.core.label="act5"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd6" org.eventb.core.predicate="prdd(pr) = lan(reld(rl))(min(dom(lan(reld(rl)))))"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd7" org.eventb.core.predicate="lan(reld(rl)) ≠ ∅"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd8" org.eventb.core.predicate="wr ∈ wrt ∧ prdd(pr) = wrts(wr) ∧ prds(pr) = wrtd(wr) ∧ wrtn(wr) = min(dom(lan(reld(rl))))"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_preready_release3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_pready_release3"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd6" org.eventb.core.predicate="prdd(pr) = lan(reld(rl))(min(dom(lan(reld(rl)))))"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd7" org.eventb.core.predicate="lan(reld(rl)) ≠ ∅"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd8" org.eventb.core.predicate="wr ∉ wrt ∧ prdd(pr) = wrts(wr) ∧ prds(pr) = wrtd(wr) ∧ wrtn(wr) = min(dom(lan(reld(rl))))"/>
+<org.eventb.core.parameter name="grd5" org.eventb.core.identifier="wr"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtA" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_unlock_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_unlock_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="pct4(ag) = UNLOCK"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ CONFIRMP" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtB" org.eventb.core.comment="[EVT:UNLOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_unlock_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_unlock_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="program counter must be at unlock" org.eventb.core.label="grd9" org.eventb.core.predicate="pct4(rspd(cf)) = UNLOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtC" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_decide">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_decide"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="pct4(ag) = CONFIRMC"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ pc" org.eventb.core.comment="update program counter value" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtD" org.eventb.core.comment="[EVT:RESPOND]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_respond">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_respond"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtE" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_lock_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_lock_c"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="pct4(ag) = LOCK"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ CONFIRMC" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtF" org.eventb.core.comment="[EVT:LOCK]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_lock_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_lock_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd9" org.eventb.core.predicate="pct4(lcks(lc)) = LOCK"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtG" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_pready_confirm">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_pready_confirm"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="pct4(ag) = CONFIRMP"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ LOCK" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtH" org.eventb.core.comment="[EVT:PRE-READY]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="resource_pready_write">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="resource_pready_write"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="if read pointer points at your lane" org.eventb.core.label="grd6" org.eventb.core.predicate="rpt(prds(pr))  = wrtn(wr)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtI" org.eventb.core.comment="[EVT:WRITE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_write_c">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="write_complete"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="pct4(ag) = WRITE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pct4(ag) ≔ CONFIRMP" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtJ" org.eventb.core.comment="[EVT:WRITE]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="agent_write_p">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="agent_write_p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="pct4(wrts(wr)) = WRITE"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd6" org.eventb.core.predicate="ag ∈ repd[rep]"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd7" org.eventb.core.predicate="rp ∈ rep"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd8" org.eventb.core.predicate="rp ∈ repd∼[{ag}]"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.label="grd9" org.eventb.core.predicate="wrtd(wr) = reps(rp)"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.label="grd10" org.eventb.core.predicate="wrts(wr) = repd(rp)"/>
+<org.eventb.core.guard name="grd10" org.eventb.core.label="grd11" org.eventb.core.predicate="wrtn(wr) = repn(rp)"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="rep ≔ rep ∖ {rp}" org.eventb.core.comment="remove reply message" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="rqts(wrts(wr)) ≔ rqts(wrts(wr)) ∖ {wrtd(wr)}" org.eventb.core.comment="remove local request" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="grd14" org.eventb.core.assignment="rqst(wrts(wr)) ≔ rqst(wrts(wr)) ∖ {wrtd(wr)}" org.eventb.core.comment="remove local special requests" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="lan(wrtd(wr)) ≔ lan(wrtd(wr))  {wrtn(wr) ↦ ag}" org.eventb.core.comment="create a lane " org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="grd11" org.eventb.core.identifier="rp"/>
+<org.eventb.core.parameter name="grd12" org.eventb.core.identifier="ag"/>
+<org.eventb.core.action name="grd13" org.eventb.core.assignment="rpt(wrtd(wr)) ≔ min(dom(lan(wrtd(wr))  {wrtn(wr) ↦ ag}))" org.eventb.core.comment="update read pointer" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="[EVT:RENEGOTIATE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_renegotiate_c">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="all replies must contain the same index" org.eventb.core.label="grd1" org.eventb.core.predicate="card(repn[rep ∩ repd∼[{ag}]]) = 1"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="agent objective must be fulfilled by reply messages" org.eventb.core.label="grd2" org.eventb.core.predicate="reps[rep ∩ repd∼[{ag}]] = objr(objt(ag))"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="pct4(ag) = RENEGOTIATE"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="pct4(ag) ≔ WRITE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.comment="[EVT:RENEGOTIATE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_renegotiate_p">
+<org.eventb.core.parameter name="(" org.eventb.core.comment="agent" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="an active agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ repd[rep]"/>
+<org.eventb.core.parameter name="-" org.eventb.core.comment="replies of the interest" org.eventb.core.identifier="rp"/>
+<org.eventb.core.action name="element5" org.eventb.core.assignment="rep ≔ rep ∖ {rp}" org.eventb.core.comment="delete replies" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="element7" org.eventb.core.comment="generated special requests" org.eventb.core.identifier="rq"/>
+<org.eventb.core.action name="element;" org.eventb.core.assignment="rqs ≔ rqs ∪ {rq}" org.eventb.core.comment="generate special requests" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="elementE" org.eventb.core.label="grd2" org.eventb.core.predicate="pct4(ag) = RENEGOTIATE"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="reply message subpool with slot number lower than maximum" org.eventb.core.label="grd3" org.eventb.core.predicate="rp ∈ dom(((rep ∩ repd∼[{ag}]) ◁ repn) ⩥ {max(repn[rep ∩ repd∼[{ag}]])})"/>
+<org.eventb.core.guard name="element6" org.eventb.core.comment="generate special request messages" org.eventb.core.label="grd4" org.eventb.core.predicate="rq ∈ RQS ∖ rqs"/>
+<org.eventb.core.guard name="element&gt;" org.eventb.core.comment="the source of special request messages must be the same" org.eventb.core.label="grd5" org.eventb.core.predicate="rqss(rq) = ag"/>
+<org.eventb.core.guard name="element?" org.eventb.core.comment="special request messages must be sent to all resources which previously replied with with slot number smaller than maximum." org.eventb.core.label="grd6" org.eventb.core.predicate="rqsd(rq) = reps(rp)"/>
+<org.eventb.core.guard name="element@" org.eventb.core.comment="special request slot number is the maximum of all reply messages" org.eventb.core.label="grd7" org.eventb.core.predicate="rqsn(rq) = max(repn[rep ∩ repd∼[{ag}]])"/>
+<org.eventb.core.action name="elementC" org.eventb.core.assignment="rqts(rqss(rq)) ≔ rqts(rqss(rq)) ∪ {rqsd(rq)}" org.eventb.core.comment="generate special requests" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="elementD" org.eventb.core.assignment="rqst(rqss(rq)) ≔ rqst(rqss(rq)) ∖ {rqsd(rq)}" org.eventb.core.comment="remove request" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.comment="[EVT:CONFIRM-WRITE-RENEGOTIATE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_confirm_write_renegotiate">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="agent" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="an active agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ repd[rep]"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="all request and special_request messages have been replied" org.eventb.core.label="grd2" org.eventb.core.predicate="card(rqst(ag) ∪ rqts(ag)) = card(rep ∩ repd∼[{ag}])"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="an objective has been fulfiled with reply messsages" org.eventb.core.label="grd3" org.eventb.core.predicate="reps[rep ∩ repd∼[{ag}]] = objr(objt(ag))"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="program counter at confirmw" org.eventb.core.label="grd4" org.eventb.core.predicate="pct4(ag) = CONFIRMW"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="if reply indedexes heterogeneous then renegotiate renegotiate (update program counter)" org.eventb.core.label="grd5" org.eventb.core.predicate="card(repn[rep ∩ repd∼[{ag}]]) &gt; 1 ⇒ pc = RENEGOTIATE"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="if reply indexes homogeneous then write (update program counter) " org.eventb.core.label="grd6" org.eventb.core.predicate="card(repn[rep ∩ repd∼[{ag}]]) = 1 ⇒ pc = WRITE"/>
+<org.eventb.core.parameter name="grd2" org.eventb.core.comment="program counter" org.eventb.core.identifier="pc"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="pct4(ag) ≔ pc" org.eventb.core.comment="update program counter" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.comment="[EVT:REPLY]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="resource_reply_special">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="rq"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="special request message" org.eventb.core.label="grd1" org.eventb.core.predicate="rq ∈ rqs"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="rp"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="new reply message" org.eventb.core.label="grd2" org.eventb.core.predicate="rp ∈ REP ∖ rep"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="destination of the reply message is the source of the request message" org.eventb.core.label="grd3" org.eventb.core.predicate="repd(rp) = rqss(rq)"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="source of the reply message is the destination of the request message" org.eventb.core.label="grd4" org.eventb.core.predicate="reps(rp) = rqsd(rq)"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="reply slot number is the maximum of promised pointer and special request slot number" org.eventb.core.label="grd5" org.eventb.core.predicate="repn(rp) = max({ppt(reps(rp)), rqsn(rq)})"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="rep ≔ rep ∪ {rp}" org.eventb.core.comment="generate a reply" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd5" org.eventb.core.assignment="rqs ≔ rqs ∖ {rq}" org.eventb.core.comment="delete special request message" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="grd6" org.eventb.core.assignment="ppt(reps(rp)) ≔ max({ppt(reps(rp)), rqsn(rq)}) + 1" org.eventb.core.comment="increment promised pointer" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.comment="[EVT:REPLY]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="resource_reply_general">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="rp"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="take a request message" org.eventb.core.label="grd1" org.eventb.core.predicate="rq ∈ req"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="generate a new reply message" org.eventb.core.label="grd2" org.eventb.core.predicate="rp ∈ REP ∖ rep"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="rep ≔ rep ∪ {rp}" org.eventb.core.comment="generate a reply message" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="-" org.eventb.core.identifier="rq"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="the destination of reply message is the source of the request message" org.eventb.core.label="grd3" org.eventb.core.predicate="repd(rp) = reqs(rq)"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="the source of reply message is the destination of the request message" org.eventb.core.label="grd4" org.eventb.core.predicate="reps(rp) = reqd(rq)"/>
+<org.eventb.core.action name="grd2" org.eventb.core.assignment="req ≔ req ∖ {rq}" org.eventb.core.comment="delete the request message" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="reply slot number is the promised pointer" org.eventb.core.label="grd5" org.eventb.core.predicate="repn(rp) = ppt(reps(rp))"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="ppt(reps(rp)) ≔ ppt(reps(rp)) + 1" org.eventb.core.comment="increment promised pointer" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="[EVT: REUQEST]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_request_c">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ dom(rqst)"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="all request messages have been sent (objective fulfilled)" org.eventb.core.label="grd2" org.eventb.core.predicate="rqst(ag) ∪ rqts(ag) = objr(objt(ag))"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="program counter at request" org.eventb.core.label="grd3" org.eventb.core.predicate="pct4(ag) = REQUEST"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="pct4(ag) ≔ CONFIRMW" org.eventb.core.comment="update program counter" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.comment="[EVT:REQUEST]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_request_p">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="rq"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="take a new request message" org.eventb.core.label="grd1" org.eventb.core.predicate="rq ∈ REQ ∖ req"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="req ≔ req ∪ {rq}" org.eventb.core.comment="create a request message" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="request message cannot be sent already (grd1 is not enough, since we allow multiple messages to have the same source/destination)" org.eventb.core.label="grd2" org.eventb.core.predicate="reqd(rq) ∉ rqst(reqs(rq))"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="request message cannot be sent already (special request)" org.eventb.core.label="grd3" org.eventb.core.predicate="reqd(rq) ∉ rqts(reqs(rq))"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="rqst(reqs(rq)) ≔ rqst(reqs(rq)) ∪ {reqd(rq)}" org.eventb.core.comment="local copy of the request" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="requested resource must be within objective" org.eventb.core.label="grd4" org.eventb.core.predicate="reqd(rq) ∈ objr(objt(reqs(rq)))"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.comment="program counter at request" org.eventb.core.label="grd5" org.eventb.core.predicate="pct4(reqs(rq)) = REQUEST"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evtK" org.eventb.core.comment="M4" org.eventb.core.identifier="req"/>
+<org.eventb.core.invariant name="evtL" org.eventb.core.comment="Global request messages." org.eventb.core.label="inv1" org.eventb.core.predicate="req ⊆ REQ"/>
+<org.eventb.core.variable name="evtM" org.eventb.core.comment="M4" org.eventb.core.identifier="rep"/>
+<org.eventb.core.invariant name="evtN" org.eventb.core.comment="Global reply messages." org.eventb.core.label="inv2" org.eventb.core.predicate="rep ⊆ REP"/>
+<org.eventb.core.variable name="evtY" org.eventb.core.comment="M4" org.eventb.core.identifier="rqs"/>
+<org.eventb.core.variable name="evtO" org.eventb.core.comment="M4" org.eventb.core.identifier="rqts"/>
+<org.eventb.core.invariant name="evtZ" org.eventb.core.comment="Global special request messages." org.eventb.core.label="inv3" org.eventb.core.predicate="rqs ⊆ RQS"/>
+<org.eventb.core.invariant name="evtP" org.eventb.core.comment="Local special request message copies." org.eventb.core.label="inv4" org.eventb.core.predicate="rqts ∈ AGT → ℙ(RES)"/>
+<org.eventb.core.variable name="evtQ" org.eventb.core.comment="M4" org.eventb.core.identifier="rqst"/>
+<org.eventb.core.invariant name="evtR" org.eventb.core.comment="Local request message copies." org.eventb.core.label="inv5" org.eventb.core.predicate="rqst ∈ AGT → ℙ(RES)"/>
+<org.eventb.core.variable name="evtS" org.eventb.core.comment="M4" org.eventb.core.identifier="ppt"/>
+<org.eventb.core.invariant name="evtT" org.eventb.core.comment="Promised pointer." org.eventb.core.label="inv6" org.eventb.core.predicate="ppt ∈ RES → ℕ"/>
+<org.eventb.core.variable name="evtU" org.eventb.core.comment="M4" org.eventb.core.identifier="rpt"/>
+<org.eventb.core.invariant name="evtV" org.eventb.core.comment="Read pointer." org.eventb.core.label="inv7" org.eventb.core.predicate="rpt ∈ RES ⇸ ℕ"/>
+<org.eventb.core.variable name="evtW" org.eventb.core.comment="M4" org.eventb.core.identifier="lan"/>
+<org.eventb.core.invariant name="evtX" org.eventb.core.comment="Distributed lane." org.eventb.core.label="inv8" org.eventb.core.predicate="lan ∈ RES → (ℕ ⇸ AGT)"/>
+<org.eventb.core.variable name="evt[" org.eventb.core.comment="M4" org.eventb.core.identifier="pct4"/>
+<org.eventb.core.invariant name="evt\" org.eventb.core.comment="Agent program counter." org.eventb.core.label="inv9" org.eventb.core.predicate="pct4 ∈ AGT → AST"/>
+</org.eventb.core.machineFile>

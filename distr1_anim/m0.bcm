@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/distr1_anim/c0_agent_state.bcc" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.seesContext#("/>
+<org.eventb.core.scInternalContext name="c0">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(RES)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(AGT)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="resin∈RES → ℕ" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="resin∼∈ℕ ⇸ RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm2" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="AGT" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(AGT)"/>
+<org.eventb.core.scCarrierSet name="RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(RES)"/>
+<org.eventb.core.scConstant name="resin" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.constant#axm3" org.eventb.core.type="ℙ(RES×ℤ)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="c0_objective">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/distr1_anim/c0.bcc|org.eventb.core.scContextFile#c0" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scAxiom name="c1" org.eventb.core.label="axm1" org.eventb.core.predicate="objr∈OBJ → ℙ1(RES)" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="c2" org.eventb.core.label="axm3" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="OBJ" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.scConstant name="objr" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.constant#)" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="c0_agent_state">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/distr1_anim/c0_objective.bcc|org.eventb.core.scContextFile#c0_objective" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scAxiom name="c0_objectivf" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(AST,{REQUEST},{CONFIRMW},{WRITE},{RENEGOTIATE},{CONFIRMR},{CONFIRMP},{LOCK},{UNLOCK},{CONFIRMC},{CONSUME},{RELEASE})" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="AST" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="CONFIRMC" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#2" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="CONFIRMP" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#4" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="CONFIRMR" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#0" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="CONFIRMW" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#\/" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="CONSUME" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#," org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="LOCK" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#1" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="RELEASE" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#-" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="RENEGOTIATE" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#+" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="REQUEST" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#)" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="UNLOCK" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#3" org.eventb.core.type="AST"/>
+<org.eventb.core.scConstant name="WRITE" org.eventb.core.source="/distr1_anim/c0_agent_state.buc|org.eventb.core.contextFile#c0_agent_state|org.eventb.core.constant#*" org.eventb.core.type="AST"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="c0_agent_statf" org.eventb.core.label="inv1" org.eventb.core.predicate="cons∈AGT ⇸ OBJ" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="c0_agent_statg" org.eventb.core.label="inv2" org.eventb.core.predicate="cons∼∈OBJ ⇸ AGT" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="c0_agent_stath" org.eventb.core.label="inv3" org.eventb.core.predicate="pct0∈AGT → AST" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#\/" org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable name="cons" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#)" org.eventb.core.type="ℙ(AGT×OBJ)"/>
+<org.eventb.core.scVariable name="pct0" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#." org.eventb.core.type="ℙ(AGT×AST)"/>
+<org.eventb.core.scEvent name="c0_agent_stati" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="cons ≔ ∅ ⦂ ℙ(AGT×OBJ)" org.eventb.core.label="act1" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="pct0 ≔ AGT × {CONSUME}" org.eventb.core.label="act2" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="c0_agent_statj" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_release" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="ag∈dom(cons)" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="ob=cons(ag)" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.guard#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="pct0(ag)=RELEASE" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.guard#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="ag" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.parameter#(" org.eventb.core.type="AGT"/>
+<org.eventb.core.scParameter name="ob" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.parameter#'" org.eventb.core.type="OBJ"/>
+<org.eventb.core.scAction name="oc" org.eventb.core.assignment="cons ≔ cons ∖ {ag ↦ ob}" org.eventb.core.label="act1" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.action#+"/>
+<org.eventb.core.scAction name="od" org.eventb.core.assignment="pct0 ≔ pct0{ag ↦ CONSUME}" org.eventb.core.label="act2" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#,|org.eventb.core.action#-"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="c0_agent_statk" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_consume" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="ob∈OBJ ∖ ran(cons)" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.guard#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="ag∈AGT ∖ dom(cons)" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.guard#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="pct0(ag)=CONSUME" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.guard#." org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="ag" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.parameter#(" org.eventb.core.type="AGT"/>
+<org.eventb.core.scParameter name="ob" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.parameter#'" org.eventb.core.type="OBJ"/>
+<org.eventb.core.scAction name="oc" org.eventb.core.assignment="cons ≔ cons{ag ↦ ob}" org.eventb.core.label="act1" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.action#+"/>
+<org.eventb.core.scAction name="od" org.eventb.core.assignment="pct0 ≔ pct0{ag ↦ RELEASE}" org.eventb.core.label="act2" org.eventb.core.source="/distr1_anim/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.action#\/"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

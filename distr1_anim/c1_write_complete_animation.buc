@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="WCT"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="WCT1"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="WCT2"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="WCT3"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.identifier="WCT4"/>
+<org.eventb.core.constant name="cst4" org.eventb.core.identifier="WCT5"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="WCT6"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="WCT7"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="WCT8"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="WCT9"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(WCT, {WCT1}, {WCT2}, {WCT3}, {WCT4}, {WCT5}, {WCT6}, {WCT7}, {WCT8}, {WCT9})"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm2" org.eventb.core.predicate="wcts = {WCT1 ↦ AGT1, WCT2 ↦ AGT1, WCT3 ↦ AGT1,&#10;&#9;&#9;&#9;WCT4 ↦ AGT2, WCT5 ↦ AGT2, WCT6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;WCT7 ↦ AGT3, WCT8 ↦ AGT3, WCT9 ↦ AGT3} "/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm3" org.eventb.core.predicate="wctd = {WCT1 ↦ RES1, WCT2 ↦ RES2, WCT3 ↦ RES3,&#10;&#9;&#9;&#9;&#9;WCT4 ↦ RES1, WCT5 ↦ RES2, WCT6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;WCT7 ↦ RES1, WCT8 ↦ RES2, WCT9 ↦ RES3}"/>
+<org.eventb.core.extendsContext name="axm5" org.eventb.core.target="c1_write_animation"/>
+<org.eventb.core.constant name="axm3" org.eventb.core.identifier="wcts"/>
+<org.eventb.core.constant name="axm4" org.eventb.core.identifier="wctd"/>
+</org.eventb.core.contextFile>

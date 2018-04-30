@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="axm4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="q,a" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="AGT,REP,RES">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AST,{REQUEST},{CONFIRMW},{WRITE},{RENEGOTIATE},{CONFIRMR},{CONFIRMP},{LOCK},{UNLOCK},{CONFIRMC},{CONSUME},{RELEASE}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54,p55,p56,p57,p58,p59"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54,p55,p56,p57,p58,p59"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(CNF,{READY},{DENY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p60" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61,p62"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p61,p62"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p63" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p65" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p72">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p67" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p68"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p69" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p70"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p64" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p71"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p72" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p75">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p68" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p73"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p70" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p74"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p71"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p75" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p76">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees q)" org.eventb.core.prGoal="p76" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p77">
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p77" org.eventb.core.prHyps="p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p78">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p78" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p79">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p79" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p80">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p80" org.eventb.core.prHyps="p2"/>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p81">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees a,q)" org.eventb.core.prGoal="p81" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p82">
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AGT"/>
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+<org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p82" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p84" org.eventb.core.prHyps="p83">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p84" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p85">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p85" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p78">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p78" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p79">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p79" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p86">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p86" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="repd" org.eventb.core.type="ℙ(REP×AGT)"/>
+<org.eventb.core.prIdent name="reps" org.eventb.core.type="ℙ(REP×RES)"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬WRITE=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬WRITE=RENEGOTIATE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬CONFIRMW=RENEGOTIATE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p84" org.eventb.core.predicate="q∈dom(reps)∧reps∈REP ⇸ RES">
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="¬RENEGOTIATE=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p85" org.eventb.core.predicate="q∈dom(reps)">
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬REQUEST=RENEGOTIATE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p48" org.eventb.core.predicate="¬CONFIRMP=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p69" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂WRT·q∈WRT∧wrts(q)=a∧wrtd(q)=r)">
+<org.eventb.core.prIdent name="WRT" org.eventb.core.type="ℙ(WRT)"/>
+<org.eventb.core.prIdent name="wrtd" org.eventb.core.type="ℙ(WRT×RES)"/>
+<org.eventb.core.prIdent name="wrts" org.eventb.core.type="ℙ(WRT×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬REQUEST=CONFIRMW">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p63" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="¬RENEGOTIATE=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬CONFIRMW=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="¬CONFIRMR=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="partition(CNF,{READY},{DENY})">
+<org.eventb.core.prIdent name="CNF" org.eventb.core.type="ℙ(CNF)"/>
+<org.eventb.core.prIdent name="DENY" org.eventb.core.type="CNF"/>
+<org.eventb.core.prIdent name="READY" org.eventb.core.type="CNF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬REQUEST=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬LOCK=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p76" org.eventb.core.predicate="∀q⦂REP·q∈dom(repd)"/>
+<org.eventb.core.prPred name="p65" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1">
+<org.eventb.core.prIdent name="OBJ" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.prIdent name="objr" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="reps∈REP ↠ RES"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∀q⦂REP·q∈REP⇒q∈dom(repd)∧repd∈REP ⇸ AGT∧(repd(q)=a⇒q∈dom(reps)∧reps∈REP ⇸ RES))"/>
+<org.eventb.core.prPred name="p70" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·⊤∧⊤⇒(∃q⦂WRT·⊤∧wrts(q)=a∧wrtd(q)=r)">
+<org.eventb.core.prIdent name="WRT" org.eventb.core.type="ℙ(WRT)"/>
+<org.eventb.core.prIdent name="wrtd" org.eventb.core.type="ℙ(WRT×RES)"/>
+<org.eventb.core.prIdent name="wrts" org.eventb.core.type="ℙ(WRT×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬WRITE=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬CONFIRMW=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="repd∈REP ↠ AGT"/>
+<org.eventb.core.prPred name="p81" org.eventb.core.predicate="∀a⦂AGT,q⦂REP·repd(q)=a⇒q∈dom(reps)∧reps∈REP ⇸ RES"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬REQUEST=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="¬CONFIRMC=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="¬CONFIRMC=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p78" org.eventb.core.predicate="q∈REP">
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="¬CONFIRMR=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="CNF={READY,DENY}">
+<org.eventb.core.prIdent name="CNF" org.eventb.core.type="ℙ(CNF)"/>
+<org.eventb.core.prIdent name="DENY" org.eventb.core.type="CNF"/>
+<org.eventb.core.prIdent name="READY" org.eventb.core.type="CNF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬CONFIRMR=CONFIRMP">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬CONFIRMP=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p77" org.eventb.core.predicate="q∈dom(repd)">
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="AST={REQUEST,CONFIRMW,WRITE,RENEGOTIATE,CONFIRMR,CONFIRMP,LOCK,UNLOCK,CONFIRMC,CONSUME,RELEASE}">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p82" org.eventb.core.predicate="repd(q)=a⇒q∈dom(reps)∧reps∈REP ⇸ RES">
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AGT"/>
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬REQUEST=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬LOCK=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="¬RENEGOTIATE=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="¬LOCK=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p80" org.eventb.core.predicate="repd∈REP ⇸ AGT"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬REQUEST=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬REQUEST=CONFIRMP">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬RENEGOTIATE=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p64" org.eventb.core.predicate="¬RES=(∅ ⦂ ℙ(RES))"/>
+<org.eventb.core.prPred name="p67" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂REL·q∈REL∧rels(q)=a∧reld(q)=r)">
+<org.eventb.core.prIdent name="REL" org.eventb.core.type="ℙ(REL)"/>
+<org.eventb.core.prIdent name="reld" org.eventb.core.type="ℙ(REL×RES)"/>
+<org.eventb.core.prIdent name="rels" org.eventb.core.type="ℙ(REL×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p83" org.eventb.core.predicate="repd(q)=a">
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AGT"/>
+<org.eventb.core.prIdent name="q" org.eventb.core.type="REP"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬CONFIRMW=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p86" org.eventb.core.predicate="reps∈REP ⇸ RES"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬CONFIRMW=CONFIRMP">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p71" org.eventb.core.predicate="¬⊥"/>
+<org.eventb.core.prPred name="p74" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·∃q⦂WRT·wrts(q)=a∧wrtd(q)=r">
+<org.eventb.core.prIdent name="WRT" org.eventb.core.type="ℙ(WRT)"/>
+<org.eventb.core.prIdent name="wrtd" org.eventb.core.type="ℙ(WRT×RES)"/>
+<org.eventb.core.prIdent name="wrts" org.eventb.core.type="ℙ(WRT×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬WRITE=CONFIRMP">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="¬CONFIRMP=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p73" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·∃q⦂REL·rels(q)=a∧reld(q)=r">
+<org.eventb.core.prIdent name="REL" org.eventb.core.type="ℙ(REL)"/>
+<org.eventb.core.prIdent name="reld" org.eventb.core.type="ℙ(REL×RES)"/>
+<org.eventb.core.prIdent name="rels" org.eventb.core.type="ℙ(REL×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬WRITE=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬CONFIRMR=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="¬UNLOCK=CONFIRMC">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="¬WRITE=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="¬CONFIRMR=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬CONFIRMP=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬REQUEST=WRITE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬CONFIRMW=WRITE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬CONFIRMW=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p75" org.eventb.core.predicate="(∀q⦂REP·q∈dom(repd))∧repd∈REP ⇸ AGT∧(∀a⦂AGT,q⦂REP·repd(q)=a⇒q∈dom(reps)∧reps∈REP ⇸ RES)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(AST,{REQUEST},{CONFIRMW},{WRITE},{RENEGOTIATE},{CONFIRMR},{CONFIRMP},{LOCK},{UNLOCK},{CONFIRMC},{CONSUME},{RELEASE})">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMC" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬WRITE=UNLOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬REQUEST=CONFIRMR">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p79" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬CONFIRMR=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="¬LOCK=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬CONFIRMW=CONFIRMR">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="¬RENEGOTIATE=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="¬RENEGOTIATE=CONFIRMP">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p68" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·⊤∧⊤⇒(∃q⦂REL·⊤∧rels(q)=a∧reld(q)=r)">
+<org.eventb.core.prIdent name="REL" org.eventb.core.type="ℙ(REL)"/>
+<org.eventb.core.prIdent name="reld" org.eventb.core.type="ℙ(REL×RES)"/>
+<org.eventb.core.prIdent name="rels" org.eventb.core.type="ℙ(REL×AGT)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="¬UNLOCK=CONSUME">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬REQUEST=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="REQUEST" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬CONFIRMW=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMW" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="¬RENEGOTIATE=CONFIRMR">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RENEGOTIATE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p66" org.eventb.core.predicate="(∀o⦂OBJ·o∈dom(objr))⇒(∃o⦂OBJ·card(objr(o))&gt;1)">
+<org.eventb.core.prIdent name="OBJ" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.prIdent name="objr" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬WRITE=CONFIRMR">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMR" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="WRITE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬CONSUME=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONSUME" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p62" org.eventb.core.predicate="¬READY=DENY">
+<org.eventb.core.prIdent name="CNF" org.eventb.core.type="ℙ(CNF)"/>
+<org.eventb.core.prIdent name="DENY" org.eventb.core.type="CNF"/>
+<org.eventb.core.prIdent name="READY" org.eventb.core.type="CNF"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p72" org.eventb.core.predicate="∀a⦂AGT·⊤∧⊤⇒(∀q⦂REP·⊤⇒q∈dom(repd)∧repd∈REP ⇸ AGT∧(repd(q)=a⇒q∈dom(reps)∧reps∈REP ⇸ RES))"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="¬CONFIRMP=LOCK">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="CONFIRMP" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="LOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="¬UNLOCK=RELEASE">
+<org.eventb.core.prIdent name="AST" org.eventb.core.type="ℙ(AST)"/>
+<org.eventb.core.prIdent name="RELEASE" org.eventb.core.type="AST"/>
+<org.eventb.core.prIdent name="UNLOCK" org.eventb.core.type="AST"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prExpr name="e0" org.eventb.core.expression="REP"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c0_objective"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="AST"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="REQUEST"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="WRITE"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="RENEGOTIATE"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="CONFIRMR"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="CONSUME"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="RELEASE"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm1" org.eventb.core.predicate="partition(AST, {REQUEST}, {CONFIRMW}, {WRITE}, {RENEGOTIATE}, {CONFIRMR}, {CONFIRMP}, {LOCK}, {UNLOCK}, {CONFIRMC}, {CONSUME}, {RELEASE})"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="CONFIRMW"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="LOCK"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="CONFIRMC"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="UNLOCK"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="4" org.eventb.core.identifier="CONFIRMP"/>
+</org.eventb.core.contextFile>

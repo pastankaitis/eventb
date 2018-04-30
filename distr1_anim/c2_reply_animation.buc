@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c1_write_complete_animation"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="REP"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="REP1"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="REP2"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="REP3"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="REP4"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="REP5"/>
+<org.eventb.core.constant name="." org.eventb.core.identifier="REP6"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="REP7"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="REP8"/>
+<org.eventb.core.constant name="1" org.eventb.core.identifier="REP9"/>
+<org.eventb.core.constant name="2" org.eventb.core.identifier="REP10"/>
+<org.eventb.core.constant name="3" org.eventb.core.identifier="REP11"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="REP12"/>
+<org.eventb.core.constant name="5" org.eventb.core.identifier="REP13"/>
+<org.eventb.core.constant name="6" org.eventb.core.identifier="REP14"/>
+<org.eventb.core.constant name="7" org.eventb.core.identifier="REP15"/>
+<org.eventb.core.constant name="8" org.eventb.core.identifier="REP16"/>
+<org.eventb.core.constant name="9" org.eventb.core.identifier="REP17"/>
+<org.eventb.core.constant name=":" org.eventb.core.identifier="REP18"/>
+<org.eventb.core.constant name=";" org.eventb.core.identifier="REP19"/>
+<org.eventb.core.constant name="=" org.eventb.core.identifier="REP20"/>
+<org.eventb.core.constant name="&gt;" org.eventb.core.identifier="REP21"/>
+<org.eventb.core.constant name="?" org.eventb.core.identifier="REP22"/>
+<org.eventb.core.constant name="@" org.eventb.core.identifier="REP23"/>
+<org.eventb.core.constant name="A" org.eventb.core.identifier="REP24"/>
+<org.eventb.core.constant name="B" org.eventb.core.identifier="REP25"/>
+<org.eventb.core.constant name="C" org.eventb.core.identifier="REP26"/>
+<org.eventb.core.constant name="D" org.eventb.core.identifier="REP27"/>
+<org.eventb.core.constant name="E" org.eventb.core.identifier="REP28"/>
+<org.eventb.core.constant name="F" org.eventb.core.identifier="REP29"/>
+<org.eventb.core.constant name="G" org.eventb.core.identifier="REP30"/>
+<org.eventb.core.constant name="H" org.eventb.core.identifier="REP31"/>
+<org.eventb.core.constant name="I" org.eventb.core.identifier="REP32"/>
+<org.eventb.core.constant name="J" org.eventb.core.identifier="REP33"/>
+<org.eventb.core.constant name="K" org.eventb.core.identifier="REP34"/>
+<org.eventb.core.constant name="L" org.eventb.core.identifier="REP35"/>
+<org.eventb.core.constant name="M" org.eventb.core.identifier="REP36"/>
+<org.eventb.core.constant name="N" org.eventb.core.identifier="REP37"/>
+<org.eventb.core.constant name="O" org.eventb.core.identifier="REP38"/>
+<org.eventb.core.constant name="P" org.eventb.core.identifier="REP39"/>
+<org.eventb.core.constant name="Q" org.eventb.core.identifier="REP40"/>
+<org.eventb.core.constant name="R" org.eventb.core.identifier="REP41"/>
+<org.eventb.core.constant name="S" org.eventb.core.identifier="REP42"/>
+<org.eventb.core.constant name="T" org.eventb.core.identifier="REP43"/>
+<org.eventb.core.constant name="U" org.eventb.core.identifier="REP44"/>
+<org.eventb.core.constant name="V" org.eventb.core.identifier="REP45"/>
+<org.eventb.core.axiom name="W" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(REP, {REP1}, {REP2}, {REP3}, {REP4}, {REP5}, {REP6}, {REP7}, {REP8}, {REP9}, {REP10}, {REP11}, &#10;{REP12}, {REP13}, {REP14}, {REP15}, {REP16}, {REP17}, {REP18}, {REP19}, {REP20}, {REP21}, {REP22}, {REP23}, {REP24}, &#10;{REP25}, {REP26}, {REP27}, {REP28}, {REP29}, {REP30}, {REP31}, {REP32}, {REP33}, {REP34}, {REP35}, {REP36}, {REP37}, &#10;{REP38}, {REP39}, {REP40}, {REP41}, {REP42}, {REP43}, {REP44}, {REP45})"/>
+<org.eventb.core.constant name="X" org.eventb.core.comment="reply source" org.eventb.core.identifier="reps"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.comment="reply destination" org.eventb.core.identifier="repd"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.comment="reply slot number" org.eventb.core.identifier="repn"/>
+<org.eventb.core.axiom name="Y" org.eventb.core.label="axm2" org.eventb.core.predicate="reps = {&#10;REP1 ↦ RES1, REP2 ↦ RES1, REP3 ↦ RES1, REP4 ↦ RES1, REP5 ↦ RES1, &#10;&#9;REP6 ↦ RES2, REP7 ↦ RES2, REP8 ↦ RES2, REP9 ↦ RES2, REP10 ↦ RES2, &#10;&#9;&#9;REP11 ↦ RES3, REP12 ↦ RES3, REP13 ↦ RES3, REP14 ↦ RES3, REP15 ↦ RES3, &#10;&#10;REP16 ↦ RES1, REP17 ↦ RES1, REP18 ↦ RES1, REP19 ↦ RES1, REP20 ↦ RES1, &#10;&#9;REP21 ↦ RES2, REP22 ↦ RES2, REP23 ↦ RES2, REP24 ↦ RES2, REP25 ↦ RES2, &#10;&#9;&#9;REP26 ↦ RES3, REP27 ↦ RES3, REP28 ↦ RES3, REP29 ↦ RES3, REP30 ↦ RES3, &#10;&#10;REP31 ↦ RES1, REP32 ↦ RES1, REP33 ↦ RES1, REP34 ↦ RES1, REP35 ↦ RES1, &#10;&#9;REP36 ↦ RES2, REP37 ↦ RES2, REP38 ↦ RES2, REP39 ↦ RES2, REP40 ↦ RES2, &#10;&#9;&#9;REP41 ↦ RES3, REP42 ↦ RES3, REP43 ↦ RES3, REP44 ↦ RES3, REP45 ↦ RES3&#10;}"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm3" org.eventb.core.predicate="repd = {&#10;REP1 ↦ AGT1, REP2 ↦ AGT1, REP3 ↦ AGT1, REP4 ↦ AGT1, REP5 ↦ AGT1, &#10;&#9;REP6 ↦ AGT1, REP7 ↦ AGT1, REP8 ↦ AGT1, REP9 ↦ AGT1, REP10 ↦ AGT1, &#10;&#9;&#9;REP11 ↦ AGT1, REP12 ↦ AGT1, REP13 ↦ AGT1, REP14 ↦ AGT1, REP15 ↦ AGT1, &#10;&#10;REP16 ↦ AGT2, REP17 ↦ AGT2, REP18 ↦ AGT2, REP19 ↦ AGT2, REP20 ↦ AGT2, &#10;&#9;REP21 ↦ AGT2, REP22 ↦ AGT2, REP23 ↦ AGT2, REP24 ↦ AGT2, REP25 ↦ AGT2, &#10;&#9;&#9;REP26 ↦ AGT2, REP27 ↦ AGT2, REP28 ↦ AGT2, REP29 ↦ AGT2, REP30 ↦ AGT2, &#10;&#10;REP31 ↦ AGT3, REP32 ↦ AGT3, REP33 ↦ AGT3, REP34 ↦ AGT3, REP35 ↦ AGT3, &#10;&#9;REP36 ↦ AGT3, REP37 ↦ AGT3, REP38 ↦ AGT3, REP39 ↦ AGT3, REP40 ↦ AGT3, &#10;&#9;&#9;REP41 ↦ AGT3, REP42 ↦ AGT3, REP43 ↦ AGT3, REP44 ↦ AGT3, REP45 ↦ AGT3&#10;}"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm4" org.eventb.core.predicate="repn = {&#10;REP1 ↦ 0, REP2 ↦ 1, REP3 ↦ 2, REP4 ↦ 3, REP5 ↦ 4,&#10;&#9;REP6 ↦ 1, REP7 ↦ 2, REP8 ↦ 3, REP9 ↦ 4, REP10 ↦ 5, &#10;&#9;&#9;REP11 ↦ 2, REP12 ↦ 3, REP13 ↦ 4, REP14 ↦ 5, REP15 ↦ 6,&#10;&#10;REP16 ↦ 0, REP17 ↦ 1, REP18 ↦ 2, REP19 ↦ 3, REP20 ↦ 4,&#10;&#9;REP21 ↦ 1, REP22 ↦ 2, REP23 ↦ 3, REP24 ↦ 4, REP25 ↦ 5, &#10;&#9;&#9;REP26 ↦ 2, REP27 ↦ 3, REP28 ↦ 4, REP29 ↦ 5, REP30 ↦ 6, &#10;&#10;REP31 ↦ 0, REP32 ↦ 1, REP33 ↦ 2, REP34 ↦ 3, REP35 ↦ 4, &#10;&#9;REP36 ↦ 1, REP37 ↦ 2, REP38 ↦ 3, REP39 ↦ 4, REP40 ↦ 5,&#10;&#9;&#9;REP41 ↦ 2, REP42 ↦ 3, REP43 ↦ 4, REP44 ↦ 5, REP45 ↦ 6&#10;}&#10;"/>
+</org.eventb.core.contextFile>

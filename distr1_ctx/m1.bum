@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="capt ≔ AGT × {∅}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="objt :∣ objt' ∈ AGT → OBJ" org.eventb.core.comment="Every agent has an objective to begin with." org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pct1 ≔ AGT × {CONSUME}" org.eventb.core.comment="Every agent starts with program counter at consume (@ m1)." org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_release_c">
+<org.eventb.core.guard name="'" org.eventb.core.comment="reset capture variable" org.eventb.core.label="grd1" org.eventb.core.predicate="capt(ag) = ∅"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="take (new) objective" org.eventb.core.label="grd2" org.eventb.core.predicate="ob ∈ OBJ"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="program counter must be at release " org.eventb.core.label="grd3" org.eventb.core.predicate="pct1(ag) = RELEASE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pct1(ag) ≔ CONSUME" org.eventb.core.comment="change program counter to consume" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="ob"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="objt(ag) ≔ ob" org.eventb.core.comment="update agent objective" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=")" org.eventb.core.comment="[EVT:RELEASE]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_release_p">
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="rs"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="an active agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ dom(capt)"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="capt(ag) ≔ capt(ag) ∖ {rs}" org.eventb.core.comment="remove captured resource" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="already captured resource" org.eventb.core.label="grd2" org.eventb.core.predicate="rs ∈ capt(ag)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.comment="program counter at release" org.eventb.core.label="grd3" org.eventb.core.predicate="pct1(ag) = RELEASE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="capt"/>
+<org.eventb.core.invariant name="+" org.eventb.core.comment="Global variable of an agent to stored locked resources." org.eventb.core.label="inv1" org.eventb.core.predicate="capt ∈ AGT → ℙ(RES)"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="c0_agent_state"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="objt"/>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="pct1"/>
+<org.eventb.core.invariant name="1" org.eventb.core.comment="Global variable of an objectives of the agent." org.eventb.core.label="inv2" org.eventb.core.predicate="objt ∈ AGT → OBJ"/>
+<org.eventb.core.invariant name="4" org.eventb.core.comment="Local program counter of an agent." org.eventb.core.label="inv3" org.eventb.core.predicate="pct1 ∈ AGT → AST"/>
+<org.eventb.core.refinesMachine name="6" org.eventb.core.target="m0"/>
+<org.eventb.core.event name="2" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_consume_c">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="objective of an agent has been fulfilled" org.eventb.core.label="grd1" org.eventb.core.predicate="capt(ag) = objr(objt(ag))"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="pct1(ag) ≔ RELEASE" org.eventb.core.comment="update program counter" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="program counter must be at consume" org.eventb.core.label="grd2" org.eventb.core.predicate="pct1(ag) = CONSUME"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="(" org.eventb.core.comment="[EVT:CONSUME]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="agent_consume_p">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="rs"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="ag"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="an active agent" org.eventb.core.label="grd1" org.eventb.core.predicate="ag ∈ dom(capt)"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="resource to consume has to be within objective" org.eventb.core.label="grd2" org.eventb.core.predicate="rs ∈ objr(objt(ag))"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="resource to consume cannot be captured already (by any agent)" org.eventb.core.label="grd3" org.eventb.core.predicate="rs ∉ union(ran(capt))"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="capt(ag) ≔ capt(ag) ∪ {rs}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="1" org.eventb.core.comment="program counter must be at consume" org.eventb.core.label="grd4" org.eventb.core.predicate="pct1(ag) = CONSUME"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="7" org.eventb.core.comment="safety invariant, no 2 or more agents captured the same resources." org.eventb.core.label="inv4" org.eventb.core.predicate="∀a1, a2 · a1 ∈ dom(capt) ∧ a2 ∈ dom(capt) ∧ a1 ≠ a2 ⇒ capt(a1) ∩ capt(a2) = ∅"/>
+</org.eventb.core.machineFile>

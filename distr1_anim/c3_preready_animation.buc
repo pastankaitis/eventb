@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="PRD"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="PRD1"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="PRD2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="PRD3"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="+" org.eventb.core.identifier="PRD4"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.identifier="PRD5"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.identifier="PRD6"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="PRD7"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="PRD8"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="PRD9"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(PRD, {PRD1}, {PRD2}, {PRD3}, {PRD4}, {PRD5}, {PRD6}, {PRD7}, {PRD8}, {PRD9})"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm2" org.eventb.core.predicate="prds = {PRD1 ↦ RES1, PRD2 ↦ RES2, PRD3 ↦ RES3,&#10;&#9;&#9;&#9;PRD4 ↦ RES1, PRD5 ↦ RES2, PRD6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;PRD7 ↦ RES1, PRD8 ↦ RES2, PRD9 ↦ RES3} "/>
+<org.eventb.core.extendsContext name="2" org.eventb.core.target="c1_confirm_animation"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="prds"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="4" org.eventb.core.identifier="prdd"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm3" org.eventb.core.predicate="prdd = {PRD1 ↦ AGT1, PRD2 ↦ AGT1, PRD3 ↦ AGT1,&#10;&#9;&#9;&#9;PRD4 ↦ AGT2, PRD5 ↦ AGT2, PRD6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;PRD7 ↦ AGT3, PRD8 ↦ AGT3, PRD9 ↦ AGT3} "/>
+</org.eventb.core.contextFile>

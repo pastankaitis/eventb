@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c0_release_animation"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.identifier="RDY1"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="RDY2"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="RDY3"/>
+<org.eventb.core.constant name="cst4" org.eventb.core.identifier="RDY4"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="RDY5"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="RDY6"/>
+<org.eventb.core.constant name="cst7" org.eventb.core.identifier="RDY7"/>
+<org.eventb.core.constant name="cst8" org.eventb.core.identifier="RDY8"/>
+<org.eventb.core.constant name="cst9" org.eventb.core.identifier="RDY9"/>
+<org.eventb.core.carrierSet name="cst18" org.eventb.core.identifier="RDY"/>
+<org.eventb.core.axiom name="cst1D" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(RDY, {RDY1}, {RDY2}, {RDY3}, {RDY4}, {RDY5}, {RDY6}, {RDY7}, {RDY8}, {RDY9})"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm2" org.eventb.core.predicate="rdyd = {RDY1 ↦ AGT1, RDY2 ↦ AGT1, RDY3 ↦ AGT1,&#10;&#9;&#9;&#9;RDY4 ↦ AGT2, RDY5 ↦ AGT2, RDY6 ↦ AGT2,&#10;&#9;&#9;&#9;&#9;&#9;RDY7 ↦ AGT3, RDY8 ↦ AGT3, RDY9 ↦ AGT3} "/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm3" org.eventb.core.predicate="rdys = {RDY1 ↦ RES1, RDY2 ↦ RES2, RDY3 ↦ RES3,&#10;&#9;&#9;&#9;RDY4 ↦ RES1, RDY5 ↦ RES2, RDY6 ↦ RES3,&#10;&#9;&#9;&#9;&#9;&#9;RDY7 ↦ RES1, RDY8 ↦ RES2, RDY9 ↦ RES3} "/>
+<org.eventb.core.constant name="cst1E" org.eventb.core.identifier="rdyd"/>
+<org.eventb.core.constant name="cst1F" org.eventb.core.identifier="rdys"/>
+</org.eventb.core.contextFile>

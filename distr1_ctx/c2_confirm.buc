@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="RSP"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="rsps"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="rsps ∈ RSP ↠ RES"/>
+<org.eventb.core.extendsContext name="+" org.eventb.core.target="c2_lock"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.identifier="rspd"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="rspd ∈ RSP ↠ AGT"/>
+<org.eventb.core.carrierSet name="." org.eventb.core.identifier="CNF"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="READY"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="DENY"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(CNF, {READY}, {DENY})"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="rspn"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm4" org.eventb.core.predicate="rspn ∈ RSP ↠ CNF"/>
+</org.eventb.core.contextFile>

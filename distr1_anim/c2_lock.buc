@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="LCK"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="LCK1"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="LCK2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="LCK3"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="+" org.eventb.core.identifier="LCK4"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.identifier="LCK5"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.identifier="LCK6"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="LCK7"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="LCK8"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="LCK9"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(LCK, {LCK1}, {LCK2}, {LCK3}, {LCK4}, {LCK5}, {LCK6}, {LCK7}, {LCK8}, {LCK9})"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="lcks"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm2" org.eventb.core.predicate="lcks ∈ LCK ↠ AGT"/>
+<org.eventb.core.extendsContext name="4" org.eventb.core.target="c1_ready"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="5" org.eventb.core.identifier="lckd"/>
+<org.eventb.core.axiom name="6" org.eventb.core.label="axm3" org.eventb.core.predicate="lckd ∈ LCK ↠ RES"/>
+</org.eventb.core.contextFile>

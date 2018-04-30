@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c4_reply"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="REQ"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="reqs"/>
+<org.eventb.core.axiom name="*" org.eventb.core.comment="why surjective?" org.eventb.core.label="axm1" org.eventb.core.predicate="reqs ∈ REQ ↠ AGT"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="reqd"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm2" org.eventb.core.predicate="reqd ∈ REQ ↠ RES"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.comment="suitable message exists" org.eventb.core.label="axm3" org.eventb.core.predicate="∀a, r · a ∈ AGT ∧ r ∈ RES ⇒ (∃q · q ∈ REQ ∧ reqs(q) = a ∧ reqd(q) = r)"/>
+</org.eventb.core.contextFile>

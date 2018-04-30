@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="RSP"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="RSP1"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="RSP2"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="RSP3"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="+" org.eventb.core.identifier="RSP4"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="," org.eventb.core.identifier="RSP5"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="-" org.eventb.core.identifier="RSP6"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="RSP7"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="RSP8"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="RSP9"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="RSP10"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="RSP11"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="RSP12"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="4" org.eventb.core.identifier="RSP13"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="5" org.eventb.core.identifier="RSP14"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="6" org.eventb.core.identifier="RSP15"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="RSP16"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="8" org.eventb.core.identifier="RSP17"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="9" org.eventb.core.identifier="RSP18"/>
+<org.eventb.core.axiom name=":" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(RSP, {RSP1}, {RSP2}, {RSP3}, {RSP4}, {RSP5}, {RSP6}, {RSP7}, {RSP8}, {RSP9}, {RSP10}, {RSP11}, {RSP12}, {RSP13}, &#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;{RSP14}, {RSP15}, {RSP16}, {RSP17}, {RSP18})"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=";" org.eventb.core.identifier="rsps"/>
+<org.eventb.core.axiom name="axm=" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(CONFIRM, {READY}, {DENY})"/>
+<org.eventb.core.axiom name="=" org.eventb.core.label="axm3" org.eventb.core.predicate="rsps = {RSP1 ↦ RES1, RSP2 ↦ RES1, RSP3 ↦ RES2, &#10;&#9;&#9;&#9;RSP4 ↦ RES2, RSP5 ↦ RES3, RSP6 ↦ RES3, &#10;RSP7 ↦ RES1, RSP8 ↦ RES1, RSP9 ↦ RES2, &#10;&#9;&#9;&#9;RSP10 ↦ RES2, RSP11 ↦ RES3, RSP12 ↦ RES3,&#10;RSP13 ↦ RES1, RSP14 ↦ RES1, RSP15 ↦ RES2, &#10;&#9;&#9;&#9;RSP16 ↦ RES2, RSP17 ↦ RES3, RSP18 ↦ RES3}"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm4" org.eventb.core.predicate="rspd = {RSP1 ↦ AGT1, RSP2 ↦ AGT1, RSP3 ↦ AGT1, &#10;&#9;&#9;&#9;RSP4 ↦ AGT1, RSP5 ↦ AGT1, RSP6 ↦ AGT1, &#10;RSP7 ↦ AGT2, RSP8 ↦ AGT2, RSP9 ↦ AGT2, &#10;&#9;&#9;&#9;RSP10 ↦ AGT2, RSP11 ↦ AGT2, RSP12 ↦ AGT2,&#10;RSP13 ↦ AGT3, RSP14 ↦ AGT3, RSP15 ↦ AGT3, &#10;&#9;&#9;&#9;RSP16 ↦ AGT3, RSP17 ↦ AGT3, RSP18 ↦ AGT3}"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm5" org.eventb.core.predicate="rspn = {RSP1 ↦ READY, RSP2 ↦ DENY, RSP3 ↦ READY, &#10;&#9;&#9;&#9;RSP4 ↦ DENY, RSP5 ↦ READY, RSP6 ↦ DENY, &#10;RSP7 ↦ READY, RSP8 ↦ DENY, RSP9 ↦ READY, &#10;&#9;&#9;&#9;RSP10 ↦ DENY, RSP11 ↦ READY, RSP12 ↦ DENY,&#10;RSP13 ↦ READY, RSP14 ↦ DENY, RSP15 ↦ READY, &#10;&#9;&#9;&#9;RSP16 ↦ DENY, RSP17 ↦ READY, RSP18 ↦ DENY}"/>
+<org.eventb.core.extendsContext name="&gt;" org.eventb.core.target="c2_lock_animation"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="?" org.eventb.core.identifier="rspd"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="axm2" org.eventb.core.identifier="rspn"/>
+<org.eventb.core.carrierSet name="axm3" org.eventb.core.identifier="CONFIRM"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="axm8" org.eventb.core.identifier="READY"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="axm9" org.eventb.core.identifier="DENY"/>
+</org.eventb.core.contextFile>

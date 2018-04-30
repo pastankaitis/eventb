@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="AGT" org.eventb.core.type="ℙ(AGT)"/>
+<org.eventb.core.poIdentifier name="RES" org.eventb.core.type="ℙ(RES)"/>
+<org.eventb.core.poIdentifier name="resin" org.eventb.core.type="ℙ(RES×ℤ)"/>
+<org.eventb.core.poPredicate name="resio" org.eventb.core.predicate="finite(RES)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="resip" org.eventb.core.predicate="finite(AGT)" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiq" org.eventb.core.predicate="(∅ ⦂ ℙ(RES))⊂RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="resir" org.eventb.core.predicate="resin∈RES → ℕ" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="resis" org.eventb.core.predicate="resin∼∈ℕ ⇸ RES" org.eventb.core.source="/distr1_anim/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poIdentifier name="OBJ" org.eventb.core.type="ℙ(OBJ)"/>
+<org.eventb.core.poIdentifier name="objr" org.eventb.core.type="ℙ(OBJ×ℙ(RES))"/>
+<org.eventb.core.poPredicate name="resit" org.eventb.core.predicate="objr∈OBJ → ℙ1(RES)" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiu" org.eventb.core.predicate="∃o⦂OBJ·o∈dom(objr)⇒card(objr(o))&gt;1" org.eventb.core.source="/distr1_anim/c0_objective.buc|org.eventb.core.contextFile#c0_objective|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="RDY" org.eventb.core.type="ℙ(RDY)"/>
+<org.eventb.core.poIdentifier name="rdyd" org.eventb.core.type="ℙ(RDY×AGT)"/>
+<org.eventb.core.poIdentifier name="rdys" org.eventb.core.type="ℙ(RDY×RES)"/>
+<org.eventb.core.poPredicate name="resiv" org.eventb.core.predicate="rdys∈RDY ↠ RES" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiw" org.eventb.core.predicate="rdyd∈RDY ↠ AGT" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="resix" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂RDY·q∈RDY∧rdyd(q)=a∧rdys(q)=r)" org.eventb.core.source="/distr1_anim/c1_ready.buc|org.eventb.core.contextFile#c1_ready|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poIdentifier name="WRT" org.eventb.core.type="ℙ(WRT)"/>
+<org.eventb.core.poIdentifier name="wrtd" org.eventb.core.type="ℙ(WRT×RES)"/>
+<org.eventb.core.poIdentifier name="wrtn" org.eventb.core.type="ℙ(WRT×ℤ)"/>
+<org.eventb.core.poIdentifier name="wrts" org.eventb.core.type="ℙ(WRT×AGT)"/>
+<org.eventb.core.poPredicate name="resiy" org.eventb.core.predicate="wrts∈WRT ↠ AGT" org.eventb.core.source="/distr1_anim/c1_write.buc|org.eventb.core.contextFile#c1_write|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resiz" org.eventb.core.predicate="wrtd∈WRT ↠ RES" org.eventb.core.source="/distr1_anim/c1_write.buc|org.eventb.core.contextFile#c1_write|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="resi{" org.eventb.core.predicate="wrtn∈WRT → ℕ" org.eventb.core.source="/distr1_anim/c1_write.buc|org.eventb.core.contextFile#c1_write|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="resi|" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂WRT·q∈WRT∧wrts(q)=a∧wrtd(q)=r)" org.eventb.core.source="/distr1_anim/c1_write.buc|org.eventb.core.contextFile#c1_write|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poIdentifier name="REP" org.eventb.core.type="ℙ(REP)"/>
+<org.eventb.core.poIdentifier name="repd" org.eventb.core.type="ℙ(REP×AGT)"/>
+<org.eventb.core.poIdentifier name="repn" org.eventb.core.type="ℙ(REP×ℤ)"/>
+<org.eventb.core.poIdentifier name="reps" org.eventb.core.type="ℙ(REP×RES)"/>
+<org.eventb.core.poPredicate name="resi}" org.eventb.core.predicate="reps∈REP ↠ RES" org.eventb.core.source="/distr1_anim/c2_reply.buc|org.eventb.core.contextFile#c2_reply|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="resi~" org.eventb.core.predicate="repd∈REP ↠ AGT" org.eventb.core.source="/distr1_anim/c2_reply.buc|org.eventb.core.contextFile#c2_reply|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="resj'" org.eventb.core.predicate="repn∈REP → ℕ" org.eventb.core.source="/distr1_anim/c2_reply.buc|org.eventb.core.contextFile#c2_reply|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="resj(" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂REP·q∈REP∧repd(q)=a∧reps(q)=r)" org.eventb.core.source="/distr1_anim/c2_reply.buc|org.eventb.core.contextFile#c2_reply|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poIdentifier name="REQ" org.eventb.core.type="ℙ(REQ)"/>
+<org.eventb.core.poIdentifier name="reqd" org.eventb.core.type="ℙ(REQ×RES)"/>
+<org.eventb.core.poIdentifier name="reqs" org.eventb.core.type="ℙ(REQ×AGT)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/distr1_anim/c2_request.bpo|org.eventb.core.poFile#c2_request|org.eventb.core.poPredicateSet#HYPc0_objectivg"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∀q⦂REQ·q∈REQ⇒q∈dom(reqs)∧reqs∈REQ ⇸ AGT∧(reqs(q)=a⇒q∈dom(reqd)∧reqd∈REQ ⇸ RES))" org.eventb.core.source="/distr1_anim/c2_request.buc|org.eventb.core.contextFile#c2_request|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/distr1_anim/c2_request.buc|org.eventb.core.contextFile#c2_request|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/distr1_anim/c2_request.bpo|org.eventb.core.poFile#c2_request|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/distr1_anim/c2_request.bpo|org.eventb.core.poFile#c2_request|org.eventb.core.poPredicateSet#HYPc0_objectivg"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPc0_objectivg" org.eventb.core.parentSet="/distr1_anim/c2_request.bpo|org.eventb.core.poFile#c2_request|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="reqs∈REQ ↠ AGT" org.eventb.core.source="/distr1_anim/c2_request.buc|org.eventb.core.contextFile#c2_request|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="reqd∈REQ ↠ RES" org.eventb.core.source="/distr1_anim/c2_request.buc|org.eventb.core.contextFile#c2_request|org.eventb.core.axiom#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/distr1_anim/c2_request.bpo|org.eventb.core.poFile#c2_request|org.eventb.core.poPredicateSet#HYPc0_objectivg" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀a⦂AGT,r⦂RES·a∈AGT∧r∈RES⇒(∃q⦂REQ·q∈REQ∧reqs(q)=a∧reqd(q)=r)" org.eventb.core.source="/distr1_anim/c2_request.buc|org.eventb.core.contextFile#c2_request|org.eventb.core.axiom#axm1"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

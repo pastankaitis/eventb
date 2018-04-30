@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c3_preready_animation"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="WRT"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="WRT1"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="WRT2"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="WRT3"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="WRT4"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="WRT5"/>
+<org.eventb.core.constant name="." org.eventb.core.identifier="WRT6"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="WRT7"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="WRT8"/>
+<org.eventb.core.constant name="1" org.eventb.core.identifier="WRT9"/>
+<org.eventb.core.constant name="2" org.eventb.core.identifier="WRT10"/>
+<org.eventb.core.constant name="3" org.eventb.core.identifier="WRT11"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="WRT12"/>
+<org.eventb.core.constant name="5" org.eventb.core.identifier="WRT13"/>
+<org.eventb.core.constant name="6" org.eventb.core.identifier="WRT14"/>
+<org.eventb.core.constant name="7" org.eventb.core.identifier="WRT15"/>
+<org.eventb.core.constant name="8" org.eventb.core.identifier="WRT16"/>
+<org.eventb.core.constant name="9" org.eventb.core.identifier="WRT17"/>
+<org.eventb.core.constant name=":" org.eventb.core.identifier="WRT18"/>
+<org.eventb.core.constant name=";" org.eventb.core.identifier="WRT19"/>
+<org.eventb.core.constant name="=" org.eventb.core.identifier="WRT20"/>
+<org.eventb.core.constant name="&gt;" org.eventb.core.identifier="WRT21"/>
+<org.eventb.core.constant name="?" org.eventb.core.identifier="WRT22"/>
+<org.eventb.core.constant name="@" org.eventb.core.identifier="WRT23"/>
+<org.eventb.core.constant name="A" org.eventb.core.identifier="WRT24"/>
+<org.eventb.core.constant name="B" org.eventb.core.identifier="WRT25"/>
+<org.eventb.core.constant name="C" org.eventb.core.identifier="WRT26"/>
+<org.eventb.core.constant name="D" org.eventb.core.identifier="WRT27"/>
+<org.eventb.core.constant name="E" org.eventb.core.identifier="WRT28"/>
+<org.eventb.core.constant name="F" org.eventb.core.identifier="WRT29"/>
+<org.eventb.core.constant name="G" org.eventb.core.identifier="WRT30"/>
+<org.eventb.core.constant name="H" org.eventb.core.identifier="WRT31"/>
+<org.eventb.core.constant name="I" org.eventb.core.identifier="WRT32"/>
+<org.eventb.core.constant name="J" org.eventb.core.identifier="WRT33"/>
+<org.eventb.core.constant name="K" org.eventb.core.identifier="WRT34"/>
+<org.eventb.core.constant name="L" org.eventb.core.identifier="WRT35"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.identifier="WRT37"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="WRT38"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="WRT39"/>
+<org.eventb.core.constant name="cst4" org.eventb.core.identifier="WRT40"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="WRT41"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="WRT42"/>
+<org.eventb.core.constant name="cst7" org.eventb.core.identifier="WRT43"/>
+<org.eventb.core.constant name="cst8" org.eventb.core.identifier="WRT44"/>
+<org.eventb.core.constant name="cst9" org.eventb.core.identifier="WRT45"/>
+<org.eventb.core.constant name="cst11" org.eventb.core.identifier="WRT36"/>
+<org.eventb.core.axiom name="M" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(WRT, {WRT1}, {WRT2}, {WRT3}, {WRT4}, {WRT5}, {WRT6}, {WRT7}, {WRT8}, {WRT9}, {WRT10}, {WRT11}, {WRT12}, {WRT13}, {WRT14}, {WRT15}, {WRT16}, {WRT17}, &#10;{WRT18}, {WRT19}, {WRT20}, {WRT21}, {WRT22}, {WRT23}, {WRT24}, {WRT25}, {WRT26}, {WRT27}, {WRT28}, {WRT29}, {WRT30}, {WRT31}, {WRT32}, &#10;{WRT33}, {WRT34}, {WRT35}, {WRT36}, {WRT37}, {WRT38}, {WRT39}, {WRT40}, {WRT41}, {WRT42}, {WRT43}, {WRT44}, {WRT45})"/>
+<org.eventb.core.axiom name="O" org.eventb.core.label="axm2" org.eventb.core.predicate="wrts = &#10;{&#10;WRT1 ↦ AGT1, WRT2 ↦ AGT1, WRT3 ↦ AGT1, WRT4 ↦ AGT1, WRT5 ↦ AGT1, WRT6 ↦ AGT1, WRT7 ↦ AGT1,&#10;WRT8 ↦ AGT1, WRT9 ↦ AGT1, WRT10 ↦ AGT1, WRT11 ↦ AGT1, WRT12 ↦ AGT1, WRT13 ↦ AGT1, WRT14 ↦ AGT1, WRT15 ↦ AGT1, &#10;&#10;WRT16 ↦ AGT2, WRT17 ↦ AGT2, WRT18 ↦ AGT2, WRT19 ↦ AGT2,&#10;WRT20 ↦ AGT2, WRT21 ↦ AGT2, WRT22 ↦ AGT2, WRT23 ↦ AGT2, WRT24 ↦ AGT2, WRT25 ↦ AGT2,WRT26 ↦ AGT2, WRT27 ↦ AGT2, WRT28 ↦ AGT2, WRT29 ↦ AGT2, WRT30 ↦ AGT2,&#10;&#10;WRT31 ↦ AGT3, WRT32 ↦ AGT3, WRT33 ↦ AGT3, WRT34 ↦ AGT3, WRT35 ↦ AGT3, WRT36 ↦ AGT3, WRT37 ↦ AGT3, WRT38 ↦ AGT3, WRT39 ↦ AGT3, WRT40 ↦ AGT3, WRT41 ↦ AGT3, &#10;WRT42 ↦ AGT3, WRT43 ↦ AGT3, WRT44 ↦ AGT3, WRT45 ↦ AGT3&#10;}&#10;&#10;"/>
+<org.eventb.core.constant name="N" org.eventb.core.identifier="wrts"/>
+<org.eventb.core.constant name="cst12" org.eventb.core.identifier="wrtd"/>
+<org.eventb.core.constant name="cst13" org.eventb.core.identifier="wrtn"/>
+<org.eventb.core.axiom name="cst13" org.eventb.core.label="axm3" org.eventb.core.predicate="wrtd = {&#10;WRT1 ↦ RES1, WRT2 ↦ RES1, WRT3 ↦ RES1, WRT4 ↦ RES1, WRT5 ↦ RES1, &#10;&#9;WRT6 ↦ RES2, WRT7 ↦ RES2, WRT8 ↦ RES2, WRT9 ↦ RES2, WRT10 ↦ RES2, &#10;&#9;&#9;WRT11 ↦ RES3, WRT12 ↦ RES3, WRT13 ↦ RES3, WRT14 ↦ RES3, WRT15 ↦ RES3, &#10;&#10;WRT16 ↦ RES1, WRT17 ↦ RES1, WRT18 ↦ RES1, WRT19 ↦ RES1, WRT20 ↦ RES1,&#10;&#9;WRT21 ↦ RES2, WRT22 ↦ RES2, WRT23 ↦ RES2, WRT24 ↦ RES2, WRT25 ↦ RES2,&#10;&#9;&#9;WRT26 ↦ RES3, WRT27 ↦ RES3, WRT28 ↦ RES3, WRT29 ↦ RES3, WRT30 ↦ RES3, &#10;&#10;WRT31 ↦ RES1, WRT32 ↦ RES1, WRT33 ↦ RES1, WRT34 ↦ RES1, WRT35 ↦ RES1, &#10;&#9;WRT36 ↦ RES2, WRT37 ↦ RES2, WRT38 ↦ RES2, WRT39 ↦ RES2, WRT40 ↦ RES2,&#10;&#9;&#9;WRT41 ↦ RES3, WRT42 ↦ RES3, WRT43 ↦ RES3, WRT44 ↦ RES3, WRT45 ↦ RES3&#10;}"/>
+<org.eventb.core.axiom name="cst14" org.eventb.core.label="axm4" org.eventb.core.predicate="wrtn = {&#10;WRT1 ↦ 0, WRT2 ↦ 1, WRT3 ↦ 2, WRT4 ↦ 3, WRT5 ↦ 4,&#10;&#9;WRT6 ↦ 1, WRT7 ↦ 2, WRT8 ↦ 3, WRT9 ↦ 4, WRT10 ↦ 5, &#10;&#9;&#9;WRT11 ↦ 2, WRT12 ↦ 3, WRT13 ↦ 4, WRT14 ↦ 5, WRT15 ↦ 6,&#10;&#10;WRT16 ↦ 0, WRT17 ↦ 1, WRT18 ↦ 2, WRT19 ↦ 3, WRT20 ↦ 4,&#10;&#9;WRT21 ↦ 1, WRT22 ↦ 2, WRT23 ↦ 3, WRT24 ↦ 4, WRT25 ↦ 5, &#10;&#9;&#9;WRT26 ↦ 2, WRT27 ↦ 3, WRT28 ↦ 4, WRT29 ↦ 5, WRT30 ↦ 6, &#10;&#10;WRT31 ↦ 0, WRT32 ↦ 1, WRT33 ↦ 2, WRT34 ↦ 3, WRT35 ↦ 4, &#10;&#9;WRT36 ↦ 1, WRT37 ↦ 2, WRT38 ↦ 3, WRT39 ↦ 4, WRT40 ↦ 5,&#10;&#9;&#9;WRT41 ↦ 2, WRT42 ↦ 3, WRT43 ↦ 4, WRT44 ↦ 5, WRT45 ↦ 6&#10;}&#10;"/>
+</org.eventb.core.contextFile>

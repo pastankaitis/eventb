@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="c1_ready"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.comment="write message" org.eventb.core.identifier="WRT"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="wrts"/>
+<org.eventb.core.axiom name="*" org.eventb.core.comment="write source" org.eventb.core.label="axm1" org.eventb.core.predicate="wrts ∈ WRT ↠ AGT"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="wrtd"/>
+<org.eventb.core.axiom name="," org.eventb.core.comment="write destination" org.eventb.core.label="axm2" org.eventb.core.predicate="wrtd ∈ WRT ↠ RES"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="wrtn"/>
+<org.eventb.core.axiom name="." org.eventb.core.comment="write slot number" org.eventb.core.label="axm3" org.eventb.core.predicate="wrtn ∈ WRT → ℕ"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.comment="suitable message exists" org.eventb.core.label="axm4" org.eventb.core.predicate="∀a, r · a ∈ AGT ∧ r ∈ RES ⇒ (∃q · q ∈ WRT ∧ wrts(q) = a ∧ wrtd(q) = r)"/>
+</org.eventb.core.contextFile>
